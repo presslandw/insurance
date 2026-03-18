@@ -136,7 +136,8 @@ a:hover {
 
 .btn-primary {
     background-color: var(--color-accent);
-    color: var(--color-bg-alt);
+    color: var(--color-primary);
+    font-weight: 600;
 }
 
 .btn-primary:hover {
