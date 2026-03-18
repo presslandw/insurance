@@ -320,7 +320,7 @@ a:hover {
     background-image: linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(42, 59, 82, 0.9) 100%), url('images/3.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: scroll;
     z-index: 1;
 }
 
@@ -1400,6 +1400,12 @@ textarea {
     
     .footer-brand {
         grid-column: 1 / -1;
+    }
+}
+
+@media (min-width: 1081px) {
+    .hero-bg {
+        background-attachment: fixed;
     }
 }
 
