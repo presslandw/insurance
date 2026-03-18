@@ -1541,3 +1541,48 @@ textarea {
         font-size: 1.75rem;
     }
 }
+
+/* =========================================
+   LIBRARY / ARCHIVE PAGES
+   ========================================= */
+.archive-hero {
+    background-color: var(--color-bg-alt);
+    padding: 8rem 0 4rem;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 4rem;
+}
+
+.archive-main {
+    padding-bottom: 6rem;
+}
+
+.archive-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+@media (max-width: 1024px) {
+    .archive-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .archive-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .archive-hero {
+        padding: 6rem 0 3rem;
+    }
+}
+
+/* Force visibility if ScrollReveal fails or for specific archive items */
+.archive-grid .reveal, 
+.archive-hero .reveal {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
