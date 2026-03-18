@@ -1337,6 +1337,18 @@ textarea {
 /* =========================================
    11. MEDIA QUERIES
    ========================================= */
+@media (max-width: 1250px) {
+    .logo-text {
+        font-size: 1.3rem;
+    }
+    .nav-links {
+        gap: 1.5rem;
+    }
+    .nav-container {
+        padding: 0 1.5rem;
+    }
+}
+
 @media (max-width: 1200px) {
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1388,7 +1400,7 @@ textarea {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
     :root {
         --section-padding: 4rem;
     }
