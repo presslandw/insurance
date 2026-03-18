@@ -855,9 +855,15 @@ body.focus-lock {
     overflow: hidden;
 }
 
-.edge-tabs.focus-mode .edge-embed-container img {
+/* Block embedded Edge Benefits links from triggering */
+.edge-embed-container * {
+    pointer-events: none !important;
     -webkit-user-drag: none;
-    pointer-events: none; /* Let the container handle the drag/click */
+    user-select: none;
+}
+
+.edge-embed-container {
+    cursor: grab;
 }
 
 .edge-tab-btn {
