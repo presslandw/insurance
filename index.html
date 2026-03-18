@@ -642,12 +642,15 @@
             });
 
             // Drag-to-Scroll Functionality
+            let hasDragged = false;
+
             const initDragToScroll = (slider) => {
                 let isDown = false;
                 let startX, startY, scrollLeft, scrollTop;
 
                 const startDragging = (e) => {
                     isDown = true;
+                    hasDragged = false; // Reset drag state on click down
                     slider.classList.add('grabbing');
                     startX = e.clientX - slider.offsetLeft;
                     startY = e.clientY - slider.offsetTop;
@@ -670,6 +673,12 @@
                     const y = e.clientY - slider.offsetTop;
                     const walkX = (x - startX);
                     const walkY = (y - startY);
+                    
+                    // Only mark as dragged if moved more than a few pixels
+                    if (Math.abs(walkX) > 5 || Math.abs(walkY) > 5) {
+                        hasDragged = true;
+                    }
+                    
                     slider.scrollLeft = scrollLeft - walkX;
                     slider.scrollTop = scrollTop - walkY;
                 };
@@ -681,16 +690,28 @@
 
             document.querySelectorAll('.edge-embed-container').forEach(initDragToScroll);
 
-            // Intercept clicks on Edge injected links or container to trigger/exit Focus Mode
+            // Intercept clicks to prevent external links and handle Focus Mode toggle
             edgeTabs.addEventListener('click', (e) => {
+                const link = e.target.closest('a');
+                
+                // Prevent redirection from any embedded Edge Benefits links
+                if (link) {
+                    e.preventDefault();
+                }
+
                 const isEmbedArea = e.target.closest('.edge-embed-container');
                 const isFocus = edgeTabs.classList.contains('focus-mode');
 
-                if (isEmbedArea && isFocus) {
-                    // Calculate if it was a real drag or just a click
-                    // If it's a quick click in focus mode, we exit
-                    // (Actually, simple exit on click is fine if user isn't dragging)
-                    focusToggle.click();
+                if (isEmbedArea) {
+                    if (isFocus) {
+                        // In Focus Mode: only close if it was a simple click, not a drag
+                        if (!hasDragged) {
+                            focusToggle.click();
+                        }
+                    } else {
+                        // In Normal Mode: clicking the image expands it
+                        focusToggle.click();
+                    }
                 }
             });
         });
