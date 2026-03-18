@@ -15,7 +15,7 @@
         rel="stylesheet">
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 
 <body>
@@ -714,6 +714,19 @@
                     }
                 }
             });
+
+            // Failsafe: Physically remove hrefs from injected Edge Benefits links to permanently prevent redirects
+            const stripEdgeLinks = () => {
+                document.querySelectorAll('.edge-embed-container a').forEach(a => {
+                    a.removeAttribute('href');
+                    a.removeAttribute('target');
+                    a.style.cursor = 'grab'; // Maintain our grab cursor
+                });
+            };
+            
+            // Run exactly once after the scripts have likely injected their content
+            setTimeout(stripEdgeLinks, 2000);
+            setTimeout(stripEdgeLinks, 5000); // Secondary check for slower connections
         });
     </script>
 </body>
