@@ -644,40 +644,40 @@
             // Drag-to-Scroll Functionality
             const initDragToScroll = (slider) => {
                 let isDown = false;
-                let startX;
-                let startY;
-                let scrollLeft;
-                let scrollTop;
+                let startX, startY, scrollLeft, scrollTop;
 
-                slider.addEventListener('mousedown', (e) => {
+                const startDragging = (e) => {
                     isDown = true;
                     slider.classList.add('grabbing');
-                    startX = e.pageX - slider.offsetLeft;
-                    startY = e.pageY - slider.offsetTop;
+                    // Use clientX/Y to avoid offset issues with parent positioning
+                    startX = e.clientX - slider.offsetLeft;
+                    startY = e.clientY - slider.offsetTop;
                     scrollLeft = slider.scrollLeft;
                     scrollTop = slider.scrollTop;
-                });
+                };
 
-                slider.addEventListener('mouseleave', () => {
+                const stopDragging = () => {
                     isDown = false;
                     slider.classList.remove('grabbing');
-                });
+                };
 
-                slider.addEventListener('mouseup', () => {
-                    isDown = false;
-                    slider.classList.remove('grabbing');
-                });
-
-                slider.addEventListener('mousemove', (e) => {
+                const moveDragging = (e) => {
                     if (!isDown) return;
                     e.preventDefault();
-                    const x = e.pageX - slider.offsetLeft;
-                    const y = e.pageY - slider.offsetTop;
-                    const walkX = (x - startX) * 2; // Scroll speed
-                    const walkY = (y - startY) * 2;
+                    const x = e.clientX - slider.offsetLeft;
+                    const y = e.clientY - slider.offsetTop;
+                    // Improved sensitivity (1:1 movement feels more natural for "grabbing")
+                    const walkX = (x - startX);
+                    const walkY = (y - startY);
                     slider.scrollLeft = scrollLeft - walkX;
                     slider.scrollTop = scrollTop - walkY;
-                });
+                };
+
+                slider.addEventListener('mousedown', startDragging);
+                
+                // Attach to window to ensure release works even if mouse moves outside the container
+                window.addEventListener('mouseup', stopDragging);
+                window.addEventListener('mousemove', moveDragging);
             };
 
             document.querySelectorAll('.edge-embed-container').forEach(initDragToScroll);
