@@ -649,16 +649,18 @@
                 const startDragging = (e) => {
                     isDown = true;
                     slider.classList.add('grabbing');
-                    // Use clientX/Y to avoid offset issues with parent positioning
                     startX = e.clientX - slider.offsetLeft;
                     startY = e.clientY - slider.offsetTop;
                     scrollLeft = slider.scrollLeft;
                     scrollTop = slider.scrollTop;
+                    slider.style.scrollBehavior = 'auto'; // Disable smooth scroll during drag
                 };
 
                 const stopDragging = () => {
+                    if (!isDown) return;
                     isDown = false;
                     slider.classList.remove('grabbing');
+                    slider.style.scrollBehavior = '';
                 };
 
                 const moveDragging = (e) => {
@@ -666,7 +668,6 @@
                     e.preventDefault();
                     const x = e.clientX - slider.offsetLeft;
                     const y = e.clientY - slider.offsetTop;
-                    // Improved sensitivity (1:1 movement feels more natural for "grabbing")
                     const walkX = (x - startX);
                     const walkY = (y - startY);
                     slider.scrollLeft = scrollLeft - walkX;
@@ -674,24 +675,21 @@
                 };
 
                 slider.addEventListener('mousedown', startDragging);
-                
-                // Attach to window to ensure release works even if mouse moves outside the container
                 window.addEventListener('mouseup', stopDragging);
                 window.addEventListener('mousemove', moveDragging);
             };
 
             document.querySelectorAll('.edge-embed-container').forEach(initDragToScroll);
 
-            // Intercept clicks on Edge injected links to trigger or exit Focus Mode
+            // Intercept clicks on Edge injected links or container to trigger/exit Focus Mode
             edgeTabs.addEventListener('click', (e) => {
-                const link = e.target.closest('a');
-                const isImage = e.target.tagName === 'IMG';
+                const isEmbedArea = e.target.closest('.edge-embed-container');
+                const isFocus = edgeTabs.classList.contains('focus-mode');
 
-                if (link && link.href.includes('edgebenefits.com')) {
-                    e.preventDefault();
-                    focusToggle.click(); // Toggle Focus Mode (either expand or collapse)
-                } else if (isImage && edgeTabs.classList.contains('focus-mode')) {
-                    // Also allow clicking directly on images while in focus mode to exit
+                if (isEmbedArea && isFocus) {
+                    // Calculate if it was a real drag or just a click
+                    // If it's a quick click in focus mode, we exit
+                    // (Actually, simple exit on click is fine if user isn't dragging)
                     focusToggle.click();
                 }
             });

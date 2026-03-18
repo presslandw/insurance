@@ -856,7 +856,9 @@ body.focus-lock {
 }
 
 .edge-tabs.focus-mode .edge-embed-container img {
-    cursor: zoom-out;
+    user-drag: none;
+    -webkit-user-drag: none;
+    pointer-events: none; /* Let the container handle the drag/click */
 }
 
 .edge-tab-btn {
