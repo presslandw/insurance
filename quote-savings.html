@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximize Your Savings Strategy | Abbotsford FHSA & RRSP Advice</title>
+    <meta name="description"
+        content="Get a personalized review of your FHSA, RRSP, and TFSA strategies in Abbotsford. Tax-efficient savings advice for your first home.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .landing-page {
+            background-color: var(--color-bg-alt);
+            min-height: 100vh;
+        }
+
+        .landing-hero {
+            padding: 5rem 0;
+            background: linear-gradient(rgba(17, 24, 39, 0.02), rgba(17, 24, 39, 0.05));
+        }
+
+        .landing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .landing-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--color-primary);
+        }
+
+        .landing-content p {
+            font-size: 1.25rem;
+            color: var(--color-text-muted);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        .landing-form-container {
+            background: white;
+            padding: 3.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-hover);
+            border: 1px solid var(--color-border);
+        }
+
+        .benefit-tag {
+            display: inline-block;
+            background: #fdf6ed;
+            color: var(--color-accent);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-title {
+            font-size: 1.75rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-family: var(--font-heading);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--color-primary);
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.9rem;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus {
+            border-color: var(--color-accent);
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 992px) {
+            .landing-grid { grid-template-columns: 1fr; gap: 4rem; }
+            .landing-content { text-align: center; }
+            .landing-content h1 { font-size: 2.75rem; }
+        }
+    </style>
+</head>
+
+<body class="landing-page">
+    <header class="landing-header">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" class="logo-text">Chris Walker Insurance</a>
+            <a href="index.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem; border-color: rgba(255,255,255,0.3); color: white;">Back to Main Site</a>
+        </div>
+    </header>
+
+    <main class="landing-hero">
+        <div class="container landing-grid">
+            <div class="landing-content">
+                <span class="benefit-tag">Tax-Efficient Savings Review</span>
+                <h1>Stop guessing where to save. Start growing faster.</h1>
+                <p>The right balance between FHSA, RRSP, and TFSA can shave years off your down payment timeline. I help you navigate the rules and maximize every tax-free dollar available to you.</p>
+                
+                <div class="feature-list" style="margin-top: 3rem;">
+                    <div class="feature-item" style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C48E54" stroke-width="2.5">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <div>
+                            <strong style="display: block; color: var(--color-primary);">FHSA Maximization</strong>
+                            <span style="color: var(--color-text-muted); font-size: 0.95rem;">Trigger the maximum tax refunds possible.</span>
+                        </div>
+                    </div>
+                    <div class="feature-item" style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C48E54" stroke-width="2.5">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <div>
+                            <strong style="display: block; color: var(--color-primary);">Home Buyers' Plan Strategy</strong>
+                            <span style="color: var(--color-text-muted); font-size: 0.95rem;">Safely use RRSP funds without the future debt trap.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="landing-form-container">
+                <h3 style="margin-bottom: 1.5rem; text-align: center;">Request a Savings Review</h3>
+                <form action="https://formspree.io/f/mqakaynd" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="goal">What is your primary goal?</label>
+                        <select id="goal" name="goal">
+                            <option value="first-home">Buying my first home</option>
+                            <option value="tax-reduction">Reducing this year's taxes</option>
+                            <option value="retirement">Building long-term wealth</option>
+                            <option value="other">General savings questions</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="savings">Approximate annual savings goal?</label>
+                        <input type="text" id="savings" name="savings" placeholder="e.g. $8,000 / year">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number (Optional)</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(604) 555-0199">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-submit">Send My Request &rarr;</button>
+                    <p style="text-align: center; font-size: 0.8rem; color: var(--color-text-muted); margin-top: 1.5rem;">
+                        Private & Confidential. I respond to all inquiries within 24 hours.
+                    </p>
+                </form>
+            </div>
+        </div>
+    <footer class="main-footer" style="padding: 2rem 0; border-top: 1px solid var(--color-border);">
+        <div class="container text-center">
+            <div class="footer-social" style="justify-content: center; margin-bottom: 2rem;">
+                <a href="https://www.google.com/maps/place/Chris+Walker+Insurance+Services/@49.0514355,-122.319642,17z/data=!3m1!4b1!4m6!3m5!1s0x5484354cebf78677:0xaa1c64cf15e7ff54!8m2!3d49.0514355!4d-122.319642!16s%2Fg%2F12mm84dq3" target="_blank" rel="noopener" class="social-link" title="Goolge Business Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </a>
+                <a href="https://www.facebook.com/cjwalker56/" target="_blank" rel="noopener" class="social-link" title="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                </a>
+                <a href="https://linkedin.com/in/chris-walker-a0521724" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+            </div>
+            <p style="font-size: 0.85rem;">&copy; 2026 Chris Walker Insurance Services. <a href="index.html"
+                    style="color: var(--color-accent); text-decoration: none; margin-left: 10px;">Back to Main Site</a>
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>

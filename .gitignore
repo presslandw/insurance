@@ -1,0 +1,20 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Backup and temp files
+*.bak
+*.tmp
+
+# Antigravity/AI generated task data (Internal)
+.gemini/
+.agents/
+.agent/
+_agents/
+_agent/
+brain/
+task.md
+implementation_plan.md
+walkthrough.md
+design_mockups.md
+google_optimization.md
