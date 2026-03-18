@@ -579,13 +579,15 @@ a:hover {
 
 .service-tags a {
     color: var(--color-accent);
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
     transition: all var(--transition-fast);
 }
 
 .service-tags a:hover {
     color: var(--color-primary);
-    text-decoration: underline;
+    text-decoration-thickness: 2px;
 }
 
 .highlight-card .service-tags a {
@@ -594,6 +596,7 @@ a:hover {
 
 .highlight-card .service-tags a:hover {
     color: var(--color-bg-alt);
+    text-decoration-color: var(--color-bg-alt);
 }
 
 .service-desc {
