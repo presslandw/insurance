@@ -843,6 +843,12 @@ a:hover {
 
 .edge-tabs.focus-mode .edge-embed-container {
     max-height: calc(96vh - 80px);
+    cursor: grab;
+}
+
+.edge-embed-container.grabbing {
+    cursor: grabbing;
+    user-select: none;
 }
 
 body.focus-lock {

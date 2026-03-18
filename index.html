@@ -641,6 +641,47 @@
                 }
             });
 
+            // Drag-to-Scroll Functionality
+            const initDragToScroll = (slider) => {
+                let isDown = false;
+                let startX;
+                let startY;
+                let scrollLeft;
+                let scrollTop;
+
+                slider.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    slider.classList.add('grabbing');
+                    startX = e.pageX - slider.offsetLeft;
+                    startY = e.pageY - slider.offsetTop;
+                    scrollLeft = slider.scrollLeft;
+                    scrollTop = slider.scrollTop;
+                });
+
+                slider.addEventListener('mouseleave', () => {
+                    isDown = false;
+                    slider.classList.remove('grabbing');
+                });
+
+                slider.addEventListener('mouseup', () => {
+                    isDown = false;
+                    slider.classList.remove('grabbing');
+                });
+
+                slider.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - slider.offsetLeft;
+                    const y = e.pageY - slider.offsetTop;
+                    const walkX = (x - startX) * 2; // Scroll speed
+                    const walkY = (y - startY) * 2;
+                    slider.scrollLeft = scrollLeft - walkX;
+                    slider.scrollTop = scrollTop - walkY;
+                });
+            };
+
+            document.querySelectorAll('.edge-embed-container').forEach(initDragToScroll);
+
             // Intercept clicks on Edge injected links to trigger or exit Focus Mode
             edgeTabs.addEventListener('click', (e) => {
                 const link = e.target.closest('a');
