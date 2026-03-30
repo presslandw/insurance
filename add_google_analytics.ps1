@@ -12,7 +12,7 @@ $gaTag = @"
 
 $files = Get-ChildItem -Filter *.html
 foreach ($f in $files) {
-    $content = Get-Content $f.FullName -Raw
+    $content = Get-Content $f.FullName -Raw -Encoding UTF8
     if ($content -notmatch 'G-DFMPTGY8XM') {
         # Inject right after the opening <head> tag for best tracking performance
         $content = $content -replace '(?i)<head>', "<head>`r`n$gaTag"
