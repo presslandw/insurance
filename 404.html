@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DFMPTGY8XM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-DFMPTGY8XM');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Chris Walker Insurance Services</title>
+    <meta name="description" content="The page you are looking for does not exist. Return to Chris Walker Insurance Services home for trusted life and health insurance advice.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css?v=2">
+
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        .error-content {
+            max-width: 600px;
+            background: white;
+            padding: 4rem 3rem;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .error-code {
+            font-family: 'Inter', sans-serif;
+            font-size: 5rem;
+            font-weight: 600;
+            color: #0d6efd;
+            line-height: 1;
+            margin-bottom: 1rem;
+            opacity: 0.1;
+        }
+        .error-title {
+            font-family: 'Lora', serif;
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        .error-message {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        @media (max-width: 480px) {
+            .error-content {
+                padding: 3rem 1.5rem;
+            }
+            .error-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="error-page">
+        <div class="error-content reveal fade-up active">
+            <div class="error-code">404</div>
+            <h1 class="error-title">Page Not Found</h1>
+            <p class="error-message">
+                It looks like the link you're following might be outdated or incorrect. <br>
+                Don't worry—your financial protection is still our priority. 
+            </p>
+            <div class="error-actions">
+                <a href="index.html" class="btn btn-primary">Return Home</a>
+                <a href="index.html#services" class="btn btn-outline">Explore Services</a>
+                <a href="index.html#contact" class="btn btn-text">Contact Chris</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Minimal JS to ensure visibility if style.css reveals are on -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.error-content').classList.add('active');
+        });
+    </script>
+</body>
+
+</html>
