@@ -331,7 +331,7 @@ a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 80% 20%, rgba(196, 142, 84, 0.15) 0%, transparent 40%);
+    background: radial-gradient(circle at 80% 20%, rgba(196, 142, 84, 0.2) 0%, transparent 50%);
 }
 
 .hero-content {
@@ -355,20 +355,23 @@ a:hover {
 }
 
 .hero-title {
-    font-size: 4rem;
+    font-size: 3.25rem;
     font-weight: 500;
     color: var(--color-bg-alt);
-    line-height: 1.1;
+    line-height: 1.15;
     margin-bottom: 1.5rem;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
-    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: 3rem;
     max-width: 600px;
     line-height: 1.7;
+    padding-left: 1.25rem;
+    border-left: 3px solid var(--color-accent);
 }
 
 .hero-actions {
@@ -1337,6 +1340,10 @@ textarea {
     transform: translateY(0);
 }
 
+.fade-in {
+    transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+}
+
 /* =========================================
    11. MEDIA QUERIES
    ========================================= */
@@ -1360,7 +1367,7 @@ textarea {
 
 @media (max-width: 992px) {
     .hero-title {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
     
     .about-grid {
@@ -1476,7 +1483,7 @@ textarea {
     }
     
     .hero-title {
-        font-size: 2.25rem;
+        font-size: 2rem;
     }
     
     .hero-actions {
@@ -1704,4 +1711,138 @@ iframe[data-tally-src][src] {
 .lead-magnet-card iframe {
     padding: 0 !important;
     margin: 0 !important;
+}
+
+/* =========================================
+   13. WHY INDEPENDENT? — Compact Strip
+   ========================================= */
+
+.why-independent-section {
+    padding: 2.5rem 0;
+    background: var(--color-primary);
+}
+
+.why-independent-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.why-independent-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.why-independent-item strong {
+    display: block;
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.why-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    background: rgba(196, 142, 84, 0.15);
+    color: var(--color-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .why-independent-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .why-independent-section {
+        padding: 2rem 0;
+    }
+}
+
+/* =========================================
+   14. EDGE BENEFITS — Banner Card
+   ========================================= */
+
+.edge-benefits-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    background: var(--color-primary);
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+}
+
+.edge-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.edge-banner-icon {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    background: rgba(196, 142, 84, 0.15);
+    color: var(--color-accent);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edge-banner-content h3 {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.edge-benefits-banner p {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+@media (max-width: 768px) {
+    .edge-benefits-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1.5rem;
+    }
+
+    .edge-banner-content {
+        flex-direction: column;
+    }
+
+    .edge-benefits-banner .btn {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   15. UTILITY CLASSES
+   ========================================= */
+
+.text-center {
+    text-align: center;
+}
+
+.card-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+.card-link:hover {
+    color: var(--color-primary);
 }
