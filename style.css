@@ -341,10 +341,12 @@ a:hover {
 }
 
 .hero-badge {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     padding: 0.5rem 1.25rem;
     background: rgba(196, 142, 84, 0.2);
-    border: 1px solid rgba(196, 142, 84, 0.4);
+    border: 1px solid rgba(196, 142, 84, 0.55);
     color: var(--color-accent);
     border-radius: 50px;
     font-size: 0.9rem;
@@ -352,6 +354,7 @@ a:hover {
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin-bottom: 2rem;
+    box-shadow: 0 0 18px rgba(196, 142, 84, 0.15);
 }
 
 .hero-title {
@@ -366,12 +369,12 @@ a:hover {
 
 .hero-subtitle {
     font-size: 1.15rem;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 3rem;
-    max-width: 600px;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 2rem;
+    max-width: 580px;
     line-height: 1.7;
-    padding-left: 1.25rem;
-    border-left: 3px solid var(--color-accent);
+    padding-top: 1.25rem;
+    border-top: 2px solid rgba(196, 142, 84, 0.6);
 }
 
 .hero-actions {
@@ -1714,12 +1717,28 @@ iframe[data-tally-src][src] {
 }
 
 /* =========================================
-   13. WHY INDEPENDENT? — Compact Strip
+   13. WHY INDEPENDENT? — Value Proposition
    ========================================= */
 
 .why-independent-section {
-    padding: 2.5rem 0;
+    padding: 4rem 0;
     background: var(--color-primary);
+}
+
+.why-independent-title {
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
+
+.why-independent-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    font-size: 1.1rem;
+    max-width: 550px;
+    margin: 0 auto 2.5rem;
 }
 
 .why-independent-grid {
@@ -1729,31 +1748,45 @@ iframe[data-tally-src][src] {
 }
 
 .why-independent-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 0.95rem;
-    line-height: 1.5;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.why-independent-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.12);
 }
 
 .why-independent-item strong {
     display: block;
     color: #ffffff;
-    font-size: 1rem;
-    margin-bottom: 0.25rem;
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+}
+
+.why-independent-item p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
 }
 
 .why-icon {
     flex-shrink: 0;
-    width: 44px;
-    height: 44px;
+    width: 52px;
+    height: 52px;
     background: rgba(196, 142, 84, 0.15);
     color: var(--color-accent);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 auto 1rem;
 }
 
 @media (max-width: 768px) {
@@ -1763,7 +1796,11 @@ iframe[data-tally-src][src] {
     }
 
     .why-independent-section {
-        padding: 2rem 0;
+        padding: 3rem 0;
+    }
+
+    .why-independent-title {
+        font-size: 1.75rem;
     }
 }
 
