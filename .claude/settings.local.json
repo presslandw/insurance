@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/J/.claude/projects/c--Users-J-Desktop-Projects-chriswalkerinsurance/memory/**)",
+      "Bash(python3 -c ':*)",
+      "Bash(python -c ':*)",
+      "Bash(grep -h 'href=\"\\\\\\([^http#][^\"]*\\\\\\)\"' *.html)",
+      "Bash(grep -oh 'href=\"[^\"]*\"' *.html)",
+      "Bash(grep -l \"style.css?v=3\" *.html)",
+      "Bash(sed -i 's/expert disability insurance in Abbotsford\\\\. Personalized/expert disability insurance in Abbotsford and Greater Vancouver. Personalized/' disability-insurance.html)",
+      "Bash(sed -i 's/mortgage protection insurance in Abbotsford that covers/mortgage protection insurance in Abbotsford and Greater Vancouver that covers/' mortgage-protection.html)",
+      "Bash(sed -i 's/life insurance quotes for Abbotsford families/life insurance quotes for Abbotsford and Greater Vancouver families/' quote-life.html)",
+      "Bash(sed -i 's/FHSA, RRSP, and TFSA strategies in Abbotsford\\\\. Tax/FHSA, RRSP, and TFSA strategies in Abbotsford and Greater Vancouver. Tax/' quote-savings.html)",
+      "Bash(sed -i 's/disability insurance in Abbotsford\\\\./disability insurance in Abbotsford and Greater Vancouver./' archive-insights.html)"
+    ]
+  }
+}
