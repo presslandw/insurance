@@ -1645,6 +1645,63 @@ textarea {
     body {
         padding-bottom: 80px; /* Space for the sticky button */
     }
-}`n/* =========================================`n   12. TALLY.SO NATIVE INTEGRATION`n   ========================================= */`n`n.contact-form-container iframe,`n.footer-newsletter-col iframe,`n.lead-magnet-card iframe,`n.quote-form-container iframe {`n    width: 100% !important;`n    max-width: 100% !important;`n    border: none !important;`n    margin: 0 auto !important;`n    display: block !important;`n    transition: opacity 0.3s ease;`n}`n`niframe[data-tally-src] {`n    opacity: 0;`n}`n`niframe[data-tally-src].tally-loaded,`niframe[data-tally-src][src] {`n    opacity: 1;`n}`n`n.quote-form-container {`n    overflow: hidden;`n}`n`n.footer-newsletter-col {`n    min-height: 180px;`n}`n`n@media (max-width: 768px) {`n    .contact-form-container iframe {`n        min-height: 450px;`n    }`n}
-`n/* Fix padding for Tally container */`n.contact-form-container {`n    padding: 2rem;`n}
-`n/* Restore Premium Form Aesthetics */`n.contact-form-container,`n.quote-form-container,`n.lead-magnet-card {`n    background: #ffffff !important;`n    padding: 2.5rem !important;`n    border-radius: 12px !important;`n    box-shadow: var(--shadow-lg) !important;`n    border-top: 4px solid var(--color-accent) !important;`n    margin-top: 2rem !important;`n    margin-bottom: 2rem !important;`n}`n`n/* Ensure iframe sits nicely within the card */`n.contact-form-container iframe,`n.quote-form-container iframe,`n.lead-magnet-card iframe {`n    padding: 0 !important;`n    margin: 0 !important;`n}
+}
+
+/* =========================================
+   12. TALLY.SO NATIVE INTEGRATION
+   ========================================= */
+
+.contact-form-container iframe,
+.footer-newsletter-col iframe,
+.lead-magnet-card iframe,
+.quote-form-container iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+    border: none !important;
+    margin: 0 auto !important;
+    display: block !important;
+    transition: opacity 0.3s ease;
+}
+
+iframe[data-tally-src] {
+    opacity: 0;
+}
+
+iframe[data-tally-src].tally-loaded,
+iframe[data-tally-src][src] {
+    opacity: 1;
+}
+
+.quote-form-container {
+    overflow: hidden;
+}
+
+.footer-newsletter-col {
+    min-height: 180px;
+}
+
+@media (max-width: 768px) {
+    .contact-form-container iframe {
+        min-height: 450px;
+    }
+}
+
+/* Premium Form Card Aesthetics */
+.contact-form-container,
+.quote-form-container,
+.lead-magnet-card {
+    background: #ffffff !important;
+    padding: 2.5rem !important;
+    border-radius: 12px !important;
+    box-shadow: var(--shadow-lg) !important;
+    border-top: 4px solid var(--color-accent) !important;
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+}
+
+.contact-form-container iframe,
+.quote-form-container iframe,
+.lead-magnet-card iframe {
+    padding: 0 !important;
+    margin: 0 !important;
+}
