@@ -539,12 +539,12 @@ a:hover {
 .card-icon {
     width: 52px;
     height: 52px;
-    background-color: rgba(196, 142, 84, 0.15);
+    background-color: var(--color-primary);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--color-accent);
+    color: var(--color-bg-alt);
     margin-bottom: 1.5rem;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -974,47 +974,68 @@ body.focus-lock {
 /* =========================================
    8. CONTACT SECTION
    ========================================= */
-.contact-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    background-color: var(--color-bg-alt);
-    border-radius: 12px;
-    box-shadow: var(--shadow-lg);
-    overflow: hidden;
-}
-
-.contact-info {
-    padding: 4rem;
+#contact {
     background-color: var(--color-primary);
-    color: var(--color-bg-alt);
 }
 
-.contact-info .section-title {
+.contact-centered-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: transparent;
+    padding: 3.5rem 4rem 5rem;
+}
+
+.contact-section-trim {
+    padding-top: 3rem; /* Reduced from 6rem standard */
+}
+
+.contact-centered-container .section-title {
+    font-size: 2.75rem;
+    margin-bottom: 1.5rem;
     color: var(--color-bg-alt);
-    margin-bottom: 1rem;
 }
 
 .contact-intro {
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 3rem;
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .contact-methods {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-bottom: 4rem;
+    text-align: left; /* Keep card text left-aligned for legibility */
 }
 
 .contact-method {
     display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform var(--transition-base);
+}
+
+.contact-method:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
 
 .method-icon {
     color: var(--color-accent);
-    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.method-icon svg {
+    width: 28px;
+    height: 28px;
 }
 
 .method-details {
@@ -1024,25 +1045,44 @@ body.focus-lock {
 
 .method-label {
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.5);
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
     letter-spacing: 1px;
 }
 
 .method-value {
     color: var(--color-bg-alt);
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-size: 1.05rem;
+    font-weight: 600;
 }
 
-.method-value:hover {
+.method-value a {
     color: var(--color-bg-alt);
 }
 
-.contact-form-container {
-    padding: 4rem;
+.method-value a:hover {
+    color: var(--color-accent);
+}
+
+.contact-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.contact-actions .btn-contact-trigger {
+    width: auto;
+    margin-bottom: 0;
+    min-width: 280px;
+}
+
+.contact-actions .btn-outline-accent {
+    margin-top: 0;
 }
 
 .form-header {
@@ -1185,7 +1225,7 @@ textarea {
 .newsletter-text {
     color: rgba(255, 255, 255, 0.6);
     font-size: 0.9rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .footer-newsletter-form {
@@ -1715,12 +1755,98 @@ iframe[data-tally-src][src] {
 }
 
 .footer-newsletter-col {
-    min-height: 180px;
+    padding-bottom: 1rem;
+}
+
+.btn-newsletter {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.8rem 1.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    background: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    box-shadow: 0 4px 15px rgba(196, 142, 84, 0.3);
+}
+
+.btn-newsletter:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(196, 142, 84, 0.4);
+}
+
+.btn-newsletter svg {
+    transition: transform var(--transition-fast);
+}
+
+.btn-newsletter:hover svg {
+    transform: translateX(3px);
+}
+
+.btn-contact-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 1.25rem 2rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    box-shadow: 0 10px 25px rgba(11, 17, 26, 0.2);
+    margin-bottom: 1.5rem;
+}
+
+.btn-contact-trigger:hover {
+    background: #1a2436;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(11, 17, 26, 0.3);
+}
+
+.btn-contact-trigger svg {
+    transition: transform var(--transition-fast);
+}
+
+.btn-contact-trigger:hover svg {
+    transform: scale(1.1);
+}
+
+@media (max-width: 1024px) {
+    .contact-centered-container {
+        padding: 4rem 2rem;
+    }
+    
+    .contact-methods {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
 }
 
 @media (max-width: 768px) {
-    .contact-form-container iframe {
-        min-height: 450px;
+    .contact-methods {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    
+    .contact-actions {
+        flex-direction: column;
+    }
+    
+    .contact-actions .btn-contact-trigger {
+        width: 100%;
+        min-width: unset;
     }
 }
 
@@ -1891,7 +2017,17 @@ iframe[data-tally-src][src] {
 }
 
 /* =========================================
-   15. UTILITY CLASSES
+   15. ARTICLE / INSIGHT PAGES
+   ========================================= */
+
+.article-hero {
+    padding: 8rem 0 3rem;
+    background: var(--color-bg-alt);
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* =========================================
+   16. UTILITY CLASSES
    ========================================= */
 
 .text-center {
@@ -1903,11 +2039,11 @@ iframe[data-tally-src][src] {
     margin-top: 0.75rem;
     font-size: 0.95rem;
     font-weight: 500;
-    color: var(--color-accent);
+    color: var(--color-primary);
     text-decoration: none;
     transition: color var(--transition-base);
 }
 
 .card-link:hover {
-    color: var(--color-primary);
+    color: var(--color-accent);
 }
