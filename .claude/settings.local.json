@@ -11,7 +11,13 @@
       "Bash(sed -i 's/mortgage protection insurance in Abbotsford that covers/mortgage protection insurance in Abbotsford and Greater Vancouver that covers/' mortgage-protection.html)",
       "Bash(sed -i 's/life insurance quotes for Abbotsford families/life insurance quotes for Abbotsford and Greater Vancouver families/' quote-life.html)",
       "Bash(sed -i 's/FHSA, RRSP, and TFSA strategies in Abbotsford\\\\. Tax/FHSA, RRSP, and TFSA strategies in Abbotsford and Greater Vancouver. Tax/' quote-savings.html)",
-      "Bash(sed -i 's/disability insurance in Abbotsford\\\\./disability insurance in Abbotsford and Greater Vancouver./' archive-insights.html)"
+      "Bash(sed -i 's/disability insurance in Abbotsford\\\\./disability insurance in Abbotsford and Greater Vancouver./' archive-insights.html)",
+      "Bash(sed -i 's|<title>Income Protection for Abbotsford Professionals|<title>Income Protection for Abbotsford \\\\& Greater Vancouver Professionals|' insight-disability.html)",
+      "Bash(sed -i 's|content=\"Income Protection for Abbotsford Professionals|content=\"Income Protection for Abbotsford \\\\& Greater Vancouver Professionals|' insight-disability.html)",
+      "Bash(sed -i 's|<title>The FHSA Guide: Strategy for Abbotsford First-Time Home Buyers|<title>The FHSA Guide: Strategy for Abbotsford \\\\& Greater Vancouver First-Time Buyers|' insight-fhsa.html)",
+      "Bash(sed -i 's|content=\"The FHSA Guide: Strategy for Abbotsford First-Time Home Buyers|content=\"The FHSA Guide: Strategy for Abbotsford \\\\& Greater Vancouver First-Time Buyers|' insight-fhsa.html)",
+      "Bash(sed -i 's|<title>Term vs. Whole Life Insurance | Abbotsford Life Insurance Expert|<title>Term vs. Whole Life Insurance | Abbotsford \\\\& Greater Vancouver|' insight-life.html)",
+      "Bash(node -e ':*)"
     ]
   }
 }
