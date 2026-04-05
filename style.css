@@ -1530,24 +1530,26 @@ textarea {
     }
     
     #hero {
-        align-items: flex-start;
-        padding-top: 6.5rem;
-        padding-bottom: 4rem;
+        flex-direction: column;
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+    }
+
+    .hero-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .hero-title {
         font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .hero-subtitle {
-        margin-bottom: 2.5rem;
-        padding-top: 1.5rem;
     }
 
     .hero-actions {
         flex-direction: column;
         align-items: stretch;
+        margin-top: auto;
     }
     
     .hero-actions .btn {
