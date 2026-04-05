@@ -1077,7 +1077,7 @@ body.focus-lock {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     text-align: left; /* Keep card text left-aligned for legibility */
 }
 
@@ -1137,18 +1137,17 @@ body.focus-lock {
 }
 
 .contact-actions {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    align-items: stretch;
-    flex-wrap: wrap;
-    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-top: 0;
 }
 
 .contact-actions .btn-contact-trigger,
 .contact-actions .btn-outline-accent {
     justify-content: center;
     margin: 0;
+    width: 100%;
 }
 
 .form-header {
@@ -1915,14 +1914,8 @@ iframe[data-tally-src][src] {
     }
     
     .contact-actions {
-        flex-direction: column;
-    }
-
-    .contact-actions .btn-contact-trigger,
-    .contact-actions .btn-outline-accent {
-        flex: unset;
-        width: 100%;
-        min-width: unset;
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 }
 
