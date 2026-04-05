@@ -88,7 +88,7 @@ a:hover {
 }
 
 .bg-light-alt {
-    background-color: var(--color-bg-alt);
+    background-color: #F5F3F0;
 }
 
 .section-header {
@@ -385,6 +385,15 @@ a:hover {
 
 .hero-actions .btn-text {
     color: var(--color-bg-alt);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: rgba(255, 255, 255, 0.45);
+}
+
+.hero-actions .btn-text:hover {
+    color: var(--color-accent);
+    text-decoration-color: var(--color-accent);
+    transform: translateX(4px);
 }
 
 /* =========================================
@@ -512,102 +521,111 @@ a:hover {
    ========================================= */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
 }
 
 .service-card {
-    background-color: var(--color-bg-main);
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    border: 1px solid var(--color-border);
-    border-top: 3px solid var(--color-accent);
-    position: relative;
-    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.75rem 2rem 1.75rem 1.75rem;
+    background: var(--color-bg-alt);
+    border-radius: 4px 12px 12px 4px;
+    border-left: 3px solid var(--color-accent);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    transition: box-shadow var(--transition-base), transform var(--transition-base);
 }
 
 .service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-    border-color: rgba(196, 142, 84, 0.4);
-    border-top-color: var(--color-accent);
-    z-index: 2;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.09);
+    transform: translateY(-3px);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    margin-bottom: 0.875rem;
 }
 
 .card-icon {
-    width: 52px;
-    height: 52px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
     background-color: var(--color-primary);
-    border-radius: 50%;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--color-bg-alt);
-    margin-bottom: 1.5rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .service-card:hover .card-icon {
     background-color: var(--color-accent);
-    color: var(--color-bg-alt);
 }
 
 .service-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-}
-
-.service-tags {
-    font-size: 0.85rem;
+    font-size: 1.2rem;
     font-weight: 600;
-    color: var(--color-accent);
-    margin-bottom: 1rem;
-}
-
-.service-tags a {
-    color: var(--color-accent);
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 4px;
-    transition: all var(--transition-fast);
-}
-
-.service-tags a:hover {
     color: var(--color-primary);
-    text-decoration-thickness: 2px;
-}
-
-.highlight-card .service-tags a {
-    color: var(--color-accent);
-}
-
-.highlight-card .service-tags a:hover {
-    color: var(--color-bg-alt);
-    text-decoration-color: var(--color-bg-alt);
+    margin: 0;
 }
 
 .service-desc {
+    color: var(--color-text-main);
+    font-size: 0.925rem;
+    line-height: 1.65;
+    margin-bottom: 0.875rem;
+    flex-grow: 1;
+}
+
+.service-products {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
     color: var(--color-text-muted);
-    font-size: 0.95rem;
-    margin-bottom: 0;
+    margin-bottom: 1.25rem;
+    line-height: 1.9;
 }
 
-.highlight-card {
-    background-color: var(--color-primary);
+.service-products a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.service-products a:hover {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    align-self: flex-start;
+    padding: 0.55rem 1.25rem;
+    border: 1.5px solid var(--color-primary);
+    border-radius: 6px;
+    color: var(--color-primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.card-cta:hover {
+    background: var(--color-primary);
     color: var(--color-bg-alt);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-top: 3px solid var(--color-accent);
 }
 
-.highlight-card h3 {
-    color: var(--color-bg-alt);
-}
-
-.highlight-card .service-desc {
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 1.5rem;
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* =========================================
@@ -1069,19 +1087,21 @@ body.focus-lock {
 .contact-actions {
     display: flex;
     gap: 1.5rem;
-    justify-content: center;
-    align-items: center;
+    align-items: stretch;
     flex-wrap: wrap;
     margin-top: 2rem;
 }
 
 .contact-actions .btn-contact-trigger {
+    flex: 1;
     width: auto;
+    min-width: 0;
     margin-bottom: 0;
-    min-width: 280px;
 }
 
 .contact-actions .btn-outline-accent {
+    flex: 1;
+    justify-content: center;
     margin-top: 0;
 }
 
@@ -1799,20 +1819,20 @@ iframe[data-tally-src][src] {
     font-weight: 700;
     font-size: 1.1rem;
     letter-spacing: 0.5px;
-    background: var(--color-primary);
+    background: var(--color-accent);
     color: white;
     border: none;
     border-radius: 12px;
     cursor: pointer;
     transition: all var(--transition-base);
-    box-shadow: 0 10px 25px rgba(11, 17, 26, 0.2);
+    box-shadow: 0 10px 25px rgba(196, 142, 84, 0.35);
     margin-bottom: 1.5rem;
 }
 
 .btn-contact-trigger:hover {
-    background: #1a2436;
+    background: var(--color-accent-hover);
     transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(11, 17, 26, 0.3);
+    box-shadow: 0 15px 35px rgba(196, 142, 84, 0.45);
 }
 
 .btn-contact-trigger svg {
@@ -1843,8 +1863,10 @@ iframe[data-tally-src][src] {
     .contact-actions {
         flex-direction: column;
     }
-    
-    .contact-actions .btn-contact-trigger {
+
+    .contact-actions .btn-contact-trigger,
+    .contact-actions .btn-outline-accent {
+        flex: unset;
         width: 100%;
         min-width: unset;
     }
