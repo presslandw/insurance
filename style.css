@@ -1076,8 +1076,8 @@ body.focus-lock {
 .contact-methods {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
-    margin-bottom: 2rem;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
     text-align: left; /* Keep card text left-aligned for legibility */
 }
 
@@ -1139,7 +1139,7 @@ body.focus-lock {
 .contact-actions {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
+    gap: 1.5rem;
     margin-top: 0;
 }
 
