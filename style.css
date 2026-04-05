@@ -1530,13 +1530,19 @@ textarea {
     }
     
     #hero {
-        align-items: center;
-        padding-top: 5.5rem;
-        padding-bottom: 5.5rem;
+        align-items: flex-start;
+        padding-top: 6.5rem;
+        padding-bottom: 4rem;
     }
 
     .hero-title {
         font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-subtitle {
+        margin-bottom: 2.5rem;
+        padding-top: 1.5rem;
     }
 
     .hero-actions {
