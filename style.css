@@ -2263,3 +2263,27 @@ iframe[data-tally-src][src] {
     text-align: center;
 }
 
+/* =========================================
+   17. FINAL PREMIUM POLISH
+   ========================================= */
+
+.bg-light-alt {
+    background-color: var(--color-bg-alt);
+    background-image: 
+        radial-gradient(circle at 2px 2px, rgba(17, 24, 39, 0.03) 1px, transparent 0);
+    background-size: 32px 32px;
+    position: relative;
+}
+
+.service-card:hover {
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.section-divider {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(to right, transparent, var(--color-border), transparent);
+    margin: 0;
+}
+
