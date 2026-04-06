@@ -190,15 +190,16 @@ a:hover {
 
 
 .btn-outline {
-    border-color: rgba(255, 255, 255, 0.8);
-    color: var(--color-bg-alt);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.88);
     padding: 0.6rem 1.25rem;
     font-size: 0.95rem;
 }
 
 .btn-outline:hover {
-    background-color: var(--color-bg-alt);
-    color: var(--color-primary);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #fff;
+    background: transparent;
 }
 
 .btn-outline svg {
@@ -284,7 +285,7 @@ a:hover {
 }
 
 .nav-link {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.88);
     font-size: 0.9rem;
     font-weight: 500;
     position: relative;
@@ -309,6 +310,28 @@ a:hover {
 
 .nav-link:hover::after {
     width: 100%;
+}
+
+.nav-link-external {
+    color: var(--color-accent);
+    gap: 0.35rem;
+}
+
+.nav-link-external svg {
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.nav-link-external:hover {
+    color: var(--color-accent);
+}
+
+.nav-link-external:hover svg {
+    opacity: 1;
+}
+
+.nav-link-external::after {
+    background: var(--color-accent) !important;
 }
 
 .nav-contact {
