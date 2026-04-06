@@ -632,10 +632,11 @@ a:hover {
 
 .service-card {
     background: var(--color-primary);
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .service-card:hover {
@@ -682,7 +683,7 @@ a:hover {
 
 .service-card-body p {
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255, 255, 255, 0.72);
     line-height: 1.65;
     margin: 0;
 }
@@ -715,14 +716,12 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.35rem 0;
-    font-size: 0.82rem;
+    padding: 0.45rem 0;
+    font-size: 0.95rem;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.65);
     text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
-    transition: color 0.2s ease;
+    transition: color 0.25s ease, opacity 0.25s ease;
 }
 
 .service-links a span {
