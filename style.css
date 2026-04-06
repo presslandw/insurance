@@ -1454,13 +1454,27 @@ textarea {
 
 .footer-bottom-inner {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     color: rgba(255, 255, 255, 0.3);
     font-size: 0.8rem;
 }
 
 .footer-bottom p {
     margin: 0;
+}
+
+.footer-license-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-license-badge svg {
+    color: #10B981;
 }
 
 /* =========================================
