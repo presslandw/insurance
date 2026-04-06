@@ -90,7 +90,15 @@ a:hover {
 
 #about.section-padding,
 #edge-benefits.section-padding {
-    padding: 3.5rem 0; /* Reduced from 6rem for tighter feel */
+    padding: 3.5rem 0;
+}
+
+#services.section-padding {
+    padding-bottom: 4rem;
+}
+
+#insights.section-padding {
+    padding-top: 4rem;
 }
 
 .bg-light-alt {
