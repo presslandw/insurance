@@ -1,0 +1,42 @@
+{
+  // Editor
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.wordWrap": "on",
+  "editor.formatOnSave": true,
+  "editor.rulers": [120],
+  "editor.linkedEditing": true,
+
+  // HTML
+  "html.format.wrapLineLength": 120,
+  "html.format.indentInnerHtml": true,
+  "html.format.preserveNewLines": true,
+  "emmet.triggerExpansionOnTab": true,
+
+  // CSS
+  "css.validate": true,
+  "css.lint.duplicateProperties": "warning",
+  "css.lint.zeroUnits": "warning",
+
+  // Files
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.associations": {
+    "*.html": "html",
+    "CNAME": "plaintext"
+  },
+
+  // Explorer — hide clutter, keep project files visible
+  "files.exclude": {
+    "**/.git": true,
+    "**/google*.html": true
+  },
+
+  // Search — skip binary/image files
+  "search.exclude": {
+    "**/images/**": true,
+    "**/docs/**": true,
+    "**/*.pdf": true,
+    "**/*.ico": true
+  }
+}

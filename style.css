@@ -561,6 +561,8 @@ a:hover {
 }
 
 .nav-link-external {
+    display: inline-flex;
+    align-items: center;
     color: var(--color-accent);
     gap: 0.35rem;
 }
