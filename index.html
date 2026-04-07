@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -66,7 +66,7 @@
         rel="stylesheet">
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="style.css?v=47">
+    <link rel="stylesheet" href="style.css?v=49">
 
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
@@ -445,7 +445,7 @@
                             <span>(604) 309-2001</span>
                         </a>
                         <span class="contact-detail-divider"></span>
-                        <a href="mailto:quotes@chriswalkerinsurance.ca" class="contact-detail-link">
+                        <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('quotes@chriswalkerinsurance.ca'); this.querySelector('span').innerText='Copied!'; setTimeout(() => this.querySelector('span').innerText='quotes@chriswalkerinsurance.ca', 2000);" class="contact-detail-link" title="Copy email to clipboard">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                             <span>quotes@chriswalkerinsurance.ca</span>
                         </a>
@@ -547,6 +547,17 @@
                 });
             });
 
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (event) => {
+                const isClickInsideMenu = navLinks.contains(event.target);
+                const isClickOnToggle = mobileMenuBtn.contains(event.target);
+                
+                if (!isClickInsideMenu && !isClickOnToggle && navLinks.classList.contains('active')) {
+                    mobileMenuBtn.classList.remove('active');
+                    navLinks.classList.remove('active');
+                }
+            });
+
         });
     </script>
     <div class="mobile-sticky-cta">
@@ -568,6 +579,7 @@
 </body>
 
 </html>
+
 
 
 

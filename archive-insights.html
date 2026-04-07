@@ -25,7 +25,7 @@
         rel="stylesheet">
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=49">
 
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
@@ -35,9 +35,9 @@
     <meta property="og:image" content="https://www.chriswalkerinsurance.ca/images/social-share.jpg">
 </head>
 
-<body>
+<body class="article-page">
 
-    <header id="main-header" class="scrolled">
+    <header id="main-header">
         <div class="nav-container">
             <a href="index.html" class="logo">
                 <span class="logo-text">Chris Walker Insurance Services</span>
@@ -45,10 +45,11 @@
             <nav class="nav-links">
                 <a href="index.html#about" class="nav-link">About</a>
                 <a href="index.html#services" class="nav-link">Services</a>
-                <a href="index.html#insights" class="nav-link active">Insights</a>
+                <a href="archive-insights.html" class="nav-link active">Insights</a>
                 <a href="index.html#contact" class="nav-link">Contact</a>
                 <a href="https://chrisjwalker.wearelegalshield.ca/" target="_blank" rel="noopener"
-                    class="nav-link">LegalShield</a>
+                    class="nav-link nav-link-external">LegalShield
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
             </nav>
             <div class="nav-contact">
                 <a href="tel:+16043092001" class="btn btn-outline" aria-label="Call Chris Walker at (604) 309-2001">
@@ -61,9 +62,15 @@
                     </svg>
                     <span>(604) 309-2001</span>
                 </a>
+                <button class="mobile-menu-toggle" aria-label="Toggle Navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </header>
+
 
     <main class="archive-main">
         <section class="archive-hero">
@@ -133,100 +140,148 @@
             </div>
         </section>
 
-        <section id="contact" class="section-padding">
-            <div class="container">
-                <div class="contact-wrapper">
-                    <div class="contact-info">
-                        <h2 class="section-title">Have a specific question?</h2>
-                        <p class="lead-text">I'm here to help you make sense of the options. No pressure, just professional advice.</p>
-                        <div class="contact-methods">
-                            <div class="method-item" style="color: var(--color-text-main);">
-                                <div class="method-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                                </div>
-                                <div class="method-text">
-                                    <p class="method-label">Call me today</p>
-                                    <p class="method-value">(604) 309-2001</p>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="index.html#contact" class="btn btn-primary" style="margin-top: 2rem;">Get a Personal Review</a>
+
+    </main>
+
+    <section id="contact" class="section-padding contact-section-trim">
+        <div class="container reveal fade-up">
+            <div class="contact-centered-container">
+                <h2 class="section-title">Reach out to have a conversation</h2>
+                <p class="contact-intro">Whether you have questions about a new policy, or want to review your
+                    existing coverage, I'm here to help. Reach out directly or fill out the form.</p>
+
+                <div class="contact-actions">
+                    <button data-tally-open="xXyvdk" data-tally-layout="modal" data-tally-width="540" class="btn btn-contact-cta">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <span>Send a Message</span>
+                    </button>
+                    <a href="https://calendly.com/chriswalkerinsurance/30min" target="_blank" rel="noopener" class="btn btn-contact-cta">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                        <span>Book a 30-Minute Call</span>
+                    </a>
+                </div>
+                <div class="contact-details">
+                    <a href="tel:+16043092001" class="contact-detail-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span>(604) 309-2001</span>
+                    </a>
+                    <span class="contact-detail-divider"></span>
+                    <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('quotes@chriswalkerinsurance.ca'); this.querySelector('span').innerText='Copied!'; setTimeout(() => this.querySelector('span').innerText='quotes@chriswalkerinsurance.ca', 2000);" class="contact-detail-link" title="Copy email to clipboard">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <span>quotes@chriswalkerinsurance.ca</span>
+                    </a>
+                    <span class="contact-detail-divider"></span>
+                    <div class="contact-social-row">
+                        <a href="https://www.google.com/maps/place/Chris+Walker+Insurance+Services/@49.0514355,-122.319642,17z/data=!3m1!4b1!4m6!3m5!1s0x5484354cebf78677:0xaa1c64cf15e7ff54!8m2!3d49.0514355!4d-122.319642!16s%2Fg%2F12mm84dq3" target="_blank" rel="noopener" class="social-link" title="Google Business Profile">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        </a>
+                        <a href="https://www.facebook.com/cjwalker56/" target="_blank" rel="noopener" class="social-link" title="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/chris-walker-a0521724" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <footer class="main-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="index.html" class="logo">
-                        <span class="logo-text">Chris Walker Insurance Services</span>
-                    </a>
-                    <p class="footer-bio">Dedicated to providing straightforward, trusted insurance solutions in Abbotsford, Greater Vancouver, and across the Fraser Valley for over 30 years.</p>
-                </div>
-                <!-- Nav -->
-                <div class="footer-links">
-                    <h4 class="footer-heading">Quick Links</h4>
-                    <ul class="footer-menu">
-                        <li><a href="index.html#about">About</a></li>
-                        <li><a href="index.html#services">Services</a></li>
-                        <li><a href="index.html#insights">Insights</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <!-- Contact info placeholder for 4 cols -->
-                <div class="footer-links">
-                    <h4 class="footer-heading">Contact</h4>
-                    <ul class="footer-menu">
-                        <li style="color: rgba(255, 255, 255, 0.6);">(604) 309-2001</li>
-                        <li style="color: rgba(255, 255, 255, 0.6);">Abbotsford, BC</li>
-                    </ul>
-                </div>
-                <!-- Legal info placeholder for 4 cols -->
-                <div class="footer-links">
-                    <h4 class="footer-heading">Legal</h4>
-                    <ul class="footer-menu">
-                        <li><a href="https://chrisjwalker.wearelegalshield.ca/" target="_blank" rel="noopener">LegalShield</a></li>
-                    </ul>
-                </div>
+        <div class="container footer-inner">
+            <a href="index.html" class="logo footer-logo">
+                <span class="logo-text">Chris Walker Insurance Services</span>
+            </a>
+            <nav class="footer-nav">
+                <a href="index.html#about">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="archive-insights.html">Insights</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="https://chrisjwalker.wearelegalshield.ca/" target="_blank" rel="noopener">LegalShield</a>
+            </nav>
+            <div class="footer-social">
+                <a href="https://www.google.com/maps/place/Chris+Walker+Insurance+Services/@49.0514355,-122.319642,17z/data=!3m1!4b1!4m6!3m5!1s0x5484354cebf78677:0xaa1c64cf15e7ff54!8m2!3d49.0514355!4d-122.319642!16s%2Fg%2F12mm84dq3" target="_blank" rel="noopener" class="social-link" title="Google Business Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </a>
+                <a href="https://www.facebook.com/cjwalker56/" target="_blank" rel="noopener" class="social-link" title="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                </a>
+                <a href="https://linkedin.com/in/chris-walker-a0521724" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
             </div>
         </div>
         <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2026 Chris Walker Insurance Services. All rights reserved. <br>Your details are held in confidence.</p>
+            <div class="container footer-bottom-inner">
+                <span class="footer-license-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    Licensed in British Columbia
+                </span>
+                <p>&copy; 2026 Chris Walker Insurance Services. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/scrollreveal"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Mobile Menu Logic
-            const mobileToggle = document.querySelector('.mobile-menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -40px 0px',
+                threshold: 0.05
+            };
 
-            if (mobileToggle) {
-                mobileToggle.addEventListener('click', () => {
-                    mobileToggle.classList.toggle('active');
-                    navLinks.classList.toggle('active');
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
                 });
-            }
+            }, observerOptions);
 
-            // Scroll Reveal
-            const sr = ScrollReveal({
-                origin: 'bottom',
-                distance: '20px',
-                duration: 1000,
-                delay: 200,
-                reset: false
+            document.querySelectorAll('.reveal').forEach((element) => {
+                observer.observe(element);
             });
 
-            sr.reveal('.reveal');
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            const mobileMenuBtn = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuBtn.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (event) => {
+                const isClickInsideMenu = navLinks.contains(event.target);
+                const isClickOnToggle = mobileMenuBtn.contains(event.target);
+                
+                if (!isClickInsideMenu && !isClickOnToggle && navLinks.classList.contains('active')) {
+                    mobileMenuBtn.classList.remove('active');
+                    navLinks.classList.remove('active');
+                }
+            });
+
         });
     </script>
 </body>
 </html>
+
 
 
