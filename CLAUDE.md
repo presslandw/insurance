@@ -1,7 +1,7 @@
 # Chris Walker Insurance Services — Project Brief for Claude
 
 ## What This Is
-A static HTML/CSS website for Chris Walker Insurance Services, an independent insurance broker based in Abbotsford, BC, serving Greater Vancouver and the Fraser Valley. The site is deployed via GitHub Pages using a custom domain (www.chriswalkerinsurance.ca).
+A static HTML/CSS website for Chris Walker Insurance Services, an independent insurance broker based in Abbotsford, BC. The site is hosted and optimized via **Cloudflare** using the custom domain (www.chriswalkerinsurance.ca).
 
 ## The Business
 - **Owner:** Chris Walker — independent broker with 30+ years of experience
@@ -60,10 +60,13 @@ chriswalkerinsurance/
 - Testimonials section does not exist yet — do not add one until real testimonials are available
 - Do not invent or embellish biographical or credential claims about Chris Walker
 
-## Before Publishing (Checklist)
-- Increment the CSS version number (`?v=XX`) in ALL HTML files whenever style.css is changed
-- Update `sitemap.xml` — add any new pages, and update `lastmod` dates on pages with significant content changes
-- Submit the updated sitemap in Google Search Console after publishing
+## Maintenance & Publishing Checklist (CRITICAL)
+> [!IMPORTANT]
+> **Always perform these steps before a final push:**
+> - **Increment CSS Version**: Increment the `?v=XX` query string in **ALL** 13 HTML files whenever `style.css` is modified. 
+> - **Update Sitemap**: Update `lastmod` dates in `sitemap.xml` for modified pages.
+> - **Verify Assets**: Ensure every insight has a `insight-name.jpg` (Hero) and `insight-name-thumb.jpg` (Thumb).
+> - **Clear Cache**: Remind the user they may need to purge the Cloudflare cache after pushing.
 
 ## Standing Instructions for Claude Code
 - Always increment the CSS version number in ALL HTML files when style.css is modified
