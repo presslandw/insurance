@@ -66,7 +66,7 @@
         rel="stylesheet">
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="style.css?v=49">
+    <link rel="stylesheet" href="style.css?v=53">
 
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
@@ -133,8 +133,8 @@
         <section id="about" class="section-padding">
             <div class="container about-grid reveal fade-up">
                 <div class="about-image-slider">
-                    <img src="images/2.jpg" alt="Family Oriented Insurance" class="slider-img img-front">
-                    <img src="images/1.jpg" alt="Chris Walker Insurance Experience" class="slider-img img-back">
+                    <img src="images/car.jpg" alt="Family Oriented Insurance" class="slider-img img-front">
+                    <img src="images/bike.jpg" alt="Chris Walker Insurance Experience" class="slider-img img-back">
                 </div>
                 <div class="about-content">
                     <h2 class="section-title">A personal touch to your financial confidence in B.C.</h2>
@@ -353,7 +353,7 @@
                 <div class="insights-layout">
                     <!-- Featured Article: FHSA Secret Weapon (Spans 2x2) -->
                     <article class="insight-card featured reveal fade-up">
-                        <div class="insight-image" style="background-image: url('images/insight-fhsa.png');"></div>
+                        <div class="insight-image" style="background-image: url('images/insight-fhsa-thumb.png');"></div>
                         <div class="insight-content">
                             <span class="insight-tag">Home Buying Defense</span>
                             <h3><a href="insight-fhsa.html">The FHSA: Your secret weapon for a first home down
@@ -367,7 +367,7 @@
 
                     <!-- Secondary Articles: Each fills 1 slot -->
                     <article class="insight-card secondary-card reveal fade-up">
-                        <div class="insight-image" style="background-image: url('images/insight-life.png');"></div>
+                        <div class="insight-image" style="background-image: url('images/insight-life-thumb.jpg');"></div>
                         <div class="insight-content">
                             <span class="insight-tag">Family Protection</span>
                             <h3><a href="insight-life.html">Term vs. Whole Life explained</a></h3>
@@ -377,7 +377,7 @@
                     </article>
 
                     <article class="insight-card secondary-card reveal fade-up" style="transition-delay: 0.1s;">
-                        <div class="insight-image" style="background-image: url('images/insight-disability.png');">
+                        <div class="insight-image" style="background-image: url('images/insight-disability-thumb.jpg');">
                         </div>
                         <div class="insight-content">
                             <span class="insight-tag">Income Stability</span>
@@ -388,7 +388,7 @@
                     </article>
 
                     <article class="insight-card secondary-card reveal fade-up" style="transition-delay: 0.2s;">
-                        <div class="insight-image" style="background-image: url('images/insight-mortgage.png');"></div>
+                        <div class="insight-image" style="background-image: url('images/insight-mortgage-thumb.jpg');"></div>
                         <div class="insight-content">
                             <span class="insight-tag">Mortgage Protection</span>
                             <h3><a href="insight-mortgage.html">Bank vs. Independent: Which coverage is safe?</a></h3>
@@ -399,7 +399,7 @@
                     </article>
 
                     <article class="insight-card secondary-card reveal fade-up" style="transition-delay: 0.3s;">
-                        <div class="insight-image" style="background-image: url('images/insight-savings.png');"></div>
+                        <div class="insight-image" style="background-image: url('images/insight-savings-thumb.png');"></div>
                         <div class="insight-content">
                             <span class="insight-tag">Tax Strategy</span>
                             <h3><a href="insight-savings.html">FHSA vs. RRSP: The ultimate comparison</a></h3>
@@ -524,13 +524,15 @@
             });
 
             const header = document.getElementById('main-header');
-            window.addEventListener('scroll', () => {
+            function updateHeader() {
                 if (window.scrollY > 50) {
                     header.classList.add('scrolled');
                 } else {
                     header.classList.remove('scrolled');
                 }
-            });
+            }
+            window.addEventListener('scroll', updateHeader);
+            updateHeader();
 
             const mobileMenuBtn = document.querySelector('.mobile-menu-toggle');
             const navLinks = document.querySelector('.nav-links');

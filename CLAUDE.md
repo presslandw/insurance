@@ -60,6 +60,11 @@ chriswalkerinsurance/
 - Testimonials section does not exist yet — do not add one until real testimonials are available
 - Do not invent or embellish biographical or credential claims about Chris Walker
 
+## Before Publishing (Checklist)
+- Increment the CSS version number (`?v=XX`) in ALL HTML files whenever style.css is changed
+- Update `sitemap.xml` — add any new pages, and update `lastmod` dates on pages with significant content changes
+- Submit the updated sitemap in Google Search Console after publishing
+
 ## Standing Instructions for Claude Code
 - Always increment the CSS version number in ALL HTML files when style.css is modified
 - Do not add new pages without being asked
