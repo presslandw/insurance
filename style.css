@@ -252,7 +252,6 @@ a:hover {
 .article-feature-image {
     width: 100%;
     aspect-ratio: 3 / 2;
-    max-height: 480px;
     background-size: cover;
     background-position: center;
     border-radius: 12px;
