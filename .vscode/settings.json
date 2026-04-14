@@ -6,6 +6,9 @@
   "editor.formatOnSave": true,
   "editor.rulers": [120],
   "editor.linkedEditing": true,
+  "editor.minimap.enabled": false,
+  "editor.stickyScroll.enabled": true,
+  "editor.renderWhitespace": "boundary",
 
   // HTML
   "html.format.wrapLineLength": 120,
@@ -15,8 +18,8 @@
 
   // CSS
   "css.validate": true,
-  "css.lint.duplicateProperties": "warning",
-  "css.lint.zeroUnits": "warning",
+  "css.lint.duplicateProperties": "ignore",
+  "css.lint.zeroUnits": "ignore",
 
   // Files
   "files.trimTrailingWhitespace": true,
