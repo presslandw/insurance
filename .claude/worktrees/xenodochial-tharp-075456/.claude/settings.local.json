@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rmdir .claude/worktrees/xenodochial-tharp-075456)",
+      "Bash(rmdir .claude/worktrees/sleepy-lederberg-d54b42)",
+      "Bash(rmdir .claude/worktrees)"
+    ]
+  }
+}
