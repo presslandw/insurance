@@ -1,5 +1,5 @@
 {
-  // Editor
+
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
   "editor.wordWrap": "on",
@@ -10,18 +10,15 @@
   "editor.stickyScroll.enabled": true,
   "editor.renderWhitespace": "boundary",
 
-  // HTML
   "html.format.wrapLineLength": 120,
   "html.format.indentInnerHtml": true,
   "html.format.preserveNewLines": true,
   "emmet.triggerExpansionOnTab": true,
 
-  // CSS
   "css.validate": true,
   "css.lint.duplicateProperties": "ignore",
   "css.lint.zeroUnits": "ignore",
 
-  // Files
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "files.associations": {
@@ -29,13 +26,11 @@
     "CNAME": "plaintext"
   },
 
-  // Explorer — hide clutter, keep project files visible
   "files.exclude": {
     "**/.git": true,
     "**/google*.html": true
   },
 
-  // Search — skip binary/image files
   "search.exclude": {
     "**/images/**": true,
     "**/docs/**": true,
@@ -43,3 +38,4 @@
     "**/*.ico": true
   }
 }
+
