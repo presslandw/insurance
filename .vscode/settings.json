@@ -1,41 +1,17 @@
 {
-
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
   "editor.wordWrap": "on",
   "editor.formatOnSave": true,
   "editor.rulers": [120],
-  "editor.linkedEditing": true,
   "editor.minimap.enabled": false,
   "editor.stickyScroll.enabled": true,
-  "editor.renderWhitespace": "boundary",
-
-  "html.format.wrapLineLength": 120,
-  "html.format.indentInnerHtml": true,
-  "html.format.preserveNewLines": true,
-  "emmet.triggerExpansionOnTab": true,
-
-  "css.validate": true,
-  "css.lint.duplicateProperties": "ignore",
-  "css.lint.zeroUnits": "ignore",
-
-  "files.trimTrailingWhitespace": true,
-  "files.insertFinalNewline": true,
-  "files.associations": {
-    "*.html": "html",
-    "CNAME": "plaintext"
-  },
-
   "files.exclude": {
     "**/.git": true,
-    "**/google*.html": true
+    "**/.claude": true
   },
-
   "search.exclude": {
     "**/images/**": true,
-    "**/docs/**": true,
-    "**/*.pdf": true,
-    "**/*.ico": true
+    "**/*.pdf": true
   }
 }
-

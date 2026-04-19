@@ -1,2 +1,13 @@
-.claude
-.git
+.git/
+.claude/
+.vscode/
+node_modules/
+dist/
+build/
+*.pdf
+*.jpg
+*.png
+*.ico
+*.zip
+*.bak
+*.tmp
