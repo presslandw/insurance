@@ -169,15 +169,16 @@ a:hover {
 }
 
 .btn-solid-accent {
-    background: transparent;
-    color: var(--color-accent);
+    background: var(--color-accent);
+    color: white;
     border: 2px solid var(--color-accent);
-    box-shadow: 0 4px 12px rgba(196, 142, 84, 0.1);
+    box-shadow: 0 4px 12px rgba(196, 142, 84, 0.15);
 }
 
 .btn-solid-accent:hover {
     background: var(--color-accent-hover);
     border-color: var(--color-accent-hover);
+    color: white !important;
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(196, 142, 84, 0.35);
 }
@@ -877,15 +878,15 @@ a:hover {
 .about-features-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.75rem; /* Tighter gap */
+    gap: 0.5rem; /* Ultra-tight gap */
     list-style: none;
-    margin: 1.5rem 0; /* Tighter margins */
+    margin: 1rem 0; /* Tight margins */
     padding: 0;
 }
 
 .about-features-grid li {
     background: white;
-    padding: 0.85rem 1rem; /* Tighter padding */
+    padding: 0.65rem 0.85rem; /* Ultra-tight padding */
     border-radius: 8px;
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--color-border);
