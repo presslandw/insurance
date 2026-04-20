@@ -66,7 +66,7 @@
         rel="stylesheet">
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="style.css?v=59">
+    <link rel="stylesheet" href="style.css?v=60">
 
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
@@ -136,17 +136,15 @@
                     <img src="images/car.jpg" alt="Family Oriented Insurance" class="slider-img img-front">
                     <img src="images/bike.jpg" alt="Chris Walker Insurance Experience" class="slider-img img-back">
                 </div>
-                <div class="about-content">
+                <div class="about-content" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
                     <h2 class="section-title">A personal touch to your financial confidence in B.C.</h2>
                     <p class="lead-text">As an independent insurance broker with over 30 years serving families across Greater Vancouver and the Fraser Valley, I will give you straightforward, unbiased advice — and access to plans from multiple carriers, not just one company.</p>
 
-
-
-                    <ul class="about-features">
+                    <ul class="about-features-grid">
                         <li>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-check-circle">
+                                stroke-linejoin="round">
                                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
                             </svg>
@@ -155,7 +153,7 @@
                         <li>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-check-circle">
+                                stroke-linejoin="round">
                                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
                             </svg>
@@ -164,23 +162,31 @@
                         <li>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-check-circle">
+                                stroke-linejoin="round">
                                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
                             </svg>
-                            <span>Serving Greater Vancouver & the Fraser Valley</span>
+                            <span>Greater Vancouver & the Fraser Valley</span>
                         </li>
                         <li>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-check-circle">
+                                stroke-linejoin="round">
                                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
                             </svg>
                             <span>Licensed in British Columbia</span>
                         </li>
                     </ul>
-                    <a href="#contact" class="btn btn-boxy-accent">Contact Me</a>
+                    
+                    <div class="contact-actions" style="margin-top: 1rem; justify-content: flex-start; gap: 1rem;">
+                        <button data-tally-open="xXyvdk" data-tally-layout="modal" data-tally-width="540" class="btn btn-solid-accent">
+                            Get a Custom Quote
+                        </button>
+                        <a href="https://calendly.com/chriswalkerinsurance/30min" target="_blank" rel="noopener" class="btn btn-outline-accent">
+                            Schedule a Call
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
