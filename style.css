@@ -895,7 +895,7 @@ a:hover {
     display: flex;
     align-items: center;
     color: rgba(255, 255, 255, 0.95);
-    font-weight: 500;
+    font-weight: 400; /* Dropped from 500 to compensate for light-on-dark optical bleeding */
     font-size: 0.85rem; /* Slightly smaller text for compact UI */
     transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
