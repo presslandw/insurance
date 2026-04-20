@@ -66,7 +66,7 @@
         rel="stylesheet">
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="style.css?v=65">
+    <link rel="stylesheet" href="style.css?v=69">
 
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
@@ -180,10 +180,10 @@
                     </ul>
                     
                     <div class="contact-actions" style="margin-top: 1rem; justify-content: flex-start; gap: 1rem;">
-                        <button data-tally-open="xXyvdk" data-tally-layout="modal" data-tally-width="540" class="btn btn-solid-accent">
-                            Get a Custom Quote
+                        <button data-tally-open="xXyvdk" data-tally-layout="modal" data-tally-width="540" class="btn btn-outline-accent">
+                            Compare my rate options
                         </button>
-                        <a href="https://calendly.com/chriswalkerinsurance/30min" target="_blank" rel="noopener" class="btn btn-outline-accent">
+                        <a href="https://calendly.com/chriswalkerinsurance/30min" target="_blank" rel="noopener" class="btn btn-outline">
                             Schedule a Call
                         </a>
                     </div>
@@ -230,7 +230,7 @@
 
                 <div class="services-featured">
 
-                    <div class="service-feature is-primary reveal fade-up">
+                    <div class="service-feature reveal fade-up">
                         <div class="service-feature-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
                         </div>
@@ -282,16 +282,22 @@
 
                 <div class="services-secondary reveal fade-up">
 
-                    <a href="quote-savings.html" class="service-secondary">
+                    <div class="service-secondary">
                         <div class="service-secondary-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
                         </div>
                         <div class="service-secondary-body">
                             <strong>Savings &amp; Retirement</strong>
-                            <span>RRSP, TFSA, FHSA, RESP, segregated funds, annuities</span>
+                            <span>RRSP, TFSA, FHSA, Segregated Funds, Annuities</span>
+                            <div style="margin-top: 0.5rem; display: flex; gap: 1rem;">
+                                <a href="quote-savings.html" style="color: var(--color-accent); font-size: 0.8rem; font-weight: 600; text-decoration: none;">Get a Review &rarr;</a>
+                                <a href="docs/diploma.pdf" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.5); font-size: 0.8rem; text-decoration: none; display: flex; align-items: center; gap: 0.25rem;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                                    RESP Brochure
+                                </a>
+                            </div>
                         </div>
-                        <svg class="service-secondary-arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </a>
+                    </div>
 
                     <a href="#contact" class="service-secondary">
                         <div class="service-secondary-icon">
@@ -342,12 +348,12 @@
 
                     <!-- Secondary Articles: Each fills 1 slot -->
                     <article class="insight-card secondary-card reveal fade-up">
-                        <div class="insight-image" style="background-image: url('images/insight-life-thumb.jpg');"></div>
+                        <div class="insight-image" style="background-image: url('images/insight-bc-probate-thumb.jpg');"></div>
                         <div class="insight-content">
-                            <span class="insight-tag">Family Protection</span>
-                            <h3><a href="insight-life.html">Term vs. Whole Life explained</a></h3>
-                            <p>Understand the fundamental differences for your family's future.</p>
-                            <a href="insight-life.html" class="read-more">Read the guide &rarr;</a>
+                            <span class="insight-tag">Estate Planning</span>
+                            <h3><a href="insight-bc-probate.html">BC Probate laws &amp; your estate</a></h3>
+                            <p>Understand how BC's probate process affects your wealth transfer.</p>
+                            <a href="insight-bc-probate.html" class="read-more">Read the guide &rarr;</a>
                         </div>
                     </article>
 
@@ -385,7 +391,7 @@
                 </div>
 
                 <div class="insights-footer reveal fade-up">
-                    <a href="archive-insights.html" class="btn btn-outline btn-view-all">
+                    <a href="archive-insights.html" class="btn btn-outline">
                         <span>Browse Entire Library</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -497,6 +503,7 @@
 </body>
 
 </html>
+
 
 
 

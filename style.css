@@ -140,7 +140,7 @@ a:hover {
     align-items: center;
     justify-content: center;
     padding: 0.8rem 2.2rem;
-    border-radius: 2px; /* Architectural Sharp Look */
+    border-radius: 8px; /* Softer, premium modern look */
     font-family: var(--font-display);
     font-weight: 500;
     font-size: 1rem;
@@ -183,14 +183,28 @@ a:hover {
     box-shadow: 0 8px 20px rgba(196, 142, 84, 0.35);
 }
 
-.btn-solid-primary {
+.btn-outline-accent {
+    background: transparent;
+    color: var(--color-accent);
+    border: 2px solid var(--color-accent);
+    box-shadow: 0 4px 10px rgba(196, 142, 84, 0.1);
+}
+
+.btn-outline-accent:hover {
+    background: var(--color-accent);
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(196, 142, 84, 0.35);
+}
+
+.btn-solid-primary, .btn-primary {
     background: var(--color-primary);
     color: white;
     border: 2px solid var(--color-primary);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-.btn-solid-primary:hover {
+.btn-solid-primary:hover, .btn-primary:hover {
     background: var(--color-primary-light);
     border-color: var(--color-primary-light);
     color: white !important;
@@ -207,7 +221,7 @@ a:hover {
     background: transparent;
     color: var(--color-primary);
     border: 2px solid var(--color-primary);
-    border-radius: 2px;
+    border-radius: 8px;
     font-family: var(--font-display);
     font-weight: 500;
     cursor: pointer;
@@ -465,16 +479,19 @@ a:hover {
 
 
 .btn-outline {
-    border-color: rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 0.88);
-    padding: 0.6rem 1.25rem;
-    font-size: 0.95rem;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    background: transparent;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .btn-outline:hover {
-    border-color: rgba(255, 255, 255, 0.5);
-    color: #fff;
-    background: transparent;
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: white !important;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
 }
 
 .btn-outline svg {
@@ -500,26 +517,26 @@ a:hover {
 /* =========================================
    4. HEADER & NAVIGATION (Glassmorphism)
    ========================================= */
-#main-header, .navbar.sticky, .landing-header {
+#main-header, .navbar.sticky {
     position: fixed;
-    top: 1.5rem;
+    top: 1rem;
     left: 50%;
     transform: translateX(-50%);
-    width: 92%;
+    width: 94%;
     max-width: 1200px;
     z-index: 1000;
-    padding: 0.5rem 0;
+    padding: 0.45rem 0; /* Loosened from 0.35rem */
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    background: rgba(17, 24, 39, 0.5);
+    background: rgba(17, 24, 39, 0.65);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     display: block; /* Ensure block for width/transform */
 }
 
 #main-header.scrolled {
-    top: 1rem;
+    top: 0.75rem;
     background: rgba(17, 24, 39, 0.95);
     border: 1px solid rgba(196, 142, 84, 0.4);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -528,7 +545,7 @@ a:hover {
 .nav-container {
     width: 100%;
     margin: 0 auto;
-    padding: 0 2.5rem;
+    padding: 0 2rem;
     display: flex !important;
     flex-wrap: nowrap !important;
     justify-content: space-between !important;
@@ -543,7 +560,7 @@ a:hover {
 
 .logo-text {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     font-weight: 600;
     color: var(--color-bg-alt);
     letter-spacing: -0.5px;
@@ -551,7 +568,7 @@ a:hover {
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 2rem; /* Loosened from 1.75rem */
     align-items: center;
     list-style: none;
     margin: 0;
@@ -615,6 +632,27 @@ a:hover {
     display: flex;
     align-items: center;
     flex-shrink: 0;
+}
+
+.nav-contact .btn-outline {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+    color: var(--color-bg-alt);
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-contact .btn-outline:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(196, 142, 84, 0.3);
+}
+
+.nav-contact .btn-outline svg {
+    margin-right: 0.4rem;
+    width: 16px;
+    height: 16px;
 }
 
 .mobile-menu-toggle {
@@ -729,7 +767,7 @@ a:hover {
     align-items: center;
     justify-content: center;
     padding: 0.8rem 2.2rem;
-    border-radius: 2px;
+    border-radius: 8px;
     font-family: var(--font-display);
     font-weight: 500;
     font-size: 1rem;
@@ -946,14 +984,11 @@ a:hover {
     z-index: 10;
 }
 
-.service-feature.is-primary:hover {
-    border-color: rgba(196, 142, 84, 0.6);
+/* Neutralized highlight classes for consistency */
+.service-feature.is-primary {
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.service-feature.is-primary {
-    background: linear-gradient(145deg, #111827 0%, #1f2937 100%);
-    border: 1px solid rgba(196, 142, 84, 0.3);
-}
 
 .service-feature-icon {
     width: 52px;
@@ -1280,28 +1315,7 @@ a:hover {
     margin-top: 5rem;
 }
 
-.btn-view-all {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 2.8rem;
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 1rem;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    color: var(--color-primary);
-    border: 2px solid var(--color-primary);
-    background: transparent;
-    border-radius: 2px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
 
-.btn-view-all:hover {
-    background: var(--color-primary);
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-}
 
 /* =========================================
    9. EDGE BENEFITS SECTION
@@ -1583,8 +1597,8 @@ body.focus-lock {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
+    max-width: 700px; /* Match contact-intro width */
+    margin: 2.5rem auto; /* Centered with vertical margins */
 }
 
 .btn-contact-cta {
@@ -1988,6 +2002,12 @@ textarea {
         text-align: center;
     }
     
+    .contact-actions {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        max-width: 100%;
+    }
+    
     .section-title {
         font-size: 2rem;
     }
@@ -2107,7 +2127,7 @@ textarea {
 
 .btn-outline-accent:hover {
     background: var(--color-accent);
-    color: white;
+    color: white !important;
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(196, 142, 84, 0.2);
 }
@@ -2444,7 +2464,7 @@ iframe[data-tally-src][src] {
     align-items: center;
     justify-content: center;
     padding: 0.8rem 2.2rem;
-    border-radius: 2px;
+    border-radius: 8px;
     font-family: var(--font-display);
     font-weight: 500;
     font-size: 1rem;
@@ -2518,60 +2538,191 @@ iframe[data-tally-src][src] {
 }
 
 .landing-header {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     background-color: var(--color-primary);
-    border-bottom: 3px solid var(--color-accent);
-    text-align: center;
-    box-shadow: var(--shadow-md);
-    position: relative;
-    z-index: 10;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .landing-header .logo-text {
     color: #ffffff !important;
-    font-size: 1.75rem;
+    font-size: 1.4rem;
     font-weight: 600;
-    letter-spacing: -0.5px;
-    font-family: var(--font-heading);
 }
 
 .landing-hero {
-    padding: 4rem 0;
+    padding: 6rem 0 4rem;
     background-color: var(--color-primary);
     color: #ffffff;
+    text-align: center;
+}
+
+.landing-hero h1 {
+    color: #fff;
+    font-size: 3rem;
+    margin-bottom: 1.25rem;
+}
+
+.landing-hero p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
 }
 
 .landing-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 1fr 450px;
+    gap: 5rem;
     align-items: start;
+    padding: 5rem 0;
+}
+
+.landing-body {
+    background: var(--color-bg-main);
 }
 
 .benefit-item {
     display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .benefit-icon {
     flex-shrink: 0;
+    width: 54px;
+    height: 54px;
+    background: rgba(196, 142, 84, 0.1);
+    color: var(--color-accent);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(196, 142, 84, 0.2);
+}
+
+.benefit-item h4 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.benefit-item p {
+    color: var(--color-text-main);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.quote-form-card {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--color-border);
+    position: sticky;
+    top: 2rem;
+}
+
+.quote-form-card h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+/* =========================================
+   RESOURCE CARDS (PDF DOWNLOADS)
+   ========================================= */
+.resources-section {
+    padding: 6rem 0;
+    background: #f8fafc;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.resource-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    border: 1px solid var(--color-border);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    text-decoration: none;
+    color: inherit;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-accent);
+}
+
+.resource-icon {
     width: 48px;
     height: 48px;
     background: rgba(196, 142, 84, 0.1);
     color: var(--color-accent);
-    border-radius: 50%;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
-.benefit-item h4 {
-    color: #ffffff;
+.resource-info h4 {
+    color: var(--color-primary);
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
 }
 
-.benefit-item .text-muted {
-    color: rgba(255, 255, 255, 0.7) !important;
+.resource-info p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.resource-download-text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Landing page variation of resources */
+.landing-page-resources {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.landing-page-resources .section-title {
+    color: white;
+}
+
+.landing-page-resources .resource-card {
+    background: rgba(17, 24, 39, 0.6);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.landing-page-resources .resource-card:hover {
+    background: rgba(17, 24, 39, 0.8);
+    border-color: var(--color-accent);
+}
+
+.landing-page-resources .resource-info h4 {
+    color: #fff;
 }
 
 @media (max-width: 992px) {

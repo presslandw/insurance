@@ -26,7 +26,7 @@
         rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css?v=59">
+    <link rel="stylesheet" href="style.css?v=69">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     
     <!-- Open Graph / Social Media Meta Tags -->
@@ -47,18 +47,18 @@
         </div>
     </header>
 
-    <main>
+    <main class="landing-body">
         <section class="landing-hero">
-            <div class="container landing-grid">
-                <div class="landing-content">
-                    <span class="hero-badge"
-                        style="background: rgba(196, 142, 84, 0.1); color: var(--color-accent);">Smart Homeowner
-                        Protection</span>
-                    <h1 class="hero-title" style="font-size: 2.75rem; margin: 1rem 0;">Don't Let the Bank <span
-                            class="text-accent">Own Your Protection.</span></h1>
-                    <p class="hero-subtitle" style="margin-bottom: 2.5rem;">Most bank mortgage insurance only protects
-                        the lender. Get independent coverage that puts money in your family's hands, not the bank's.</p>
+            <div class="container">
+                <span class="policy-effective" style="margin-bottom: 1.5rem;">Smart Homeowner Protection</span>
+                <h1>Don't Let the Bank Own Your Protection.</h1>
+                <p>Most bank mortgage insurance only protects the lender. Get independent coverage that puts money in your family's hands, not the bank's.</p>
+            </div>
+        </section>
 
+        <section class="landing-content-section">
+            <div class="container landing-grid">
+                <div class="landing-main-column">
                     <div class="benefits-list">
                         <div class="benefit-item">
                             <div class="benefit-icon">
@@ -70,9 +70,8 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 style="margin-bottom: 0.25rem;">You Own the Policy</h4>
-                                <p class="text-muted">Unlike bank insurance, your coverage stays with you even if you
-                                    switch lenders or move homes.</p>
+                                <h4>You Own the Policy</h4>
+                                <p>Unlike bank insurance, your coverage stays with you even if you switch lenders or move homes.</p>
                             </div>
                         </div>
                         <div class="benefit-item">
@@ -85,9 +84,8 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 style="margin-bottom: 0.25rem;">Fixed Benefits</h4>
-                                <p class="text-muted">Bank coverage decreases as your mortgage goes down. Our protection
-                                    stays the same, giving your family more.</p>
+                                <h4>Fixed Benefits</h4>
+                                <p>Bank coverage decreases as your mortgage goes down. Our protection stays the same, giving your family more.</p>
                             </div>
                         </div>
                         <div class="benefit-item">
@@ -102,16 +100,29 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 style="margin-bottom: 0.25rem;">Family First</h4>
-                                <p class="text-muted">Your beneficiaries decide how to use the funds&mdash;mortgage, bills, or
-                                    education&mdash;not the lender.</p>
+                                <h4>Family First</h4>
+                                <p>Your beneficiaries decide how to use the funds&mdash;mortgage, bills, or education&mdash;not the lender.</p>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" style="margin-top: 3rem; background: #ffffff; border: 1px solid var(--color-border); box-shadow: var(--shadow-md);">
+                        <div class="resource-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        </div>
+                        <div class="resource-info">
+                            <h4 style="color: var(--color-primary);">Mortgage Protection Guide</h4>
+                            <p>Comprehensive brochure comparing independent vs. bank coverage.</p>
+                            <a href="docs/Term-Mortgage-Protection.pdf" target="_blank" rel="noopener" class="resource-download-text">
+                                <span>Download PDF</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="quote-form-container">
-                    <h3 style="margin-bottom: 1.5rem; text-align: center;">Request a Custom Review</h3>
+                <div class="quote-form-card">
+                    <h3>Request a Custom Review</h3>
                     <iframe data-tally-src="https://tally.so/embed/xXyvdk?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&source=mortgage_protection_contact" loading="lazy" width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0" title="Contact Chris Walker"></iframe>
                 </div>
             </div>
@@ -131,13 +142,13 @@
                 <a href="https://chrisjwalker.wearelegalshield.ca/" target="_blank" rel="noopener" class="nav-link-external">LegalShield <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
             </nav>
             <div class="footer-social">
-                <a href="https://www.google.com/maps/place/Chris+Walker+Insurance+Services/@49.0514355,-122.319642,17z/data=!3m1!4b1!4m6!3m5!1s0x5484354cebf78677:0xaa1c64cf15e7ff54!8m2!3d49.0514355!4d-122.319642!16s%2Fg%2F12mm84dq3" target="_blank" rel="noopener" class="social-link" title="Google Business Profile" aria-label="Visit Chris Walker Insurance on Google Maps">
+                <a href="https://www.google.com/maps/place/Chris+Walker+Insurance+Services/@49.0514355,-122.319642,17z/data=!3m1!4b1!4m6!3m5!1s0x5484354cebf78677:0xaa1c64cf15e7ff54!8m2!3d49.0514355!4d-122.319642!16s%2Fg%2F12mm84dq3" target="_blank" rel="noopener" class="social-link" title="Google Business Profile">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                 </a>
-                <a href="https://www.facebook.com/cjwalker56/" target="_blank" rel="noopener" class="social-link" title="Facebook" aria-label="Follow Chris Walker on Facebook">
+                <a href="https://www.facebook.com/cjwalker56/" target="_blank" rel="noopener" class="social-link" title="Facebook">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                 </a>
-                <a href="https://linkedin.com/in/chris-walker-a0521724" target="_blank" rel="noopener" class="social-link" title="LinkedIn" aria-label="Connect with Chris Walker on LinkedIn">
+                <a href="https://linkedin.com/in/chris-walker-a0521724" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                 </a>
             </div>
