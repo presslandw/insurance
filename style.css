@@ -2646,30 +2646,32 @@ iframe[data-tally-src][src] {
 }
 
 .resource-card {
-    background: white;
+    background: #ffffff;
     border-radius: 12px;
-    padding: 2rem;
+    padding: 1rem 1.25rem;
     display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
+    align-items: center;
+    gap: 1.25rem;
     border: 1px solid var(--color-border);
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     text-decoration: none;
     color: inherit;
+    position: relative;
+    overflow: hidden;
 }
 
 .resource-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
     border-color: var(--color-accent);
 }
 
 .resource-icon {
-    width: 48px;
-    height: 48px;
-    background: rgba(196, 142, 84, 0.1);
+    width: 44px;
+    height: 44px;
+    background: rgba(196, 142, 84, 0.08);
     color: var(--color-accent);
-    border-radius: 8px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2678,25 +2680,27 @@ iframe[data-tally-src][src] {
 
 .resource-info h4 {
     color: var(--color-primary);
-    margin-bottom: 0.25rem;
-    font-size: 1.1rem;
+    margin-bottom: 0.15rem;
+    font-size: 1.05rem;
+    font-weight: 600;
 }
 
 .resource-info p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--color-text-muted);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
 }
 
 .resource-download-text {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 0.85rem;
-    font-weight: 600;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 700;
     color: var(--color-accent);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.75px;
 }
 
 /* Landing page variation of resources */
