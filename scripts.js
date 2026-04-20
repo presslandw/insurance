@@ -63,6 +63,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4. Smooth Anchor-only Scroll fallback (if needed)
-  // Most browsers handle scroll-behavior: smooth now, but this handles specific offsets
+  // 5. Tally Form Initialization & Fallback
+  const initTally = () => {
+    if (typeof Tally !== 'undefined' && Tally.loadEmbeds) {
+      Tally.loadEmbeds();
+    } else {
+      // Fallback: If Tally script hasn't loaded or failed, just set the src natively
+      document.querySelectorAll('iframe[data-tally-src]:not([src])').forEach(iframe => {
+        iframe.src = iframe.dataset.tallySrc;
+      });
+    }
+  };
+  
+  // Attempt initialization on DOM ready, and again when all assets (including async tally.js) finish loading
+  initTally();
+  window.addEventListener('load', initTally);
+
 });
+
