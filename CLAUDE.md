@@ -1,76 +1,46 @@
-# Chris Walker Insurance Services — Project Brief for Claude
+# Chris Walker Insurance - AI Project Guide (April 2026)
 
-## What This Is
-A static HTML/CSS website for Chris Walker Insurance Services, an independent insurance broker based in Abbotsford, BC. The site is hosted and optimized via **Cloudflare** using the custom domain (www.chriswalkerinsurance.ca).
+This document provides project context and technical standards for AI coding assistants (Antigravity).
 
-## The Business
-- **Owner:** Chris Walker — independent broker with 30+ years of experience
-- **Location:** Abbotsford, BC
-- **Service Area:** Abbotsford, Greater Vancouver, Fraser Valley, and all of British Columbia
-- **Phone:** (604) 309-2001
-- **Email:** quotes@chriswalkerinsurance.ca
-- **Products:** Life insurance, health insurance, mortgage protection, disability insurance, critical illness, savings (RRSP, FHSA, TFSA, RESP, annuities, seg funds), Edge Benefits health & dental, LegalShield
+## Technical Stack
+- **Architecture**: Static Multi-Page Application (MPA)
+- **Frontend**: Vanilla HTML5, Vanilla CSS3 (Modern 2026 standards)
+- **Fonts**: Inter, Lora, Outfit (via Google Fonts)
+- **Integrations**: Google Tag Manager, Tally.so (Forms), Calendly (Booking)
+- **Hosting**: Likely GitHub Pages (based on CNAME and robots.txt)
 
-## Tech Stack
-- Pure static HTML and CSS — no JavaScript framework, no build process
-- Single shared stylesheet: `style.css` (versioned with `?v=XX` query string on each HTML page — increment the version number whenever style.css is changed)
-- Google Analytics: `G-DFMPTGY8XM`
-- Contact form: Tally.so modal (`data-tally-open="xXyvdk"`)
-- Booking: Calendly (`https://calendly.com/chriswalkerinsurance/30min`)
-- Fonts: Lora (headings), Outfit (display), Inter (body) — loaded from Google Fonts
+## Project Structure
+- `index.html`: Main landing page
+- `style.css`: Primary stylesheet (all pages)
+- `images/`: High-resolution assets
+- `_content/`: (Potential) raw content source
+- `insight-*.html`: Educational articles/guides
+- `quote-*.html`: Quote request landing pages
+- `.vscode/`: Environment configuration
 
-## File Structure
-```
-chriswalkerinsurance/
-├── _content/        ← Cowork drafts, copy briefs, content notes (not part of the live site)
-├── docs/            ← Product PDFs linked from service cards
-├── images/          ← Site images and insight article thumbnails
-├── index.html       ← Main single-page site
-├── style.css        ← Shared stylesheet for all pages
-├── insight-*.html   ← Individual insight/article pages
-├── quote-*.html     ← Quote request pages
-├── disability-insurance.html
-├── mortgage-protection.html
-├── edge-benefits.html
-├── archive-insights.html
-├── 404.html
-├── sitemap.xml
-├── robots.txt
-├── CNAME            ← www.chriswalkerinsurance.ca
-└── CLAUDE.md        ← This file
-```
+## Code Style & Standards
+- **HTML**:
+  - Use Semantic HTML5 elements (`<main>`, `<section>`, `<article>`, `<header>`, `<footer>`).
+  - Strict Accessibility: All images must have `alt` text, buttons must have `aria-label` where needed.
+  - SEO: Every page MUST have a unique `<title>`, `canonical` link, and meta `description`.
+  - Social: Open Graph (OG) tags must be present on all indexable pages.
+- **CSS**:
+  - Prefer native CSS variables (Custom Properties).
+  - Use modern layout techniques: CSS Grid and Flexbox.
+  - Colors: Use `oklch()` or semantic variables where possible.
+  - Typography: Stick to the project's font pairings (Outfit for headers, Inter for body).
+- **SEO**:
+  - Use JSON-LD Schema (e.g., `InsuranceAgency`) on relevant pages.
+  - Ensure fast LCP (Largest Contentful Paint) by optimizing images.
 
-## SEO Strategy
-- Primary geographic targets: Abbotsford + Greater Vancouver (both must appear together in titles and meta descriptions — do not revert to Abbotsford-only)
-- Secondary targets: Fraser Valley, British Columbia
-- JSON-LD LocalBusiness schema is on index.html — keep it updated if business details change
-- Each page has its own `<title>`, `<meta name="description">`, and `<link rel="canonical">`
-- Do not change title tags or meta descriptions without being asked
+## Common Operations
+- **Serve Local**: Use VS Code "Live Server" extension.
+- **Build**: No build step required (Static).
+- **Validation**:
+  - HTML: W3C Validator
+  - Accessibility: Axe Linter (VS Code)
 
-## Design System (do not alter without instruction)
-- **Accent colour:** `#C48E54` (copper/gold)
-- **Primary/dark:** `#111827` (deep charcoal)
-- **Background:** `#FAFAFA` (warm off-white)
-- **Heading font:** Lora (serif)
-- **Body font:** Inter (sans-serif)
-- Soft shadows, smooth transitions, scroll-reveal animations on `.reveal.fade-up` elements
-
-## Content Status
-- Most copy is AI-generated placeholder text — real content from Chris Walker is being gathered and will replace it gradually
-- Testimonials section does not exist yet — do not add one until real testimonials are available
-- Do not invent or embellish biographical or credential claims about Chris Walker
-
-## Maintenance & Publishing Checklist (CRITICAL)
-> [!IMPORTANT]
-> **Always perform these steps before a final push:**
-> - **Increment CSS Version**: Increment the `?v=XX` query string in **ALL** 13 HTML files whenever `style.css` is modified. 
-> - **Update Sitemap**: Update `lastmod` dates in `sitemap.xml` for modified pages.
-> - **Verify Assets**: Ensure every insight has a `insight-name.jpg` (Hero) and `insight-name-thumb.jpg` (Thumb).
-> - **Clear Cache**: Remind the user they may need to purge the Cloudflare cache after pushing.
-
-## Standing Instructions for Claude Code
-- Always increment the CSS version number in ALL HTML files when style.css is modified
-- Do not add new pages without being asked
-- Do not modify sitemap.xml or robots.txt without being asked
-- Save any generated copy, briefs, or content drafts to `_content/` — not to the root
-- When in doubt about content or business facts, ask rather than assume
+## AI Communication Rules
+- Always preserve existing SEO tracking scripts (GTM).
+- Maintain 2026 best practices for accessibility and performance.
+- When adding content, match the "trusted local insurance broker" tone of voice.

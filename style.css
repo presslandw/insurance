@@ -900,7 +900,7 @@ a:hover {
    7. SERVICES SECTION
    ========================================= */
 
-/* Featured three — hero cards */
+/* Featured three â€” hero cards */
 .services-featured {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -921,12 +921,14 @@ a:hover {
 }
 
 .service-feature:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(17, 24, 39, 0.2);
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(196, 142, 84, 0.4);
+    z-index: 10;
 }
 
 .service-feature.is-primary:hover {
-    border-color: rgba(196, 142, 84, 0.55);
+    border-color: rgba(196, 142, 84, 0.6);
 }
 
 .service-feature.is-primary {
@@ -998,8 +1000,9 @@ a:hover {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    background: var(--color-accent);
-    color: #fff;
+    background: transparent;
+    color: var(--color-accent);
+    border: 2px solid var(--color-accent);
     font-family: var(--font-display);
     font-size: 0.9rem;
     font-weight: 600;
@@ -1008,20 +1011,27 @@ a:hover {
     padding: 0.85rem 1.25rem;
     border-radius: 8px;
     margin-top: auto;
-    transition: background 0.2s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .service-feature-cta:hover {
-    background: #b07a3f;
-    transform: translateY(-1px);
+    background: var(--color-accent);
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(196, 142, 84, 0.3);
 }
 
 .service-feature-cta svg {
     width: 16px;
     height: 16px;
+    transition: transform 0.3s ease;
 }
 
-/* Secondary row — compact cards */
+.service-feature-cta:hover svg {
+    transform: translateX(4px);
+}
+
+/* Secondary row â€” compact cards */
 .services-secondary {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1479,12 +1489,12 @@ body.focus-lock {
     margin: 0 auto;
     text-align: center;
     background-color: transparent;
-    padding: 3.5rem 4rem 5rem;
+    padding: 3.5rem 4rem 0rem; /* Bottom gap removed - handled by section trim */
 }
 
 .contact-section-trim {
     padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem; /* Reduced for tighter footer transition */
 }
 
 .contact-centered-container .section-title {
@@ -2281,7 +2291,7 @@ iframe[data-tally-src][src] {
 }
 
 /* =========================================
-   13. WHY INDEPENDENT? — Value Proposition
+   13. WHY INDEPENDENT? â€” Value Proposition
    ========================================= */
 
 .why-independent-section {
@@ -2369,7 +2379,7 @@ iframe[data-tally-src][src] {
 }
 
 /* =========================================
-   14. EDGE BENEFITS — Banner Card
+   14. EDGE BENEFITS â€” Banner Card
    ========================================= */
 
 .edge-benefits-banner {
@@ -2480,4 +2490,77 @@ iframe[data-tally-src][src] {
 .text-center {
     text-align: center;
 }
+
+/* =========================================
+   14. LANDING PAGE UTILITIES
+   ========================================= */
+.landing-page {
+    background-color: var(--color-bg-main);
+}
+
+.landing-header {
+    padding: 2rem 0;
+    background-color: var(--color-primary);
+    border-bottom: 3px solid var(--color-accent);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    z-index: 10;
+}
+
+.landing-header .logo-text {
+    color: #ffffff !important;
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    font-family: var(--font-heading);
+}
+
+.landing-hero {
+    padding: 4rem 0;
+    background-color: var(--color-primary);
+    color: #ffffff;
+}
+
+.landing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.benefit-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.benefit-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: rgba(196, 142, 84, 0.1);
+    color: var(--color-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.benefit-item h4 {
+    color: #ffffff;
+}
+
+.benefit-item .text-muted {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+@media (max-width: 992px) {
+    .landing-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+
 

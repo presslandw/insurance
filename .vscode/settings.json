@@ -6,12 +6,40 @@
   "editor.rulers": [120],
   "editor.minimap.enabled": false,
   "editor.stickyScroll.enabled": true,
+  "editor.stickyScroll.maxLineCount": 10,
+  "editor.inlineSuggest.enabled": true,
+  "editor.accessibilitySupport": "on",
+  "editor.cursorSurroundingLines": 5,
+  "editor.linkedEditing": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.renderWhitespace": "boundary",
+  
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
   "files.exclude": {
     "**/.git": true,
-    "**/.claude": true
+    "**/.claude": true,
+    "**/.DS_Store": true,
+    "Thumbs.db": true
   },
+  
   "search.exclude": {
     "**/images/**": true,
-    "**/*.pdf": true
+    "**/*.pdf": true,
+    "**/*.zip": true,
+    "**/*.ico": true
+  },
+
+  "html.format.wrapLineLength": 120,
+  "html.format.indentInnerHtml": true,
+  "css.lint.duplicateProperties": "ignore",
+  "css.lint.zeroUnits": "ignore",
+
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
