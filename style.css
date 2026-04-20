@@ -2240,7 +2240,8 @@ textarea {
 
 .contact-form-container iframe,
 .lead-magnet-card iframe,
-.quote-form-container iframe {
+.quote-form-container iframe,
+.quote-form-card iframe {
     width: 100% !important;
     max-width: 100% !important;
     border: none !important;

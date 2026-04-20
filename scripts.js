@@ -65,19 +65,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 5. Tally Form Initialization & Fallback
   const initTally = () => {
-    if (typeof Tally !== 'undefined' && Tally.loadEmbeds) {
+    if (typeof Tally !== 'undefined') {
       Tally.loadEmbeds();
     } else {
-      // Fallback: If Tally script hasn't loaded or failed, just set the src natively
-      document.querySelectorAll('iframe[data-tally-src]:not([src])').forEach(iframe => {
-        iframe.src = iframe.dataset.tallySrc;
-      });
+      // If Tally isn't loaded yet, try again in a bit
+      // Don't set src manually immediately to avoid interfering with Tally script
+      setTimeout(() => {
+        if (typeof Tally !== 'undefined') {
+          Tally.loadEmbeds();
+        } else {
+          // Final fallback: Set src if script is blocked
+          document.querySelectorAll('iframe[data-tally-src]:not([src])').forEach(iframe => {
+            iframe.src = iframe.dataset.tallySrc;
+          });
+        }
+      }, 1000);
     }
   };
   
-  // Attempt initialization on DOM ready, and again when all assets (including async tally.js) finish loading
-  initTally();
+  // Try on load
   window.addEventListener('load', initTally);
+  
+  // Listen for height messages from Tally (extra insurance)
+  window.addEventListener('message', (e) => {
+    if (e.data && typeof e.data === 'string' && e.data.includes('tally-height')) {
+      try {
+        const data = JSON.parse(e.data);
+        const iframe = document.querySelector(`iframe[src*="${data.formId}"], iframe[data-tally-src*="${data.formId}"]`);
+        if (iframe && data.height) {
+          iframe.style.height = data.height + 'px';
+        }
+      } catch (err) {
+        // Silently fail if not a valid Tally height message
+      }
+    }
+  });
 
 });
 
