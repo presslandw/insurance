@@ -1489,12 +1489,12 @@ body.focus-lock {
     margin: 0 auto;
     text-align: center;
     background-color: transparent;
-    padding: 3.5rem 4rem 0rem; /* Bottom gap removed - handled by section trim */
+    padding: 1.5rem 4rem; /* Balanced vertical padding */
 }
 
 .contact-section-trim {
-    padding-top: 3rem;
-    padding-bottom: 2rem; /* Reduced for tighter footer transition */
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
 }
 
 .contact-centered-container .section-title {
