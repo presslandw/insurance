@@ -298,10 +298,11 @@ a:hover {
 .article-tag {
     display: inline-block;
     color: var(--color-accent);
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: none;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
     margin-bottom: 1rem;
 }
 
@@ -723,15 +724,16 @@ a:hover {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem 1.25rem;
+    padding: 0.55rem 1.25rem;
     background: rgba(196, 142, 84, 0.2);
     border: 1px solid rgba(196, 142, 84, 0.55);
     color: var(--color-accent);
     border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: 0.5px;
     margin-bottom: 2rem;
     box-shadow: 0 0 18px rgba(196, 142, 84, 0.15);
 }
@@ -1811,6 +1813,12 @@ textarea {
     align-items: center;
     color: rgba(255, 255, 255, 0.3);
     font-size: 0.8rem;
+    padding: 0; /* Align with container edges */
+}
+
+/* Ensure consistent footer width/alignment */
+.footer-inner, .footer-bottom-inner {
+    width: 100%;
 }
 
 .footer-bottom p {
@@ -2550,16 +2558,28 @@ iframe[data-tally-src][src] {
 }
 
 .landing-hero {
-    padding: 6rem 0 4rem;
+    padding: 4.5rem 0 3.5rem;
     background-color: var(--color-primary);
     color: #ffffff;
     text-align: center;
 }
 
+.policy-effective {
+    display: block;
+    color: var(--color-accent);
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+}
+
 .landing-hero h1 {
     color: #fff;
     font-size: 3rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 2rem;
 }
 
 .landing-hero p {
@@ -2727,6 +2747,44 @@ iframe[data-tally-src][src] {
 
 .landing-page-resources .resource-info h4 {
     color: #fff;
+}
+
+/* Custom Navy Container for Resources */
+.landing-resource-container {
+    margin-bottom: 3rem;
+    background: var(--color-primary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+}
+
+.landing-resource-container h4 {
+    color: #ffffff !important;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.landing-resource-container .resource-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.landing-resource-container .resource-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--color-accent);
+}
+
+.landing-resource-container .resource-info h4 {
+    color: #ffffff;
+}
+
+.landing-resource-container .resource-download-text {
+    color: var(--color-accent);
+}
+
+.landing-resource-container .resource-icon {
+    background: rgba(196, 142, 84, 0.15);
 }
 
 @media (max-width: 992px) {
