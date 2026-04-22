@@ -1556,6 +1556,15 @@ body.focus-lock {
     transform: translateY(-2px);
 }
 
+.about-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 1.5rem;
+}
+
 .contact-actions {
     display: flex;
     flex-wrap: wrap;
