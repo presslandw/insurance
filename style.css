@@ -679,13 +679,15 @@ section[id] {
     cursor: pointer;
     padding: 0.5rem;
     margin-left: 1rem;
+    position: relative;
+    z-index: 1100; /* Ensure it stays above header elements */
 }
 
 .mobile-menu-toggle span {
     display: block;
     width: 24px;
     height: 2px;
-    background-color: var(--color-bg-alt);
+    background-color: #FFFFFF; /* Force white for visibility on dark nav */
     margin-bottom: 5px;
     transition: all var(--transition-base);
 }
@@ -1644,10 +1646,10 @@ body.focus-lock {
     box-shadow: 0 8px 20px rgba(196, 142, 84, 0.3);
 }
 
-.contact-actions .btn-contact-cta {
+.contact-actions .btn {
+    min-width: 200px; /* Reduced from 280px to prevent excessive width */
     justify-content: center;
     margin: 0;
-    width: 100%;
 }
 
 .form-header {
@@ -1799,10 +1801,11 @@ textarea {
 }
 
 .footer-nav a {
-    color: rgba(255, 255, 255, 0.55);
-    font-size: 0.875rem;
-    font-weight: 500;
-    transition: color var(--transition-fast);
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    padding: 0.25rem 0; /* Better hit area on mobile */
 }
 
 .footer-nav a:hover {
@@ -2065,7 +2068,9 @@ textarea {
     }
 
     .footer-nav {
+        flex-wrap: wrap; /* Prevent overflow on mobile */
         gap: 1.25rem;
+        justify-content: flex-start;
     }
 }
 
