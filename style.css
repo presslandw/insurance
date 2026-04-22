@@ -164,19 +164,6 @@ section[id] {
     backface-visibility: hidden;
 }
 
-.btn-boxy-accent {
-    background: transparent;
-    color: var(--color-accent);
-    border: 2px solid var(--color-accent);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.btn-boxy-accent:hover {
-    background: var(--color-accent);
-    color: white !important;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(196, 142, 84, 0.3);
-}
 
 .btn-solid-accent {
     background: var(--color-accent);
@@ -781,59 +768,6 @@ section[id] {
     margin-top: 2.5rem; /* Added slightly more space from subtitle */
 }
 
-.btn-hero-cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.8rem 2.2rem;
-    border-radius: 8px;
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 1rem;
-    letter-spacing: 0.01em;
-    cursor: pointer;
-    white-space: nowrap;
-    background: transparent;
-    color: #fff;
-    border: 2px solid rgba(196, 142, 84, 0.85);
-    box-shadow: 0 0 16px rgba(196, 142, 84, 0.12);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.btn-hero-cta:hover {
-    background: var(--color-accent);
-    border-color: var(--color-accent);
-    color: #fff !important;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(196, 142, 84, 0.3);
-}
-
-.hero-link {
-    font-family: var(--font-display);
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    letter-spacing: 0.02em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
-    padding-bottom: 2px;
-}
-
-.hero-link span {
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-.hero-link:hover {
-    color: var(--color-accent);
-    border-bottom-color: var(--color-accent);
-}
-
-.hero-link:hover span {
-    transform: translateX(4px);
-}
 
 /* =========================================
    6. ABOUT SECTION
@@ -1623,31 +1557,15 @@ body.focus-lock {
 }
 
 .contact-actions {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 1.5rem;
-    max-width: 700px; /* Match contact-intro width */
-    margin: 2.5rem auto; /* Centered with vertical margins */
-}
-
-.btn-contact-cta {
-    gap: 0.6rem;
-    background: transparent;
-    color: #fff;
-    border: 2px solid rgba(196, 142, 84, 0.85);
-    box-shadow: 0 0 16px rgba(196, 142, 84, 0.12);
-}
-
-.btn-contact-cta:hover {
-    background: var(--color-accent);
-    border-color: var(--color-accent);
-    color: #fff !important;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(196, 142, 84, 0.3);
+    justify-content: center;
+    margin: 2.5rem auto;
 }
 
 .contact-actions .btn {
-    min-width: 200px; /* Reduced from 280px to prevent excessive width */
+    width: fit-content;
     justify-content: center;
     margin: 0;
 }
@@ -2029,12 +1947,8 @@ textarea {
         align-items: stretch;
     }
     
-    .hero-actions .btn-hero-cta {
+    .hero-actions .btn {
         width: 100%;
-        text-align: center;
-    }
-
-    .hero-actions .hero-link {
         text-align: center;
     }
     
