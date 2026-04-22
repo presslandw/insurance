@@ -40,7 +40,26 @@ This document provides project context and technical standards for AI coding ass
   - HTML: W3C Validator
   - Accessibility: Axe Linter (VS Code)
 
+## Design System & "2026 Premium" Aesthetic
+The project underwent a significant visual overhaul in April 2026 to adopt a "Premium Light" editorial aesthetic.
+
+- **Color Palette**:
+  - `Primary (Navy)`: Used for the floating header and high-contrast accents.
+  - `Accent (Gold/Copper)`: Symbolizes value and trust. Used for CTAs and iconography.
+  - `Text Title (Deep Charcoal)`: A refined, very dark navy-grey used for all headers to avoid the "harshness" of pure black.
+  - `Backgrounds`: Prefer clean white (`#FFFFFF`) or off-white (`#F8FAFC`) over dark solid blocks.
+- **Typography**:
+  - **Headers**: `Outfit` (Sans-serif) for high-impact titles.
+  - **Editorial Body**: `Lora` (Serif) for long-form insight content to evoke professional journalism.
+  - **UI/Small Text**: `Inter` (Sans-serif) for functional readability.
+  - **Readability Rules**: Paragraphs use `line-height: 1.85` and `1.75rem` bottom-margin for an open, airy reading rhythm.
+- **UI Component Standards**:
+  - **Corners**: `8px` for buttons/forms; `16px-20px` for large content cards/images.
+  - **Header**: Floating "glassmorphism" pill with `15px` backdrop-blur and `85px` scroll-margin-top.
+  - **CTAs**: Avoid heavy solid boxes. Use white cards with subtle borders and gold top-accents.
+
 ## AI Communication Rules
 - Always preserve existing SEO tracking scripts (GTM).
 - Maintain 2026 best practices for accessibility and performance.
-- When adding content, match the "trusted local insurance broker" tone of voice.
+- **Aesthetic Consistency**: Adhere to the "Premium Light" design tokens. Avoid adding heavy dark backgrounds or generic blue/red colors.
+- When adding content, match the "trusted local insurance broker" tone of voice: professional, straightforward, and family-oriented.
