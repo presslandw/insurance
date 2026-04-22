@@ -2893,5 +2893,15 @@ iframe[data-tally-src][src] {
     }
 }
 
+@media (max-width: 768px) {
+    .landing-hero {
+        padding: 5.5rem 0 2rem;
+    }
+    
+    .landing-content-section {
+        padding: 2.5rem 0;
+    }
+}
+
 
 
