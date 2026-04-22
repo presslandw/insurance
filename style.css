@@ -1623,10 +1623,10 @@ body.focus-lock {
 }
 
 .contact-actions {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
     gap: 1.5rem;
-    max-width: 700px; /* Match contact-intro width */
+    justify-content: center;
+    flex-wrap: wrap;
     margin: 2.5rem auto; /* Centered with vertical margins */
 }
 
