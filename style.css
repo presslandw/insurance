@@ -729,16 +729,17 @@ section[id] {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0;
-    background: transparent;
-    border: none;
-    color: var(--color-accent);
-    font-family: var(--font-display);
-    font-size: 0.85rem;
+    padding: 0.55rem 1.25rem;
+    background: rgba(255, 248, 230, 0.13);
+    border: 1px solid rgba(255, 235, 180, 0.35);
+    color: rgba(255, 240, 200, 0.95);
+    border-radius: 50px;
+    font-family: var(--font-heading);
+    font-size: 1rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin-bottom: 1.5rem;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    margin-bottom: 2rem;
     box-shadow: none;
 }
 
@@ -753,11 +754,11 @@ section[id] {
 }
 
 .hero-subtitle {
-    font-size: 1.35rem;
-    color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 3.5rem;
-    line-height: 1.8;
-    max-width: 650px;
+    font-size: 1.2rem;
+    color: rgba(248, 250, 252, 0.9); /* Softer white */
+    margin-bottom: 2rem;
+    max-width: 600px;
+    line-height: 1.6;
 }
 
 .hero-actions {
@@ -1956,13 +1957,12 @@ textarea {
     
     #hero {
         min-height: 0;
-        padding-top: 10rem;
-        padding-bottom: 6rem;
+        padding-top: 7rem;
+        padding-bottom: 4rem;
     }
 
     .hero-title {
-        font-size: 1.85rem;
-        line-height: 1.2;
+        font-size: 2rem;
     }
 
     .hero-actions {
