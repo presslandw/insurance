@@ -2401,7 +2401,7 @@ iframe[data-tally-src][src] {
 
 .why-independent-section {
     padding: 4rem 0;
-    background: #FFFFFF;
+    background: var(--color-bg-subtle);
     border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
 }
