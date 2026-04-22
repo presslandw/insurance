@@ -34,11 +34,13 @@ This document provides project context and technical standards for AI coding ass
   - Ensure fast LCP (Largest Contentful Paint) by optimizing images.
 
 ## Common Operations
-- **Serve Local**: Use VS Code "Live Server" extension.
+- **Serve Local**: Run `npm run dev` to start a local server at `http://localhost:3000`.
+- **Version Bump**: After ANY change to `style.css`, run `.\bump_version.ps1` to update the cache-busting version string across all 15+ HTML files.
 - **Build**: No build step required (Static).
 - **Validation**:
   - HTML: W3C Validator
   - Accessibility: Axe Linter (VS Code)
+- **Deployment**: `git push origin main` (auto-deploys to GitHub Pages).
 
 ## Design System & "2026 Premium" Aesthetic
 The project underwent a significant visual overhaul in April 2026 to adopt a "Premium Light" editorial aesthetic.
@@ -63,3 +65,8 @@ The project underwent a significant visual overhaul in April 2026 to adopt a "Pr
 - Maintain 2026 best practices for accessibility and performance.
 - **Aesthetic Consistency**: Adhere to the "Premium Light" design tokens. Avoid adding heavy dark backgrounds or generic blue/red colors.
 - When adding content, match the "trusted local insurance broker" tone of voice: professional, straightforward, and family-oriented.
+
+## Active Project State
+- **Primary Branch**: `main` (Live site).
+- **Secondary Branch**: `copy-refresh` (Low priority rough draft for sitewide copy updates).
+- **Ongoing Focus**: Monitor Mobile UX for layout crowding on smallest viewports (320px-375px).
