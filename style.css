@@ -774,8 +774,9 @@ section[id] {
 
 .hero-actions {
     display: flex;
-    gap: 1.25rem;
+    gap: 1.5rem;
     align-items: center;
+    margin-top: 2.5rem; /* Added slightly more space from subtitle */
 }
 
 .btn-hero-cta {
