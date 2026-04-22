@@ -753,11 +753,11 @@ section[id] {
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
-    color: rgba(248, 250, 252, 0.9); /* Softer white */
-    margin-bottom: 2rem;
-    max-width: 600px;
-    line-height: 1.6;
+    font-size: 1.35rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 3.5rem;
+    line-height: 1.8;
+    max-width: 650px;
 }
 
 .hero-actions {
