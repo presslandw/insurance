@@ -2075,6 +2075,49 @@ textarea {
 }
 
 /* =========================================
+   ARTICLE & LANDING COMPONENTS
+   ========================================= */
+
+.expert-note-block {
+    background: #FFFBF0;
+    border-left: 4px solid var(--color-accent);
+    padding: 2.5rem;
+    border-radius: 12px;
+    margin: 4rem 0;
+    box-shadow: var(--shadow-sm);
+}
+
+.expert-note-block h5 {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    margin-bottom: 1.25rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+}
+
+.expert-note-block p {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--color-text-title);
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .expert-note-block {
+        padding: 1.75rem;
+        margin: 2.5rem 0;
+    }
+    
+    .expert-note-block p {
+        font-size: 1.05rem;
+    }
+}
+
+/* =========================================
    ARTICLE CONVERSION CARDS
    ========================================= */
 .article-cta {
