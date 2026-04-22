@@ -1981,15 +1981,7 @@ textarea {
         align-items: center;
         gap: 1rem;
         width: 100%;
-        max-width: 420px;
         margin: 0 auto;
-    }
-
-    .contact-actions .btn {
-        width: 100%;
-        justify-content: center;
-        border-radius: 50px;
-        padding: 1.1rem;
     }
     
     .section-title {
@@ -2264,7 +2256,6 @@ textarea {
         width: 100%;
         font-weight: 700;
         letter-spacing: 0.5px;
-        border-radius: 50px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
@@ -2985,5 +2976,45 @@ iframe[data-tally-src][src] {
 
     .footer-bottom {
         padding: 0.75rem 0;
+    }
+}
+
+/* =========================================
+   15. UNIFIED MOBILE CONTACT UI (Standardized v87)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Unify all contact/sticky buttons to Pill shape & Full Width */
+    .contact-actions .btn,
+    .contact-details .contact-detail-link,
+    .mobile-sticky-cta .btn {
+        border-radius: 50px !important;
+        width: 100% !important;
+        max-width: 420px;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        padding: 1.1rem !important;
+        font-weight: 700 !important;
+        font-size: 1.05rem !important;
+    }
+
+    /* Ensure vertical stacking for all containers */
+    .contact-actions,
+    .contact-details {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    /* Adjust spacing between the two button groups */
+    .contact-actions {
+        margin-bottom: 1rem !important;
+    }
+    
+    .contact-details {
+        margin-top: 0 !important;
     }
 }
