@@ -1962,9 +1962,10 @@ textarea {
     }
 
     .hero-title {
-        font-size: 2.75rem;
+        font-size: clamp(2.1rem, 9vw, 2.75rem);
         line-height: 1.15;
         margin-bottom: 1rem;
+        text-wrap: balance;
     }
 
     .hero-subtitle {
