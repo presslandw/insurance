@@ -30,6 +30,7 @@
     --transition-fast: 0.2s ease;
     --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-premium: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 
     /* Spacing */
     --section-padding: 6rem;
@@ -933,7 +934,7 @@ section[id] {
     position: relative;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: var(--transition-premium);
 }
 
 .service-feature:hover {
@@ -1149,7 +1150,7 @@ section[id] {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
-    transition: all var(--transition-base);
+    transition: var(--transition-premium);
     border: 1px solid var(--color-border);
     display: flex;
     flex-direction: column;
@@ -1157,7 +1158,7 @@ section[id] {
 }
 
 .insight-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
     box-shadow: var(--shadow-hover);
     border-color: var(--color-primary);
 }
@@ -1615,6 +1616,7 @@ body.focus-lock {
     background: white;
     color: var(--color-primary) !important;
     border-color: white;
+    transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -2456,11 +2458,11 @@ iframe[data-tally-src][src] {
     padding: 2rem;
     text-align: center;
     box-shadow: var(--shadow-sm);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    transition: var(--transition-premium);
 }
 
 .why-independent-item:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
     box-shadow: var(--shadow-md);
     border-color: var(--color-primary);
 }
