@@ -2462,7 +2462,7 @@ iframe[data-tally-src][src] {
 .why-independent-item:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-md);
-    border-color: var(--color-accent);
+    border-color: var(--color-primary);
 }
 
 .why-independent-item strong {
