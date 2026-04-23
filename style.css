@@ -730,9 +730,11 @@ section[id] {
     align-items: center;
     gap: 0.5rem;
     padding: 0.55rem 1.25rem;
-    background: rgba(255, 248, 230, 0.13);
-    border: 1px solid rgba(255, 235, 180, 0.35);
-    color: rgba(255, 240, 200, 0.95);
+    background: rgba(196, 142, 84, 0.12);
+    border: 1px solid rgba(196, 142, 84, 0.5);
+    color: var(--color-accent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 50px;
     font-family: var(--font-heading);
     font-size: 1rem;
