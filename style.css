@@ -923,7 +923,6 @@ section[id] {
 .service-feature {
     background: #FFFFFF;
     border: 1px solid var(--color-border);
-    border-top: 3px solid var(--color-accent);
     border-radius: 16px;
     padding: 2.5rem 2rem 2.25rem;
     color: var(--color-text-main);
@@ -959,10 +958,11 @@ section[id] {
 }
 
 .service-feature:hover .service-feature-icon {
-    background: var(--color-accent);
-    color: #FFFFFF;
+    background: var(--color-primary);
+    color: var(--color-accent);
+    border-color: var(--color-primary);
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(196, 142, 84, 0.3);
+    box-shadow: 0 10px 25px rgba(17, 24, 39, 0.15);
 }
 
 .service-feature h3 {
@@ -2492,10 +2492,11 @@ iframe[data-tally-src][src] {
 }
 
 .why-independent-item:hover .why-icon {
-    background: var(--color-accent);
-    color: #FFFFFF;
+    background: var(--color-primary);
+    color: var(--color-accent);
+    border-color: var(--color-primary);
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(196, 142, 84, 0.3);
+    box-shadow: 0 10px 25px rgba(17, 24, 39, 0.15);
 }
 
 @media (max-width: 768px) {
