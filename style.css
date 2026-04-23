@@ -1533,17 +1533,16 @@ body.focus-lock {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 0.8rem 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 50px;
+    padding: 0.6rem 1rem;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 8px;
     color: #FFFFFF;
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: 1.05rem;
+    font-weight: 600;
     transition: all var(--transition-base);
     text-decoration: none;
     white-space: nowrap;
-    box-shadow: var(--shadow-sm);
 }
 
 .contact-detail-link svg {
@@ -1554,20 +1553,18 @@ body.focus-lock {
 }
 
 .contact-detail-link:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: var(--color-accent);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(196, 142, 84, 0.4);
+    transform: translateY(-2px);
 }
 
 .contact-social-row {
     display: flex;
     align-items: center;
     gap: 1.25rem;
-    padding: 0.8rem 1.75rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 50px;
+    padding: 0.6rem 0;
+    background: transparent;
+    border: none;
 }
 
 .contact-social-row .social-link {
@@ -3022,19 +3019,26 @@ iframe[data-tally-src][src] {
 @media (max-width: 768px) {
     /* Unify all contact/sticky buttons to Pill shape & Full Width */
     .contact-actions .btn,
-    .contact-details .contact-detail-link,
-    .mobile-sticky-cta .btn {
-        border-radius: 50px !important;
+    .contact-details .contact-detail-link {
+        border-radius: 8px !important;
         width: 100% !important;
-        max-width: 420px;
+        max-width: 380px;
         margin-left: auto;
         margin-right: auto;
         justify-content: center;
         display: flex;
         align-items: center;
-        padding: 1.1rem !important;
-        font-weight: 700 !important;
-        font-size: 1.05rem !important;
+        padding: 0.9rem 1.25rem !important;
+        font-weight: 600 !important;
+        font-size: 1rem !important;
+    }
+
+    .contact-details .contact-detail-link {
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        margin-bottom: 0.75rem;
+        justify-content: flex-start !important;
+        padding-left: 1.5rem !important;
     }
 
     /* Ensure vertical stacking for all containers */
