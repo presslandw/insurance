@@ -2479,13 +2479,23 @@ iframe[data-tally-src][src] {
     flex-shrink: 0;
     width: 52px;
     height: 52px;
-    background: rgba(196, 142, 84, 0.15);
-    color: var(--color-accent);
-    border-radius: 50%;
+    background: #FFFFFF;
+    color: var(--color-primary);
+    border: 1px solid rgba(196, 142, 84, 0.4);
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1rem;
+    margin: 0 auto 1.25rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.why-independent-item:hover .why-icon {
+    background: var(--color-accent);
+    color: #FFFFFF;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(196, 142, 84, 0.3);
 }
 
 @media (max-width: 768px) {
