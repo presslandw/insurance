@@ -1064,9 +1064,9 @@ section[id] {
 }
 
 .service-secondary:hover {
-    border-color: rgba(17, 24, 39, 0.35);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(17, 24, 39, 0.09);
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(17, 24, 39, 0.1);
 }
 
 .service-secondary-icon {
@@ -1080,6 +1080,13 @@ section[id] {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.service-secondary:hover .service-secondary-icon {
+    background: var(--color-primary);
+    color: var(--color-accent);
+    border-color: var(--color-primary);
 }
 
 .service-secondary-body {
