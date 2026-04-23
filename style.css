@@ -1535,8 +1535,10 @@ body.focus-lock {
     justify-content: center;
     gap: 1.5rem;
     flex-wrap: wrap;
-    margin-top: 2.5rem;
+    margin: 2.5rem auto 0;
+    width: 100%;
 }
+
 
 .contact-detail-link {
     display: inline-flex;
@@ -1604,6 +1606,35 @@ body.focus-lock {
     justify-content: center;
     margin: 2.5rem auto;
 }
+
+/* Light Theme Overrides for Landing Pages */
+.landing-body .contact-details .contact-detail-link,
+.edge-page-content .contact-details .contact-detail-link {
+    color: var(--color-primary) !important;
+    background: rgba(17, 24, 39, 0.05) !important;
+    border: 1px solid rgba(17, 24, 39, 0.1) !important;
+}
+
+.landing-body .contact-details .contact-detail-link:hover,
+.edge-page-content .contact-details .contact-detail-link:hover {
+    background: rgba(17, 24, 39, 0.1) !important;
+    border-color: var(--color-accent) !important;
+    color: var(--color-primary) !important;
+}
+
+.landing-body .contact-social-row .social-link,
+.edge-page-content .contact-social-row .social-link {
+    color: var(--color-primary) !important;
+    opacity: 0.7;
+}
+
+.landing-body .contact-social-row .social-link:hover,
+.edge-page-content .contact-social-row .social-link:hover {
+    color: var(--color-accent) !important;
+    opacity: 1;
+}
+
+
 
 .contact-actions .btn {
     width: fit-content;
@@ -3054,6 +3085,14 @@ iframe[data-tally-src][src] {
         padding-left: 1.5rem !important;
     }
 
+    .landing-body .contact-details .contact-detail-link,
+    .edge-page-content .contact-details .contact-detail-link {
+        background: rgba(17, 24, 39, 0.05) !important;
+        border: 1px solid rgba(17, 24, 39, 0.15) !important;
+        color: var(--color-primary) !important;
+    }
+
+
     /* Ensure vertical stacking for all containers */
     .contact-actions,
     .contact-details {
@@ -3069,6 +3108,6 @@ iframe[data-tally-src][src] {
     }
     
     .contact-details {
-        margin-top: 0 !important;
+        margin-top: 1.5rem !important;
     }
 }
