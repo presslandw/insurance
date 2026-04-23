@@ -944,6 +944,9 @@ section[id] {
 
 /* Icons on white cards */
 .service-feature-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
     background: #FFFFFF;
     color: var(--color-primary);
     border: 1px solid rgba(196, 142, 84, 0.4);
@@ -1067,6 +1070,10 @@ section[id] {
 }
 
 .service-secondary-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 8px;
     background: #FFFFFF;
     color: var(--color-primary);
     border: 1px solid rgba(196, 142, 84, 0.3);
