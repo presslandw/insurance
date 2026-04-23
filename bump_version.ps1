@@ -1,8 +1,8 @@
 $files = Get-ChildItem -Path "." -Filter "*.html"
 foreach ($file in $files) {
     $content = Get-Content -Path $file.FullName -Raw
-    $updated = $content -replace 'style\.css\?v=\d+', 'style.css?v=91'
+    $updated = $content -replace 'style\.css\?v=\d+', 'style.css?v=92'
     Set-Content -Path $file.FullName -Value $updated -NoNewline
     Write-Host ("Updated: " + $file.Name)
 }
-Write-Host "All files updated to v91."
+Write-Host "All files updated to v92."
