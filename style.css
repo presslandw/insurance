@@ -923,7 +923,7 @@ section[id] {
 .service-feature {
     background: #FFFFFF;
     border: 1px solid var(--color-border);
-    border-top: 4px solid var(--color-accent);
+    border-top: 3px solid var(--color-accent);
     border-radius: 16px;
     padding: 2.5rem 2rem 2.25rem;
     color: var(--color-text-main);
@@ -944,21 +944,22 @@ section[id] {
 
 /* Icons on white cards */
 .service-feature-icon {
-    background: linear-gradient(135deg, rgba(196, 142, 84, 0.12) 0%, rgba(196, 142, 84, 0.05) 100%);
-    color: var(--color-accent);
-    border: 1px solid rgba(196, 142, 84, 0.2);
+    background: #FFFFFF;
+    color: var(--color-primary);
+    border: 1px solid rgba(196, 142, 84, 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .service-feature:hover .service-feature-icon {
     background: var(--color-accent);
     color: #FFFFFF;
-    transform: scale(1.05) rotate(-3deg);
-    box-shadow: 0 8px 20px rgba(196, 142, 84, 0.25);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(196, 142, 84, 0.3);
 }
 
 .service-feature h3 {
@@ -1066,9 +1067,9 @@ section[id] {
 }
 
 .service-secondary-icon {
-    background: linear-gradient(135deg, rgba(196, 142, 84, 0.1) 0%, rgba(196, 142, 84, 0.05) 100%);
-    color: var(--color-accent);
-    border: 1px solid rgba(196, 142, 84, 0.15);
+    background: #FFFFFF;
+    color: var(--color-primary);
+    border: 1px solid rgba(196, 142, 84, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
