@@ -1014,7 +1014,27 @@ section[id] {
     flex-shrink: 0;
 }
 
+/* Card-wide click area: title becomes a stretched link covering the full card.
+   The CTA stays clickable thanks to a higher stacking context below. */
+.service-feature h3 a.card-stretched-link {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.service-feature h3 a.card-stretched-link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
 .service-feature-cta {
+    position: relative;
+    z-index: 2;
     display: inline-flex;
     align-items: center;
     justify-content: center;
