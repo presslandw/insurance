@@ -61,6 +61,7 @@ The project underwent a significant visual overhaul in April 2026 to adopt a "Pr
   - **CTAs**: Avoid heavy solid boxes. Use white cards with subtle borders and gold top-accents.
 
 ## AI Communication Rules
+- **CRITICAL**: Do NOT use Git worktrees. Stick to standard `git checkout` or `git switch`. Creating worktrees permanently modifies the repo config and crashes certain AI chat indexers.
 - Always preserve existing SEO tracking scripts (GTM).
 - Maintain 2026 best practices for accessibility and performance.
 - **Aesthetic Consistency**: Adhere to the "Premium Light" design tokens. Avoid adding heavy dark backgrounds or generic blue/red colors.
