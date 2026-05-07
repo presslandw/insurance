@@ -108,6 +108,7 @@ AI does not have external visibility into the live site without being given tool
 - Page titles shortened to <60 chars across all 15 pages (local signals retained)
 - Meta descriptions tightened to <155 chars across 8 pages (Abbotsford & Greater Vancouver retained)
 - Article schema `publisher @type` corrected: `InsuranceAgency` → `Organization` on all 6 insight pages
+- Rich Results Test validated: Article schema returns "1 valid item detected" — non-critical warnings only (optional fields), no blocking errors
 - Canonical tags confirmed present on all 14 HTML pages
 - Internal 4xx (Cloudflare email obfuscation `/cdn-cgi/`) confirmed false positive — ignore
 
@@ -118,4 +119,4 @@ AI does not have external visibility into the live site without being given tool
 - **H2 structure**: 4 pages missing H2, 3 pages with non-sequential heading order (low priority)
 - **IndexNow**: Submit updated URLs to Bing via IndexNow after any major content changes
 - **Images**: 2 images over 100KB — compress and add width/height attributes to reduce CLS
-- **Google Rich Results Test**: Re-validate all 6 insight pages after schema fix (ea1774b)
+- **Google Rich Results Test**: ✅ Validated May 2026 — Article schema clean on insight pages
