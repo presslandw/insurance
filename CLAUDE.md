@@ -72,6 +72,33 @@ The project underwent a significant visual overhaul in April 2026 to adopt a "Pr
 - **Stale Worktree Branch**: `claude/gallant-wing-228abc` exists in git but is orphaned. Run `git worktree prune` if it causes issues. Do NOT create new worktrees.
 - **Ongoing Focus**: Image optimisation — 2 images over 100KB need compression and width/height attributes to reduce CLS (see SEO Audit Log).
 
+## Site Maintenance Checklist
+Things AI will not proactively suggest but that cause real headaches when skipped.
+
+### After Every Significant Deployment
+- **Purge Cloudflare cache**: Dashboard → Caching → Purge Everything. AI pushes to GitHub but Cloudflare may still serve stale HTML/CSS to Googlebot and visitors for hours.
+- **Verify live site visually**: Open an incognito window and check the changed pages. GitHub Pages + Cloudflare has a pipeline; the deploy may look complete in git but the live URL may lag.
+- **Run URL Inspection in GSC**: For any new or significantly changed page, paste the URL into GSC → URL Inspection → Request Indexing. Don't wait for Google to find it passively.
+
+### After Any sitemap.xml Change
+- **Resubmit sitemap in GSC**: GSC → Sitemaps → paste URL → Submit. This is manual every time. GSC does not auto-detect sitemap changes.
+- **Check sitemap renders correctly**: Visit `https://www.chriswalkerinsurance.ca/sitemap.xml` directly in a browser and confirm XML is valid and no entries are blank.
+
+### After Any Schema / Structured Data Change
+- **Run Rich Results Test**: https://search.google.com/test/rich-results — paste the page URL. Google flags errors that Ahrefs and Screaming Frog miss. This is the authoritative validator.
+
+### Monthly
+- **Check GSC Coverage report**: Look for new Errors or pages that dropped from Valid to Excluded. GSC emails alerts but they can be delayed by weeks.
+- **Check GSC Core Web Vitals report**: Poor/Needs Improvement pages affect rankings. AI cannot see this without you pasting the data in.
+- **Review 404s in GSC**: GSC → Coverage → Not Found (404). Broken internal links accumulate silently over time.
+- **Check Google Business Profile**: Confirm hours, phone, and address are accurate. Verify no one has suggested unauthorized edits. Post an update (events, offers) to signal activity to Google.
+
+### Quarterly
+- **Run an external crawler audit**: Screaming Frog (free, <500 URLs) or Ahrefs Site Audit. Paste the issues report into AI for triage. AI auditing its own code without external data is unreliable.
+- **Check external link rot**: Any outbound links (carrier sites, government pages) may have moved. Ahrefs Webmaster Tools flags these for free.
+- **Validate robots.txt in GSC**: GSC → Settings → robots.txt Tester. Confirm Googlebot sees `Allow: /` and no unintended blocks after any Cloudflare config changes.
+- **Review Cloudflare Analytics**: Check for bot traffic spikes or unexpected 5xx errors that GitHub/GSC won't surface.
+
 ## SEO Audit Log
 AI does not have external visibility into the live site without being given tool output. Always run an external audit first and paste results in.
 
