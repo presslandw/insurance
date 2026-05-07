@@ -13,7 +13,6 @@ This document provides project context and technical standards for AI coding ass
 - `index.html`: Main landing page
 - `style.css`: Primary stylesheet (all pages)
 - `images/`: High-resolution assets
-- `_content/`: (Potential) raw content source
 - `insight-*.html`: Educational articles/guides
 - `quote-*.html`: Quote request landing pages
 - `.vscode/`: Environment configuration
@@ -68,9 +67,10 @@ The project underwent a significant visual overhaul in April 2026 to adopt a "Pr
 - When adding content, match the "trusted local insurance broker" tone of voice: professional, straightforward, and family-oriented.
 
 ## Active Project State
-- **Primary Branch**: `main` (Live site).
-- **Secondary Branch**: `copy-refresh` (Low priority rough draft for sitewide copy updates).
-- **Ongoing Focus**: Monitor Mobile UX for layout crowding on smallest viewports (320px-375px).
+- **Primary Branch**: `main` (Live site — auto-deploys on push).
+- **Secondary Branch**: `copy-refresh` (Stale rough draft for sitewide copy refresh — not merged, low priority, do not touch unless explicitly asked).
+- **Stale Worktree Branch**: `claude/gallant-wing-228abc` exists in git but is orphaned. Run `git worktree prune` if it causes issues. Do NOT create new worktrees.
+- **Ongoing Focus**: Image optimisation — 2 images over 100KB need compression and width/height attributes to reduce CLS (see SEO Audit Log).
 
 ## SEO Audit Log
 AI does not have external visibility into the live site without being given tool output. Always run an external audit first and paste results in.
