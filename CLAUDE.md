@@ -7,7 +7,7 @@ This document provides project context and technical standards for AI coding ass
 - **Frontend**: Vanilla HTML5, Vanilla CSS3 (Modern 2026 standards)
 - **Fonts**: Inter, Lora, Outfit (via Google Fonts)
 - **Integrations**: Google Tag Manager, Tally.so (Forms), Calendly (Booking)
-- **Hosting**: Likely GitHub Pages (based on CNAME and robots.txt)
+- **Hosting**: GitHub Pages (source of truth) behind Cloudflare proxy (CDN + bot management)
 
 ## Project Structure
 - `index.html`: Main landing page
@@ -30,7 +30,7 @@ This document provides project context and technical standards for AI coding ass
   - Colors: Use `oklch()` or semantic variables where possible.
   - Typography: Stick to the project's font pairings (Outfit for headers, Inter for body).
 - **SEO**:
-  - Use JSON-LD Schema (e.g., `InsuranceAgency`) on relevant pages.
+  - Use JSON-LD Schema on relevant pages: `InsuranceAgency` on homepage, `Article` with `Organization` publisher (NOT `InsuranceAgency`) on insight pages.
   - Ensure fast LCP (Largest Contentful Paint) by optimizing images.
 
 ## Common Operations
@@ -71,3 +71,24 @@ The project underwent a significant visual overhaul in April 2026 to adopt a "Pr
 - **Primary Branch**: `main` (Live site).
 - **Secondary Branch**: `copy-refresh` (Low priority rough draft for sitewide copy updates).
 - **Ongoing Focus**: Monitor Mobile UX for layout crowding on smallest viewports (320px-375px).
+
+## SEO Audit Log
+AI does not have external visibility into the live site without being given tool output. Always run an external audit first and paste results in.
+
+### Completed (May 2026)
+- `robots.txt` cleaned — global `Allow: /`, Cloudflare injects its own managed block above (harmless)
+- `sitemap.xml` fixed — orphaned PDFs re-linked globally in footer then restored to sitemap
+- Page titles shortened to <60 chars across all 15 pages (local signals retained)
+- Meta descriptions tightened to <155 chars across 8 pages (Abbotsford & Greater Vancouver retained)
+- Article schema `publisher @type` corrected: `InsuranceAgency` → `Organization` on all 6 insight pages
+- Canonical tags confirmed present on all 14 HTML pages
+- Internal 4xx (Cloudflare email obfuscation `/cdn-cgi/`) confirmed false positive — ignore
+
+### Outstanding / Next Steps
+- **Local SEO audit**: Run BrightLocal to audit Google Business Profile, local citations, and map pack rankings — highest ROI opportunity not yet addressed
+- **AI search visibility**: Check brand visibility in Google AI Overviews / Perplexity using Profound or Otterly.ai
+- **Twitter/X cards**: Add `twitter:card` meta tags if/when a Twitter account is created
+- **H2 structure**: 4 pages missing H2, 3 pages with non-sequential heading order (low priority)
+- **IndexNow**: Submit updated URLs to Bing via IndexNow after any major content changes
+- **Images**: 2 images over 100KB — compress and add width/height attributes to reduce CLS
+- **Google Rich Results Test**: Re-validate all 6 insight pages after schema fix (ea1774b)
