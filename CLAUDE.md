@@ -1,3 +1,9 @@
+> **Universal agent behavior rules are maintained globally.**
+> Refer to `AGENT_SKILLS.md` in your `agent-skills` folder for cross-project rules (like the NEVER list).
+> To update behavioral rules, edit that file — not this one.
+
+---
+
 # Chris Walker Insurance - AI Project Guide (April 2026)
 
 This document provides project context and technical standards for AI coding assistants (Antigravity).
@@ -33,7 +39,7 @@ This document provides project context and technical standards for AI coding ass
   - Ensure fast LCP (Largest Contentful Paint) by optimizing images.
 
 ## Common Operations
-- **Serve Local**: Run `npm run dev` to start a local server at `http://localhost:3000`.
+- **Serve Local**: Run `npx serve .` to start a local server at `http://localhost:3000`.
 - **Version Bump**: After ANY change to `style.css`, run `.\bump_version.ps1` to update the cache-busting version string across all 15+ HTML files.
 - **Build**: No build step required (Static).
 - **Validation**:
