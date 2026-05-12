@@ -4,25 +4,33 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   // 1. Reveal on Scroll (Intersection Observer)
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px 0px -40px 0px',
-    threshold: 0.08 // Slightly increased for smoother triggering
-  };
+  const revealElements = document.querySelectorAll('.reveal');
 
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-        revealObserver.unobserve(entry.target);
-      }
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    revealElements.forEach((element) => element.classList.add('active'));
+  } else {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.08 // Slightly increased for smoother triggering
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    revealElements.forEach((element) => {
+      revealObserver.observe(element);
     });
-  }, observerOptions);
-
-  document.querySelectorAll('.reveal').forEach((element) => {
-    revealObserver.observe(element);
-  });
+  }
 
   // 2. Header Scroll Effect
   const header = document.getElementById('main-header');
@@ -42,12 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeMenu = () => {
       mobileToggle.classList.remove('active');
       navLinks.classList.remove('active');
+      mobileToggle.setAttribute('aria-expanded', 'false');
     };
 
     mobileToggle.addEventListener('click', (e) => {
       e.stopPropagation();
-      mobileToggle.classList.toggle('active');
-      navLinks.classList.toggle('active');
+      const isOpen = mobileToggle.classList.toggle('active');
+      navLinks.classList.toggle('active', isOpen);
+      mobileToggle.setAttribute('aria-expanded', String(isOpen));
     });
 
     // Close on link click
@@ -62,6 +72,32 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // 4. Email Copy Enhancement
+  document.querySelectorAll('.contact-copy-email').forEach((button) => {
+    const label = button.querySelector('span');
+    const originalText = label ? label.textContent : '';
+    const copyValue = button.dataset.copyValue || originalText;
+
+    button.addEventListener('click', async () => {
+      if (!navigator.clipboard || !copyValue) {
+        window.location.href = `mailto:${copyValue}`;
+        return;
+      }
+
+      try {
+        await navigator.clipboard.writeText(copyValue);
+        if (label) {
+          label.textContent = 'Copied!';
+          window.setTimeout(() => {
+            label.textContent = originalText;
+          }, 2000);
+        }
+      } catch (error) {
+        window.location.href = `mailto:${copyValue}`;
+      }
+    });
+  });
 
   // 5. Tally Form Initialization & Fallback
   const initTally = () => {
@@ -102,4 +138,3 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
-

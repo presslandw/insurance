@@ -165,7 +165,7 @@
             <a href="#" class="logo">
                 <span class="logo-text">Chris Walker Insurance Services</span>
             </a>
-            <nav class="nav-links">
+            <nav class="nav-links" id="primary-navigation">
                 <a href="#about" class="nav-link">About</a>
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#insights" class="nav-link">Insights</a>
@@ -185,7 +185,7 @@
                     </svg>
                     <span>(604) 309-2001</span>
                 </a>
-                <button class="mobile-menu-toggle" aria-label="Toggle Navigation">
+                <button class="mobile-menu-toggle" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="primary-navigation">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -202,12 +202,33 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                     Serving Greater Vancouver &amp; the Fraser Valley for 30+ Years
                 </div>
-                <h1 class="hero-title">Trusted insurance advice in Abbotsford &amp; Greater Vancouver &mdash; protecting the past, present and future of the <span class="text-accent">Canadian&nbsp;family.</span></h1>
+                <h1 class="hero-title">Trusted insurance advice in Abbotsford &amp; Greater Vancouver &mdash; protecting&nbsp;the past, present and future of the <span class="text-accent">Canadian&nbsp;family.</span></h1>
 
                 <p class="hero-subtitle">Independent advice from a local broker who puts your family's needs first.</p>
                 <div class="hero-actions">
                     <a href="#contact" class="btn btn-solid-accent">Get Your Personal Review</a>
                     <a href="#services" class="btn btn-outline-accent">Explore Coverage &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="trust-strip" aria-label="Insurance service credentials">
+            <div class="container trust-strip-inner">
+                <div class="trust-item">
+                    <strong>30+ Years</strong>
+                    <span>Serving BC families</span>
+                </div>
+                <div class="trust-item">
+                    <strong>Independent</strong>
+                    <span>Advice across carriers</span>
+                </div>
+                <div class="trust-item">
+                    <strong>Licensed in BC</strong>
+                    <span>Local, regulated guidance</span>
+                </div>
+                <div class="trust-item">
+                    <strong>Direct Access</strong>
+                    <span>No call-centre handoff</span>
                 </div>
             </div>
         </section>
@@ -218,7 +239,7 @@
                     <img src="images/car.jpg" alt="Family Oriented Insurance" class="slider-img img-front" width="800" height="1067" loading="lazy">
                     <img src="images/bike.jpg" alt="Chris Walker Insurance Experience" class="slider-img img-back" width="800" height="662" loading="lazy">
                 </div>
-                <div class="about-content" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+                <div class="about-content">
                     <h2 class="section-title">A personal touch to your financial confidence in B.C.</h2>
                     <p class="lead-text">As an independent insurance broker with over 30 years serving families across Greater Vancouver and the Fraser Valley, I provide straightforward, unbiased advice — and access to plans from multiple carriers, not just one company.</p>
 
@@ -303,7 +324,7 @@
             </div>
         </section>
 
-        <section id="services" style="padding-top: 3.5rem; background: var(--color-bg-alt); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);" class="section-padding reveal fade-up">
+        <section id="services" class="section-padding services-section reveal fade-up">
             <div class="container">
                 <div class="section-header reveal fade-up">
                     <h2 class="section-title center">What I help you protect</h2>
@@ -355,7 +376,7 @@
                             <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Coverage for the self-employed</li>
                             <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Pairs with Edge group plans</li>
                         </ul>
-                        <a href="edge-benefits.html" class="service-feature-cta">View Edge plans
+                        <a href="disability-insurance.html" class="service-feature-cta">Explore income protection
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                         </a>
                     </div>
@@ -371,9 +392,9 @@
                         <div class="service-secondary-body">
                             <strong>Savings &amp; Retirement</strong>
                             <span>RRSP, TFSA, FHSA, Segregated Funds, Annuities</span>
-                            <div style="margin-top: 0.5rem; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
-                                <a href="quote-savings.html" style="color: var(--color-accent); font-weight: 600; font-size: 1rem; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);">Get a Review &rarr;</a>
-                                <a href="docs/resp.pdf" target="_blank" rel="noopener" style="color: var(--color-text-main); font-size: 0.8rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem; opacity: 0.65;">
+                            <div class="service-secondary-links">
+                                <a href="quote-savings.html" class="service-secondary-primary-link">Get a Review &rarr;</a>
+                                <a href="docs/resp.pdf" target="_blank" rel="noopener" class="service-secondary-doc-link">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                                     RESP Brochure
                                 </a>
@@ -416,7 +437,7 @@
                 <div class="insights-layout">
                     <!-- Featured Article: FHSA Secret Weapon (Spans 2x2) -->
                     <article class="insight-card featured reveal fade-up">
-                        <div class="insight-image" style="background-image: url('images/insight-fhsa-thumb.jpg');"></div>
+                        <div class="insight-image insight-image-fhsa"></div>
                         <div class="insight-content">
                             <span class="insight-tag">Home Buying Defense</span>
                             <h3><a href="insight-fhsa.html">The FHSA: Your secret weapon for a first home down
@@ -430,7 +451,7 @@
 
                     <!-- Secondary Articles: Each fills 1 slot -->
                     <article class="insight-card secondary-card reveal fade-up">
-                        <div class="insight-image" style="background-image: url('images/insight-bc-probate-thumb.jpg');"></div>
+                        <div class="insight-image insight-image-probate"></div>
                         <div class="insight-content">
                             <span class="insight-tag">Estate Planning</span>
                             <h3><a href="insight-bc-probate.html">BC Probate laws &amp; your estate</a></h3>
@@ -439,8 +460,8 @@
                         </div>
                     </article>
 
-                    <article class="insight-card secondary-card reveal fade-up" style="transition-delay: 0.1s;">
-                        <div class="insight-image" style="background-image: url('images/insight-disability-thumb.jpg');">
+                    <article class="insight-card secondary-card reveal fade-up reveal-delay-1">
+                        <div class="insight-image insight-image-disability">
                         </div>
                         <div class="insight-content">
                             <span class="insight-tag">Income Stability</span>
@@ -450,8 +471,8 @@
                         </div>
                     </article>
 
-                    <article class="insight-card secondary-card reveal fade-up" style="transition-delay: 0.2s;">
-                        <div class="insight-image" style="background-image: url('images/insight-mortgage-thumb.jpg');"></div>
+                    <article class="insight-card secondary-card reveal fade-up reveal-delay-2">
+                        <div class="insight-image insight-image-mortgage"></div>
                         <div class="insight-content">
                             <span class="insight-tag">Mortgage Protection</span>
                             <h3><a href="insight-mortgage.html">Bank vs. Independent: Which coverage is safe?</a></h3>
@@ -461,8 +482,8 @@
                         </div>
                     </article>
 
-                    <article class="insight-card secondary-card reveal fade-up" style="transition-delay: 0.3s;">
-                        <div class="insight-image" style="background-image: url('images/insight-savings-thumb.jpg');"></div>
+                    <article class="insight-card secondary-card reveal fade-up reveal-delay-3">
+                        <div class="insight-image insight-image-savings"></div>
                         <div class="insight-content">
                             <span class="insight-tag">Tax Strategy</span>
                             <h3><a href="insight-savings.html">FHSA vs. RRSP: The ultimate comparison</a></h3>
@@ -472,19 +493,19 @@
                     </article>
                 </div>
 
-                <div style="text-align: center; margin-top: 4rem;">
-                    <a href="archive-insights.html" class="btn btn-outline-accent" style="min-width: 250px;">Browse Full Library &rarr;</a>
+                <div class="insights-archive-cta">
+                    <a href="archive-insights.html" class="btn btn-outline-accent btn-wide">Browse Full Library &rarr;</a>
                 </div>
             </div>
         </section>
 
-        <section id="faq" class="section-padding faq-section-tight" style="background: var(--color-bg-alt); border-top: 1px solid var(--color-border);">
+        <section id="faq" class="section-padding faq-section-tight faq-section">
             <div class="container">
                 <div class="section-header reveal fade-up">
                     <h2 class="section-title center">Common Questions</h2>
                     <p class="section-subtitle center">Straight answers to the questions I hear most often.</p>
                 </div>
-                <div class="faq-list reveal fade-up" style="max-width: 780px; margin: 3rem auto 0;">
+                <div class="faq-list faq-list-contained reveal fade-up">
 
                     <details class="faq-item">
                         <summary class="faq-question">Why use an independent broker instead of going directly to a company?</summary>
@@ -496,14 +517,14 @@
                     <details class="faq-item">
                         <summary class="faq-question">Bank mortgage insurance vs. independent protection: What's the difference?</summary>
                         <div class="faq-answer">
-                            <p>Bank insurance protects the bank's loan, not your family. The benefit decreases as you pay down your mortgage, but your premiums stay the same. Independent coverage pays your family directly, stays level, and is portable if you switch lenders. It's almost always the superior choice for BC homeowners. <a href="insight-mortgage.html" style="color: var(--color-accent); font-weight: 600;">Compare the two &rarr;</a></p>
+                            <p>Bank insurance protects the bank's loan, not your family. The benefit decreases as you pay down your mortgage, but your premiums stay the same. Independent coverage pays your family directly, stays level, and is portable if you switch lenders. It's almost always the superior choice for BC homeowners. <a href="insight-mortgage.html" class="inline-accent-link">Compare the two &rarr;</a></p>
                         </div>
                     </details>
 
                     <details class="faq-item">
                         <summary class="faq-question">How does the First Home Savings Account (FHSA) work in BC?</summary>
                         <div class="faq-answer">
-                            <p>The FHSA allows first-time buyers to save up to $8,000/year ($40,000 lifetime) with tax-deductible contributions and tax-free growth. It's a powerful tool that I help clients integrate into their broader financial and insurance strategy to hit down payment goals faster. <a href="insight-fhsa.html" style="color: var(--color-accent); font-weight: 600;">Read the FHSA guide &rarr;</a></p>
+                            <p>The FHSA allows first-time buyers to save up to $8,000/year ($40,000 lifetime) with tax-deductible contributions and tax-free growth. It's a powerful tool that I help clients integrate into their broader financial and insurance strategy to hit down payment goals faster. <a href="insight-fhsa.html" class="inline-accent-link">Read the FHSA guide &rarr;</a></p>
                         </div>
                     </details>
 
@@ -517,14 +538,14 @@
                     <details class="faq-item">
                         <summary class="faq-question">Term vs. Whole Life: Which one do I actually need?</summary>
                         <div class="faq-answer">
-                            <p>Term Life is affordable and perfect for temporary needs (like a mortgage), while Whole Life provides permanent protection and a cash value component. Most young families start with Term, but the "right" choice depends entirely on your specific goals. <a href="quote-life.html" style="color: var(--color-accent); font-weight: 600;">Get a personal recommendation &rarr;</a></p>
+                            <p>Term Life is affordable and perfect for temporary needs (like a mortgage), while Whole Life provides permanent protection and a cash value component. Most young families start with Term, but the "right" choice depends entirely on your specific goals. <a href="quote-life.html" class="inline-accent-link">Get a personal recommendation &rarr;</a></p>
                         </div>
                     </details>
 
                 </div>
 
-                <div style="text-align: center; margin-top: 3rem;" class="reveal fade-up">
-                    <p style="color: var(--color-text-muted); margin-bottom: 1.5rem;">Still have a specific question about your situation?</p>
+                <div class="faq-contact-cta reveal fade-up">
+                    <p>Still have a specific question about your situation?</p>
                     <a href="#contact" class="btn btn-outline-accent">Ask Chris Directly</a>
                 </div>
             </div>
@@ -552,10 +573,10 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                             <span>(604) 309-2001</span>
                         </a>
-                        <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('quotes@chriswalkerinsurance.ca'); this.querySelector('span').innerText='Copied!'; setTimeout(() => this.querySelector('span').innerText='quotes@chriswalkerinsurance.ca', 2000);" class="contact-detail-link" title="Copy email to clipboard">
+                        <button type="button" class="contact-detail-link contact-copy-email" data-copy-value="quotes@chriswalkerinsurance.ca" title="Copy email to clipboard">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                             <span>quotes@chriswalkerinsurance.ca</span>
-                        </a>
+                        </button>
                         <div class="contact-social-row">
                             <a href="https://www.google.com/maps/place/Chris+Walker+Insurance+Services/@49.0514355,-122.319642,17z/data=!3m1!4b1!4m6!3m5!1s0x5484354cebf78677:0xaa1c64cf15e7ff54!8m2!3d49.0514355!4d-122.319642!16s%2Fg%2F12mm84dq3" target="_blank" rel="noopener" class="social-link" title="Google Business Profile" aria-label="Visit Chris Walker Insurance on Google Maps">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -586,52 +607,53 @@
                 <a href="https://chrisjwalker.wearelegalshield.ca/" target="_blank" rel="noopener" class="nav-link-external">LegalShield <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
             </nav>
         </div>
-        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2.5rem; padding-top: 2rem; padding-bottom: 2.5rem; border-top: 1px solid rgba(255,255,255,0.08);">
+        <div class="container footer-link-grid">
             <div>
-                <h4 style="font-family: 'Outfit', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.6); margin-bottom: 1rem; font-weight: 600;">Insurance Services</h4>
-                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem;">
-                    <li><a href="quote-life.html" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">Life &amp; Health Insurance</a></li>
-                    <li><a href="mortgage-protection.html" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">Mortgage Protection</a></li>
-                    <li><a href="disability-insurance.html" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">Disability Insurance</a></li>
-                    <li><a href="edge-benefits.html" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">Edge Benefits</a></li>
-                    <li><a href="quote-savings.html" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">Savings &amp; Retirement</a></li>
+                <h4>Insurance Services</h4>
+                <ul>
+                    <li><a href="quote-life.html">Life &amp; Health Insurance</a></li>
+                    <li><a href="mortgage-protection.html">Mortgage Protection</a></li>
+                    <li><a href="disability-insurance.html">Disability Insurance</a></li>
+                    <li><a href="edge-benefits.html">Edge Benefits</a></li>
+                    <li><a href="quote-savings.html">Savings &amp; Retirement</a></li>
                 </ul>
             </div>
             <div>
-                <h4 style="font-family: 'Outfit', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.6); margin-bottom: 1rem; font-weight: 600;">Insights &amp; Guides</h4>
-                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem;">
-                    <li><a href="archive-insights.html" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">All Insights</a></li>
-                    <li><a href="insight-fhsa.html" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">FHSA Strategy</a></li>
-                    <li><a href="insight-life.html" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">Life Insurance Guide</a></li>
-                    <li><a href="insight-mortgage.html" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">Bank vs. Independent Mortgage</a></li>
-                    <li><a href="insight-disability.html" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">Income Protection</a></li>
-                    <li><a href="insight-savings.html" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">FHSA vs. RRSP</a></li>
-                    <li><a href="insight-bc-probate.html" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">BC Probate Guide</a></li>
+                <h4>Insights &amp; Guides</h4>
+                <ul>
+                    <li><a href="archive-insights.html">All Insights</a></li>
+                    <li><a href="insight-fhsa.html">FHSA Strategy</a></li>
+                    <li><a href="insight-life.html">Life Insurance Guide</a></li>
+                    <li><a href="insight-mortgage.html">Bank vs. Independent Mortgage</a></li>
+                    <li><a href="insight-disability.html">Income Protection</a></li>
+                    <li><a href="insight-savings.html">FHSA vs. RRSP</a></li>
+                    <li><a href="insight-bc-probate.html">BC Probate Guide</a></li>
+                    <li><a href="insight-flood.html">BC Flood Insurance Guide</a></li>
                 </ul>
             </div>
             <div>
-                <h4 style="font-family: 'Outfit', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.6); margin-bottom: 1rem; font-weight: 600;">Resource Library</h4>
-                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem;">
-                    <li><a href="docs/FHSA-brochure.pdf" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">FHSA Brochure</a></li>
-                    <li><a href="docs/rrsp.pdf" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">RRSP Overview</a></li>
-                    <li><a href="docs/resp.pdf" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">RESP Brochure</a></li>
-                    <li><a href="docs/TFSA-benefits.pdf" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">TFSA Benefits</a></li>
-                    <li><a href="docs/Critical-Illness.pdf" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">Critical Illness</a></li>
-                    <li><a href="docs/Edge-Health-and-Dental-2025.pdf" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">Edge Health &amp; Dental</a></li>
-                    <li><a href="docs/EquitableTerm.pdf" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">Equitable Term Life</a></li>
-                    <li><a href="docs/EquitableWholeLife.pdf" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">Equitable Whole Life</a></li>
-                    <li><a href="docs/Term-Mortgage-Protection.pdf" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">Term Mortgage Protection</a></li>
-                    <li><a href="docs/Payout-Annuities.pdf" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">Payout Annuities</a></li>
+                <h4>Resource Library</h4>
+                <ul>
+                    <li><a href="docs/FHSA-brochure.pdf" target="_blank" rel="noopener">FHSA Brochure</a></li>
+                    <li><a href="docs/rrsp.pdf" target="_blank" rel="noopener">RRSP Overview</a></li>
+                    <li><a href="docs/resp.pdf" target="_blank" rel="noopener">RESP Brochure</a></li>
+                    <li><a href="docs/TFSA-benefits.pdf" target="_blank" rel="noopener">TFSA Benefits</a></li>
+                    <li><a href="docs/Critical-Illness.pdf" target="_blank" rel="noopener">Critical Illness</a></li>
+                    <li><a href="docs/Edge-Health-and-Dental-2025.pdf" target="_blank" rel="noopener">Edge Health &amp; Dental</a></li>
+                    <li><a href="docs/EquitableTerm.pdf" target="_blank" rel="noopener">Equitable Term Life</a></li>
+                    <li><a href="docs/EquitableWholeLife.pdf" target="_blank" rel="noopener">Equitable Whole Life</a></li>
+                    <li><a href="docs/Term-Mortgage-Protection.pdf" target="_blank" rel="noopener">Term Mortgage Protection</a></li>
+                    <li><a href="docs/Payout-Annuities.pdf" target="_blank" rel="noopener">Payout Annuities</a></li>
                 </ul>
             </div>
             <div>
-                <h4 style="font-family: 'Outfit', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.6); margin-bottom: 1rem; font-weight: 600;">Get In Touch</h4>
-                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem;">
-                    <li><a href="tel:+16043092001" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">(604) 309-2001</a></li>
-                    <li><a href="https://calendly.com/chriswalkerinsurance/30min" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">Book a 30-Minute Call</a></li>
-                    <li><a href="#contact" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">Send a Message</a></li>
-                    <li><a href="https://chrisjwalker.wearelegalshield.ca/" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">LegalShield</a></li>
-                    <li><a href="privacy.html" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem;">Privacy Policy</a></li>
+                <h4>Get In Touch</h4>
+                <ul>
+                    <li><a href="tel:+16043092001">(604) 309-2001</a></li>
+                    <li><a href="https://calendly.com/chriswalkerinsurance/30min" target="_blank" rel="noopener">Book a 30-Minute Call</a></li>
+                    <li><a href="#contact">Send a Message</a></li>
+                    <li><a href="https://chrisjwalker.wearelegalshield.ca/" target="_blank" rel="noopener">LegalShield</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>
@@ -641,7 +663,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                     Licensed Independent Broker in British Columbia
                 </span>
-                <p>&copy; 2026 Chris Walker Insurance Services. All rights reserved. &nbsp;&middot;&nbsp; <a href="privacy.html" style="color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem;">Privacy Policy</a></p>
+                <p>&copy; 2026 Chris Walker Insurance Services. All rights reserved. &nbsp;&middot;&nbsp; <a href="privacy.html">Privacy Policy</a></p>
             </div>
         </div>
     </footer>
