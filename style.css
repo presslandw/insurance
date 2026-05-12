@@ -3136,6 +3136,15 @@ iframe[data-tally-src][src] {
    16. FAQ ACCORDION (Premium v2)
    ========================================= */
 
+.faq-section-tight {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+}
+
+.faq-section-tight .section-header {
+    margin-bottom: 2rem;
+}
+
 .faq-list {
     display: flex;
     flex-direction: column;
