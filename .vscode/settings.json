@@ -17,6 +17,7 @@
   
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
+  "files.eol": "\n",
   "files.exclude": {
     "**/.git": true,
     "**/.claude": true,
