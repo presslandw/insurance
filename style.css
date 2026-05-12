@@ -1364,6 +1364,10 @@ section[id] {
     background-image: url('images/insight-savings-thumb.jpg');
 }
 
+.insight-image-flood {
+    background-image: url('images/insight-flood-thumb.jpg');
+}
+
 .secondary-card .insight-image {
     height: 160px; /* Consistently smaller for the secondary grid cards */
 }
