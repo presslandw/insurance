@@ -118,8 +118,25 @@ AI does not have external visibility into the live site without being given tool
 - Canonical tags confirmed present on all 14 HTML pages
 - Internal 4xx (Cloudflare email obfuscation `/cdn-cgi/`) confirmed false positive — ignore
 
+
+## Landing Page Strategy (Conversion-Focused)
+*Inspired by "Conversion Design" principles for high-intent PPC/Ad traffic.*
+
+- **Surgical Intent**: Create unique landing pages for every major keyword (e.g., "Mortgage Insurance Abbotsford", "BC Business Health Benefits").
+- **Conversion-Only Layout**: 
+    - **Remove Global Nav/Footer**: Disable the floating pill menu and main footer on these pages to prevent "leaks" in the conversion funnel.
+    - **Single CTA Focus**: Every element on the page should lead back to the primary lead magnet (Tally Form or Calendly).
+    - **Above-the-Fold Form**: For high-intent traffic, the form should be visible or immediately accessible in the Hero.
+- **A/B Testing**: Implement a systematic process to test headline variations, CTA button colors, and social proof placement.
+- **Technical Connection**: Ensure these pages are hosted on sub-paths (e.g., `/lp/mortgage-protection`) and excluded from the main site navigation to maintain SEO siloing.
+
 ### Outstanding / Next Steps
 - **Local SEO audit**: Run BrightLocal to audit Google Business Profile, local citations, and map pack rankings — highest ROI opportunity not yet addressed
+- **Relume Structural Audit (May 2026)**:
+    - [ ] **Trust Bar**: Add carrier logos (Manulife, Sun Life, etc.) below Hero to anchor authority.
+    - [ ] **Process Section**: Add "How it Works" 3-step guide to humanize the conversion funnel.
+    - [ ] **FAQ / Objection Handler**: Add accordion FAQ to homepage to address pre-sale friction.
+    - [ ] **Hard Stats**: Elevate "30+ Years" and "BC Families Protected" into a dedicated high-impact stats block.
 - **AI search visibility**: Check brand visibility in Google AI Overviews / Perplexity using Profound or Otterly.ai
 - **Twitter/X cards**: Add `twitter:card` meta tags if/when a Twitter account is created
 - **H2 structure**: 4 pages missing H2, 3 pages with non-sequential heading order (low priority)
