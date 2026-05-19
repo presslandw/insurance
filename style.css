@@ -3510,3 +3510,187 @@ details[open] .faq-question::after {
         opacity: 0;
     }
 }
+
+/* ==========================================================================
+   2026 PREMIUM VISUAL REFITS (MOBILE & FOOTER UX ENHANCEMENTS)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* 1. Hero Badge Mobile Adaptation (Legibility & Truncation fix) */
+    .hero-badge {
+        white-space: normal !important; /* Wrap properly on thin screens */
+        text-align: center;
+        max-width: 100%;
+        color: #FFFFFF !important; /* Premium White for readable contrast */
+        background: rgba(196, 142, 84, 0.25) !important; /* Elegant background highlight */
+        border: 1.5px solid var(--color-accent) !important;
+        font-size: 0.78rem !important;
+        line-height: 1.4 !important;
+        padding: 0.6rem 1.25rem !important;
+        margin-bottom: 1.5rem !important;
+        display: inline-flex !important;
+    }
+
+    /* 2. Break flat black & white scroll: Services & Insights Modern Refits */
+    .service-feature {
+        background: var(--color-bg-alt) !important;
+        border-radius: 16px !important;
+        border: 1px solid rgba(0, 0, 0, 0.05) !important;
+        box-shadow: var(--shadow-md) !important;
+        padding: 2.25rem 1.75rem !important;
+        margin-bottom: 2rem !important;
+        transition: transform var(--transition-base), box-shadow var(--transition-base) !important;
+    }
+    
+    .service-feature:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: var(--shadow-lg) !important;
+    }
+
+    /* Zoned background adjustments for home page interior pages */
+    .why-independent-item {
+        background: var(--color-bg-alt) !important;
+        border-radius: 16px !important;
+        border: 1px solid rgba(0, 0, 0, 0.04) !important;
+        box-shadow: var(--shadow-sm) !important;
+        padding: 2rem 1.75rem !important;
+        border-top: 3px solid var(--color-accent) !important; /* Premium color anchor */
+        transition: transform var(--transition-base), box-shadow var(--transition-base) !important;
+    }
+    
+    .why-independent-item:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: var(--shadow-md) !important;
+    }
+
+    /* Zoned layout tweaks inside disability and other service pages */
+    .info-card {
+        background: var(--color-bg-alt) !important;
+        border-radius: 12px !important;
+        box-shadow: var(--shadow-sm) !important;
+        border: 1px solid rgba(0, 0, 0, 0.04) !important;
+        padding: 1.75rem 1.5rem !important;
+    }
+
+    /* 3. Mobile Footer Collapsible Accordion Styles */
+    .footer-link-grid,
+    .main-footer > div[style*="display: grid"] {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
+        padding-top: 1rem !important;
+    }
+
+    .footer-link-grid > div,
+    .main-footer > div[style*="display: grid"] > div {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    }
+    
+    .footer-link-grid > div:last-child,
+    .main-footer > div[style*="display: grid"] > div:last-child {
+        border-bottom: none !important;
+    }
+
+    .footer-link-grid h4,
+    .main-footer h4 {
+        position: relative !important;
+        cursor: pointer !important;
+        padding: 1.25rem 0 !important;
+        margin-bottom: 0 !important;
+        font-family: var(--font-display) !important;
+        font-size: 0.95rem !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.05em !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        text-transform: uppercase !important;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Dynamic plus/minus indicators next to category titles */
+    .footer-link-grid h4::after,
+    .main-footer h4::after {
+        content: '+' !important;
+        font-size: 1.25rem !important;
+        font-weight: 300 !important;
+        color: var(--color-accent) !important;
+        transition: transform 0.3s ease !important;
+        display: inline-block !important;
+    }
+
+    .footer-link-grid h4.active::after,
+    .main-footer h4.active::after {
+        content: '−' !important;
+        transform: rotate(180deg) !important;
+        color: #FFFFFF !important;
+    }
+
+    .footer-link-grid ul,
+    .main-footer ul {
+        max-height: 0 !important;
+        overflow: hidden !important;
+        opacity: 0 !important;
+        transform: translateY(-8px) !important;
+        display: flex !important; /* Force flex so layout is correct when open */
+        flex-direction: column !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        gap: 0.6rem !important;
+        transition: max-height 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                    opacity 0.3s ease, 
+                    transform 0.3s ease !important;
+    }
+
+    .footer-link-grid h4.active + ul,
+    .main-footer h4.active + ul {
+        max-height: 500px !important;
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        padding-bottom: 1.5rem !important;
+        margin-top: 0.5rem !important;
+    }
+
+    .footer-link-grid li,
+    .main-footer li {
+        margin-bottom: 0 !important;
+    }
+
+    .footer-link-grid a,
+    .main-footer a {
+        display: block !important;
+        padding: 0.3rem 0 !important;
+        font-size: 0.92rem !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+        transition: color 0.2s ease !important;
+    }
+
+    .footer-link-grid a:hover,
+    .main-footer a:hover {
+        color: var(--color-accent) !important;
+    }
+
+    /* 4. Streamline Overlapping Sticky Elements & Compact sticky bar */
+    .floating-cta {
+        display: none !important; /* Eliminate redundance / overlapping on mobile */
+    }
+
+    .mobile-sticky-cta {
+        padding: 0.8rem 1.5rem !important; /* Compact call-to-action bar */
+        height: 64px !important;
+    }
+
+    .mobile-sticky-cta .btn {
+        padding: 0.6rem 1.5rem !important;
+        font-size: 0.95rem !important;
+        height: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    body {
+        padding-bottom: 64px !important; /* Synchronized padding space */
+    }
+}

@@ -137,4 +137,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // 6. Mobile Footer Accordion Interactivity
+  const initFooterAccordion = () => {
+    const footerHeaders = document.querySelectorAll('.main-footer h4');
+    
+    footerHeaders.forEach(header => {
+      header.addEventListener('click', (e) => {
+        if (window.innerWidth > 768) return; // Desktop bypass
+        
+        e.preventDefault();
+        const isActive = header.classList.toggle('active');
+        header.setAttribute('aria-expanded', String(isActive));
+      });
+      
+      if (window.innerWidth <= 768) {
+        header.setAttribute('role', 'button');
+        header.setAttribute('aria-expanded', 'false');
+      }
+    });
+  };
+  
+  initFooterAccordion();
+  
+  window.addEventListener('resize', () => {
+    document.querySelectorAll('.main-footer h4').forEach(header => {
+      if (window.innerWidth <= 768) {
+        if (!header.hasAttribute('role')) {
+          header.setAttribute('role', 'button');
+          header.setAttribute('aria-expanded', header.classList.contains('active') ? 'true' : 'false');
+        }
+      } else {
+        header.removeAttribute('role');
+        header.removeAttribute('aria-expanded');
+      }
+    });
+  }, { passive: true });
+
 });
