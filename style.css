@@ -747,9 +747,9 @@ section[id] {
     align-items: center;
     gap: 0.85rem;
     padding: 0.5rem 1.25rem; /* Tightened for a more compact feel */
-    background: rgba(255, 255, 255, 0.1); /* Increased opacity for better contrast */
-    border: 1px solid rgba(196, 142, 84, 0.55); /* More defined border */
-    color: var(--color-accent);
+    background: rgba(196, 142, 84, 0.15); /* Premium translucent gold tint */
+    border: 1px solid var(--color-accent); /* Crisp gold accent border */
+    color: #FFFFFF; /* High-contrast elegant white text */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 100px;
@@ -2218,32 +2218,67 @@ textarea {
     }
 
     #hero {
-        min-height: 0;
-        padding-top: 6.25rem;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding-top: 7rem;
         padding-bottom: 5.5rem;
     }
 
+    .hero-content {
+        background: transparent !important;
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        padding: 0 2rem !important;
+        box-shadow: none !important;
+        margin-top: 0 !important;
+    }
+
+    .hero-badge {
+        white-space: normal !important; /* Wrap properly on thin screens */
+        text-align: center;
+        max-width: 100%;
+        color: #FFFFFF !important; /* Premium White text */
+        background: rgba(196, 142, 84, 0.18) !important; /* Elegant background highlight */
+        border: 1px solid var(--color-accent) !important;
+        font-size: 0.78rem !important;
+        line-height: 1.4 !important;
+        padding: 0.55rem 1.25rem !important;
+        margin-bottom: 1.5rem !important;
+        display: inline-flex !important;
+    }
+
+    .hero-badge svg {
+        display: none !important; /* Hide extraneous floating shield on mobile */
+    }
+
     .hero-title {
-        font-size: clamp(2.1rem, 9vw, 2.75rem);
-        line-height: 1.15;
-        margin-bottom: 1rem;
+        font-size: clamp(2.05rem, 8.5vw, 2.6rem);
+        line-height: 1.2;
+        margin-bottom: 1.25rem;
+        letter-spacing: -0.02em;
         text-wrap: balance;
     }
 
     .hero-subtitle {
-        font-size: 1.1rem;
-        line-height: 1.5;
-        margin-bottom: 1.5rem;
-        max-width: 100%;
+        font-size: 1.08rem;
+        line-height: 1.55;
+        margin-bottom: 1.75rem;
+        max-width: 90%;
+        opacity: 0.95;
     }
 
     .hero-actions {
         flex-direction: column;
-        align-items: stretch;
+        align-items: flex-start; /* Left-aligned to harmonize with the content layout */
+        gap: 0.85rem;
     }
 
     .hero-actions .btn {
-        width: 100%;
+        width: auto; /* Intrinsically sized */
+        min-width: 230px; /* Generous interactive tap target */
         text-align: center;
     }
 
