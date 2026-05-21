@@ -111,6 +111,7 @@ AI does not have external visibility into the live site without being given tool
 ### Completed (May 2026)
 - Redesigned the global footer into a premium **Asymmetric Editorial Layout** across all 17 HTML pages (logo, taglines, trust credentials on left; streamlined 3-column link lists on right).
 - Consolidated all 10 raw PDF download links into a brand new, highly premium **Resource Library Page** (`resources.html`), eliminating links-per-page dilution and link equity leakage.
+- Refactored the homepage FAQ section into an active **Objection Handler Accordion** with 6 high-converting accordions addressing fee transparency, employer-benefit risks, cancellation commitments, bank traps, and health concerns.
 - Integrated the new **Partner Trust Bar** (with custom SVGs for Manulife, Sun Life, IA, Equitable, Canada Life, and Edge) and **Stats Bar** ("30+ Years", "BC Families Protected") on the homepage.
 - Removed the extraneous "How It Works" timeline section in favor of a standalone 3-column values grid on `#F0F4F8` cool grey-blue.
 - `robots.txt` cleaned — global `Allow: /`, Cloudflare injects its own managed block above (harmless)
@@ -139,7 +140,7 @@ AI does not have external visibility into the live site without being given tool
 - **Relume Structural Audit (May 2026)**:
     - [x] **Trust Bar**: Add carrier logos (Manulife, Sun Life, etc.) below Hero to anchor authority. (Completed)
     - [x] **Process Section**: Add "How it Works" timeline or value cards to the homepage. (Completed & subsequently simplified into the modern 3-card grid per user feedback)
-    - [ ] **FAQ / Objection Handler**: Add accordion FAQ to homepage to address pre-sale friction.
+    - [x] **FAQ / Objection Handler**: Add accordion FAQ to homepage to address pre-sale friction. (Completed)
     - [x] **Hard Stats**: Elevate "30+ Years" and "BC Families Protected" into a dedicated high-impact stats block. (Completed)
 - **AI search visibility**: Check brand visibility in Google AI Overviews / Perplexity using Profound or Otterly.ai
 - **Twitter/X cards**: Add `twitter:card` meta tags if/when a Twitter account is created
