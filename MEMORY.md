@@ -18,3 +18,6 @@ This project involves elevating the digital presence of an insurance brokerage. 
 - Setup of OpenClaw Agent Environment (May 2026).
 - Installation of Hermes Agent (May 2026) following best practices.
 - Integration of GitHub, Firecrawl, and Puppeteer MCP servers.
+- Homepage overhaul (May 2026): Designed the modern 3-card standalone Independent Broker values grid, integrated the Partner Trust Bar (6 carriers) and Stats Bar (30+ years).
+- Footer Architecture Overhaul (May 2026): Re-engineered the global footer across all 17 HTML files into a modern Asymmetric Editorial grid layout, eliminating raw-PDF link leak and duplication.
+- Created `resources.html` (May 2026): Consolidated all 10 PDF brochures into a beautiful, dedicated grid-based resource hub.

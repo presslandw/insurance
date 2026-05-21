@@ -109,13 +109,17 @@ Things AI will not proactively suggest but that cause real headaches when skippe
 AI does not have external visibility into the live site without being given tool output. Always run an external audit first and paste results in.
 
 ### Completed (May 2026)
+- Redesigned the global footer into a premium **Asymmetric Editorial Layout** across all 17 HTML pages (logo, taglines, trust credentials on left; streamlined 3-column link lists on right).
+- Consolidated all 10 raw PDF download links into a brand new, highly premium **Resource Library Page** (`resources.html`), eliminating links-per-page dilution and link equity leakage.
+- Integrated the new **Partner Trust Bar** (with custom SVGs for Manulife, Sun Life, IA, Equitable, Canada Life, and Edge) and **Stats Bar** ("30+ Years", "BC Families Protected") on the homepage.
+- Removed the extraneous "How It Works" timeline section in favor of a standalone 3-column values grid on `#F0F4F8` cool grey-blue.
 - `robots.txt` cleaned — global `Allow: /`, Cloudflare injects its own managed block above (harmless)
 - `sitemap.xml` fixed — orphaned PDFs re-linked globally in footer then restored to sitemap
 - Page titles shortened to <60 chars across all 15 pages (local signals retained)
 - Meta descriptions tightened to <155 chars across 8 pages (Abbotsford & Greater Vancouver retained)
 - Article schema `publisher @type` corrected: `InsuranceAgency` → `Organization` on all 6 insight pages
 - Rich Results Test validated: Article schema returns "1 valid item detected" — non-critical warnings only (optional fields), no blocking errors
-- Canonical tags confirmed present on all 14 HTML pages
+- Canonical tags confirmed present on all 17 HTML pages
 - Internal 4xx (Cloudflare email obfuscation `/cdn-cgi/`) confirmed false positive — ignore
 
 
@@ -133,10 +137,10 @@ AI does not have external visibility into the live site without being given tool
 ### Outstanding / Next Steps
 - **Local SEO audit**: Run BrightLocal to audit Google Business Profile, local citations, and map pack rankings — highest ROI opportunity not yet addressed
 - **Relume Structural Audit (May 2026)**:
-    - [ ] **Trust Bar**: Add carrier logos (Manulife, Sun Life, etc.) below Hero to anchor authority.
-    - [ ] **Process Section**: Add "How it Works" 3-step guide to humanize the conversion funnel.
+    - [x] **Trust Bar**: Add carrier logos (Manulife, Sun Life, etc.) below Hero to anchor authority. (Completed)
+    - [x] **Process Section**: Add "How it Works" timeline or value cards to the homepage. (Completed & subsequently simplified into the modern 3-card grid per user feedback)
     - [ ] **FAQ / Objection Handler**: Add accordion FAQ to homepage to address pre-sale friction.
-    - [ ] **Hard Stats**: Elevate "30+ Years" and "BC Families Protected" into a dedicated high-impact stats block.
+    - [x] **Hard Stats**: Elevate "30+ Years" and "BC Families Protected" into a dedicated high-impact stats block. (Completed)
 - **AI search visibility**: Check brand visibility in Google AI Overviews / Perplexity using Profound or Otterly.ai
 - **Twitter/X cards**: Add `twitter:card` meta tags if/when a Twitter account is created
 - **H2 structure**: 4 pages missing H2, 3 pages with non-sequential heading order (low priority)
