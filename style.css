@@ -808,97 +808,207 @@ section[id] {
 }
 
 /* =========================================
-   PROCESS SECTION
+   ABOUT MERGED SECTION (Why & How)
    ========================================= */
-.process-section {
-    background: var(--color-bg-alt);
-    padding: 4rem 0;
+.about-merged-section {
+    padding: 5rem 0;
+    background: #F0F4F8; /* Sophisticated grey-blue */
+    border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
 }
 
-.process-inner {
-    text-align: center;
+.about-merged-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: 4.5rem;
+    align-items: start;
 }
 
-.process-heading {
+.about-why-col,
+.about-how-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-merged-title {
+    color: var(--color-primary);
     font-family: var(--font-heading);
-    font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+    font-size: clamp(1.45rem, 2.5vw, 1.85rem);
     font-weight: 700;
-    color: var(--color-text-title);
-    margin-bottom: 3rem;
+    margin-bottom: 0.5rem;
     letter-spacing: -0.02em;
 }
 
-.process-steps {
+.about-merged-subtitle {
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+    margin-bottom: 2.25rem;
+    line-height: 1.5;
+}
+
+/* Left: Broker Values (Vertical Cards) */
+.why-list-vertical {
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.why-list-item {
+    display: flex;
+    gap: 1.25rem;
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-premium);
+}
+
+.why-list-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-accent);
+}
+
+.why-list-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    background: var(--color-bg-subtle);
+    color: var(--color-primary);
+    border: 1px solid rgba(196, 142, 84, 0.25);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 0;
+    transition: all 0.3s ease;
 }
 
-.process-step {
-    flex: 1;
-    max-width: 280px;
-    padding: 0 1.5rem;
-    text-align: center;
+.why-list-item:hover .why-list-icon {
+    background: var(--color-primary);
+    color: var(--color-accent);
+    border-color: var(--color-primary);
 }
 
-.process-step-num {
-    width: 52px;
-    height: 52px;
+.why-list-text h3 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-text-title);
+    margin-bottom: 0.4rem;
+}
+
+.why-list-text p {
+    font-size: 0.9rem;
+    color: var(--color-text-main);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Right: Process Timeline */
+.process-list-vertical {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0.5rem;
+}
+
+.process-vertical-step {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.process-step-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.process-step-circle {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: var(--color-primary);
-    color: #fff;
+    color: #FFFFFF;
     font-family: var(--font-heading);
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1.25rem;
     flex-shrink: 0;
+    border: 2px solid var(--color-accent);
+    box-shadow: 0 4px 10px rgba(17, 24, 39, 0.1);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.process-step-title {
+.process-vertical-step:hover .process-step-circle {
+    background: var(--color-accent);
+    color: var(--color-primary);
+    transform: scale(1.08);
+}
+
+.process-step-connector-line {
+    width: 2px;
+    flex-grow: 1;
+    background: linear-gradient(180deg, var(--color-accent), rgba(196, 142, 84, 0.15));
+    margin: 6px 0;
+    min-height: 60px;
+}
+
+.process-step-text {
+    padding-bottom: 2rem;
+}
+
+.process-vertical-step:last-child .process-step-text {
+    padding-bottom: 0;
+}
+
+.process-step-text h3 {
     font-family: var(--font-heading);
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: 1.15rem;
+    font-weight: 600;
     color: var(--color-text-title);
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.4rem;
 }
 
-.process-step-desc {
+.process-step-text p {
     font-size: 0.9rem;
     color: var(--color-text-muted);
-    line-height: 1.6;
+    line-height: 1.5;
     margin: 0;
 }
 
-.process-connector {
-    flex-shrink: 0;
-    width: 60px;
-    height: 2px;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
-    margin-top: 26px; /* aligns with center of number circle */
-    opacity: 0.35;
+/* Consolidated CTAs */
+.about-merged-cta {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 4rem;
 }
 
-@media (max-width: 768px) {
-    .process-steps {
+/* Media Query Adaptations */
+@media (max-width: 992px) {
+    .about-merged-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
+    .about-merged-section {
+        padding: 4rem 0;
+    }
+    .process-step-connector-line {
+        min-height: 45px;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-merged-cta {
         flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
+        align-items: stretch;
+        gap: 1rem;
     }
-
-    .process-connector {
-        width: 2px;
-        height: 32px;
-        margin: 0 auto;
-    }
-
-    .process-step {
-        max-width: 100%;
-        padding: 0;
+    .about-merged-cta .btn {
+        width: 100%;
+        text-align: center;
     }
 }
 
@@ -1064,15 +1174,7 @@ section[id] {
 }
 
 
-/* =========================================
-   6. ABOUT / WHY INDEPENDENT CTA
-   ========================================= */
-.why-independent-cta {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 3rem;
-}
+
 
 /* =========================================
    7. SERVICES SECTION
@@ -2828,108 +2930,7 @@ iframe[data-tally-src][src] {
    13. WHY INDEPENDENT? â€” Value Proposition
    ========================================= */
 
-.why-independent-section {
-    padding: 4rem 0;
-    background: #F0F4F8;
-    border-top: 1px solid var(--color-border);
-    border-bottom: 1px solid var(--color-border);
-}
 
-.why-independent-title {
-    color: var(--color-primary);
-    font-family: var(--font-heading);
-    font-size: 2.25rem;
-    text-align: center;
-    margin-bottom: 0.75rem;
-}
-
-.why-independent-subtitle {
-    color: var(--color-text-muted);
-    text-align: center;
-    font-size: 1.1rem;
-    max-width: 550px;
-    margin: 0 auto 2.5rem;
-}
-
-.why-independent-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-.why-independent-item {
-    background: #FFFFFF;
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
-    padding: 2rem;
-    text-align: center;
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition-premium);
-    transform: translateY(0);
-    -webkit-transform: translateY(0);
-    will-change: transform;
-}
-
-.why-independent-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--color-primary);
-}
-
-.why-independent-item strong {
-    display: block;
-    color: var(--color-text-title);
-    font-size: 1.35rem;
-    margin-bottom: 1rem;
-    font-family: var(--font-heading);
-    font-weight: 600;
-}
-
-.why-independent-item p {
-    color: var(--color-text-main);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin: 0;
-}
-
-.why-icon {
-    flex-shrink: 0;
-    width: 52px;
-    height: 52px;
-    background: #FFFFFF;
-    color: var(--color-primary);
-    border: 1px solid rgba(196, 142, 84, 0.4);
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.25rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.why-independent-item:hover .why-icon {
-    background: var(--color-primary);
-    color: var(--color-accent);
-    border-color: var(--color-primary);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(17, 24, 39, 0.15);
-}
-
-@media (max-width: 768px) {
-    .why-independent-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .why-independent-section {
-        padding: 3rem 0;
-    }
-
-    .why-independent-title {
-        font-size: 1.75rem;
-    }
-}
 
 /* =========================================
    14. EDGE BENEFITS â€” Banner Card
@@ -3378,19 +3379,7 @@ iframe[data-tally-src][src] {
     }
 }
 
-/* Why independent CTA — stack full-width on mobile */
-@media (max-width: 768px) {
-    .why-independent-cta {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.875rem;
-    }
 
-    .why-independent-cta .btn {
-        width: 100%;
-        justify-content: center;
-    }
-}
 
 /* Contact + footer — tighter on mobile */
 @media (max-width: 768px) {
