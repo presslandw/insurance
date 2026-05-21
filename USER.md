@@ -13,5 +13,5 @@
 
 ## Technical Environment
 - **OS**: Linux (CachyOS).
-- **Workspace**: `/run/media/j/36E0201AE01FDF45/Users/J/Desktop/Projects/chriswalkerinsurance`
+- **Workspace**: `/home/j/Desktop/Projects/chriswalkerinsurance`
 - **Shell**: zsh (with modern aliases and plugins).

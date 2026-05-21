@@ -903,6 +903,107 @@ section[id] {
 }
 
 /* =========================================
+   TRUST BAR (CARRIER LOGOS)
+   ========================================= */
+.trust-bar {
+    background: var(--color-bg-alt);
+    border-bottom: 1px solid var(--color-border);
+    padding: 1.5rem 0;
+}
+
+.trust-bar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.trust-bar-label {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+}
+
+.trust-bar-logos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    gap: 1.5rem;
+}
+
+.trust-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trust-logo svg {
+    height: 28px;
+    width: auto;
+    max-width: 140px;
+    fill: currentColor;
+    color: rgba(17, 24, 39, 0.35); /* Elegant monochromatic slate-grey */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effects for individual carrier brand colors */
+.trust-logo.manulife:hover svg {
+    color: #007A33; /* Manulife Green */
+    transform: scale(1.04);
+}
+
+.trust-logo.sunlife:hover svg {
+    color: #FFC20E; /* Sun Life Gold */
+    transform: scale(1.04);
+}
+
+.trust-logo.canadalife:hover svg {
+    color: #D11919; /* Canada Life Red */
+    transform: scale(1.04);
+}
+
+.trust-logo.iafinancial:hover svg {
+    color: #0072C6; /* iA Financial Blue */
+    transform: scale(1.04);
+}
+
+.trust-logo.equitable:hover svg {
+    color: #00483A; /* Equitable Life Forest Green */
+    transform: scale(1.04);
+}
+
+@media (max-width: 1024px) {
+    .trust-bar-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.25rem;
+    }
+    
+    .trust-bar-logos {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.25rem 2.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .trust-bar-logos {
+        gap: 1rem 1.5rem;
+    }
+    
+    .trust-logo svg {
+        height: 22px;
+    }
+}
+
+/* =========================================
    CREDENTIAL BAR
    ========================================= */
 .cred-bar {
@@ -926,8 +1027,13 @@ section[id] {
     align-items: center;
     text-align: center;
     flex: 1;
-    padding: 0.25rem 1rem;
+    padding: 0.5rem 1rem;
     border-right: 1px solid rgba(196, 142, 84, 0.2); /* extremely subtle gold line */
+    transition: transform 0.3s ease;
+}
+
+.cred-item:hover {
+    transform: translateY(-2px);
 }
 
 .cred-item:last-child {
@@ -936,12 +1042,17 @@ section[id] {
 
 .cred-item strong {
     font-family: var(--font-heading);
-    font-size: 1.05rem;
+    font-size: clamp(1.25rem, 2vw, 1.8rem);
     font-weight: 700;
     color: var(--color-text-title);
     line-height: 1.2;
     margin-bottom: 0.3rem;
     letter-spacing: -0.01em;
+    transition: color 0.3s ease;
+}
+
+.cred-item:hover strong {
+    color: var(--color-accent);
 }
 
 .cred-item span {
