@@ -808,205 +808,119 @@ section[id] {
 }
 
 /* =========================================
-   ABOUT MERGED SECTION (Why & How)
+   WHY INDEPENDENT SECTION
    ========================================= */
-.about-merged-section {
+.why-independent-section {
     padding: 5rem 0;
-    background: #F0F4F8; /* Sophisticated grey-blue */
+    background: #F0F4F8; /* Sophisticated grey-blue background */
     border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
 }
 
-.about-merged-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.05fr;
-    gap: 4.5rem;
-    align-items: start;
-}
-
-.about-why-col,
-.about-how-col {
-    display: flex;
-    flex-direction: column;
-}
-
-.about-merged-title {
+.why-independent-title {
     color: var(--color-primary);
     font-family: var(--font-heading);
-    font-size: clamp(1.45rem, 2.5vw, 1.85rem);
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
     font-weight: 700;
+    text-align: center;
     margin-bottom: 0.5rem;
     letter-spacing: -0.02em;
 }
 
-.about-merged-subtitle {
+.why-independent-subtitle {
     color: var(--color-text-muted);
-    font-size: 0.92rem;
-    margin-bottom: 2.25rem;
+    font-size: 1.02rem;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3rem;
     line-height: 1.5;
 }
 
-/* Left: Broker Values (Vertical Cards) */
-.why-list-vertical {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+.why-independent-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
 }
 
-.why-list-item {
-    display: flex;
-    gap: 1.25rem;
+.why-independent-card {
     background: #FFFFFF;
     border: 1px solid var(--color-border);
-    border-radius: 12px;
-    padding: 1.5rem;
+    border-radius: 16px;
+    padding: 2.25rem 2rem;
+    text-align: center;
     box-shadow: var(--shadow-sm);
     transition: var(--transition-premium);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.why-list-item:hover {
-    transform: translateY(-3px);
+.why-independent-card:hover {
+    transform: translateY(-5px);
     box-shadow: var(--shadow-md);
     border-color: var(--color-accent);
 }
 
-.why-list-icon {
-    flex-shrink: 0;
-    width: 44px;
-    height: 44px;
+.why-independent-icon {
+    width: 52px;
+    height: 52px;
     background: var(--color-bg-subtle);
     color: var(--color-primary);
     border: 1px solid rgba(196, 142, 84, 0.25);
-    border-radius: 10px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 1.5rem;
     transition: all 0.3s ease;
 }
 
-.why-list-item:hover .why-list-icon {
+.why-independent-card:hover .why-independent-icon {
     background: var(--color-primary);
     color: var(--color-accent);
     border-color: var(--color-primary);
 }
 
-.why-list-text h3 {
+.why-independent-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     font-weight: 600;
     color: var(--color-text-title);
-    margin-bottom: 0.4rem;
+    margin-bottom: 1rem;
 }
 
-.why-list-text p {
-    font-size: 0.9rem;
+.why-independent-card p {
+    font-size: 0.95rem;
     color: var(--color-text-main);
-    line-height: 1.5;
+    line-height: 1.6;
     margin: 0;
 }
 
-/* Right: Process Timeline */
-.process-list-vertical {
-    display: flex;
-    flex-direction: column;
-    padding-left: 0.5rem;
-}
-
-.process-vertical-step {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.process-step-indicator {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.process-step-circle {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--color-primary);
-    color: #FFFFFF;
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    border: 2px solid var(--color-accent);
-    box-shadow: 0 4px 10px rgba(17, 24, 39, 0.1);
-    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.process-vertical-step:hover .process-step-circle {
-    background: var(--color-accent);
-    color: var(--color-primary);
-    transform: scale(1.08);
-}
-
-.process-step-connector-line {
-    width: 2px;
-    flex-grow: 1;
-    background: linear-gradient(180deg, var(--color-accent), rgba(196, 142, 84, 0.15));
-    margin: 6px 0;
-    min-height: 60px;
-}
-
-.process-step-text {
-    padding-bottom: 2rem;
-}
-
-.process-vertical-step:last-child .process-step-text {
-    padding-bottom: 0;
-}
-
-.process-step-text h3 {
-    font-family: var(--font-heading);
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--color-text-title);
-    margin-bottom: 0.4rem;
-}
-
-.process-step-text p {
-    font-size: 0.9rem;
-    color: var(--color-text-muted);
-    line-height: 1.5;
-    margin: 0;
-}
-
-/* Consolidated CTAs */
-.about-merged-cta {
+.why-independent-cta {
     display: flex;
     gap: 1.5rem;
     justify-content: center;
-    margin-top: 4rem;
+    margin-top: 3.5rem;
 }
 
 /* Media Query Adaptations */
 @media (max-width: 992px) {
-    .about-merged-grid {
+    .why-independent-grid {
         grid-template-columns: 1fr;
-        gap: 3.5rem;
+        gap: 1.5rem;
     }
-    .about-merged-section {
+    .why-independent-section {
         padding: 4rem 0;
-    }
-    .process-step-connector-line {
-        min-height: 45px;
     }
 }
 
 @media (max-width: 576px) {
-    .about-merged-cta {
+    .why-independent-cta {
         flex-direction: column;
         align-items: stretch;
         gap: 1rem;
     }
-    .about-merged-cta .btn {
+    .why-independent-cta .btn {
         width: 100%;
         text-align: center;
     }
