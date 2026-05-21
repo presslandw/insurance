@@ -836,91 +836,214 @@ section[id] {
     line-height: 1.5;
 }
 
-.why-independent-grid {
+/* =========================================
+   ABOUT SECTION (Why Broker & How It Works)
+   ========================================= */
+.about-section {
+    padding: 5.5rem 0;
+    background: #F0F4F8; /* Sophisticated slate-blue background */
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.about-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1.05fr;
+    gap: 0; /* Gap is 0 because we use padding for symmetrical border divider spacing */
+    align-items: start;
+}
+
+.about-why-col {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(17, 24, 39, 0.08); /* Clean elegant desktop separator */
+    padding-right: 4.5rem;
+}
+
+.about-how-col {
+    display: flex;
+    flex-direction: column;
+    padding-left: 4.5rem;
+}
+
+.about-eyebrow {
+    color: var(--color-accent);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.about-col-title {
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+}
+
+/* Left Column: Why Values (Clean text rows) */
+.why-values {
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
 }
 
-.why-independent-card {
-    background: #FFFFFF;
-    border: 1px solid var(--color-border);
-    border-radius: 16px;
-    padding: 2.25rem 2rem;
-    text-align: center;
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition-premium);
+.why-value {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    gap: 1.25rem;
 }
 
-.why-independent-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--color-accent);
-}
-
-.why-independent-icon {
-    width: 52px;
-    height: 52px;
-    background: var(--color-bg-subtle);
-    color: var(--color-primary);
-    border: 1px solid rgba(196, 142, 84, 0.25);
-    border-radius: 12px;
+.why-value-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    margin-top: 2px;
+    color: var(--color-accent);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.5rem;
-    transition: all 0.3s ease;
 }
 
-.why-independent-card:hover .why-independent-icon {
-    background: var(--color-primary);
-    color: var(--color-accent);
-    border-color: var(--color-primary);
+.why-value-icon svg {
+    width: 20px;
+    height: 20px;
 }
 
-.why-independent-card h3 {
+.why-value strong {
+    display: block;
     font-family: var(--font-heading);
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 600;
     color: var(--color-text-title);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
-.why-independent-card p {
+.why-value p {
     font-size: 0.95rem;
     color: var(--color-text-main);
     line-height: 1.6;
     margin: 0;
 }
 
-.why-independent-cta {
+/* Right Column: How Steps Timeline */
+.how-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative; /* Relative container for vertical connector line */
+}
+
+/* Vertical Timeline Connector Line */
+.how-steps::before {
+    content: "";
+    position: absolute;
+    top: 16px; /* Center of the first step's circle badge */
+    bottom: 16px; /* Center of the last step's circle badge */
+    left: 16px; /* Center of the circle badge (width/height 32px => 16px center) */
+    width: 1.5px;
+    background: rgba(196, 142, 84, 0.25); /* Elegant gold/copper line */
+    z-index: 1;
+}
+
+.how-step {
+    display: flex;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 2; /* Keeps text and elements above background pseudo-elements */
+}
+
+.how-step-number {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    background: #F0F4F8; /* Matches sophisticated slate-blue section bg to overlay & mask the vertical line */
+    border: 1.5px solid rgba(196, 142, 84, 0.35); /* Custom elegant copper border */
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 3; /* Above the timeline line */
+    line-height: 1;
+}
+
+.how-step-content {
+    flex-grow: 1;
+}
+
+.how-step-content strong {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-text-title);
+    margin-bottom: 0.5rem;
+}
+
+.how-step-content p {
+    font-size: 0.95rem;
+    color: var(--color-text-main);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Consolidated CTAs */
+.about-cta {
     display: flex;
     gap: 1.5rem;
     justify-content: center;
-    margin-top: 3.5rem;
+    margin-top: 4.5rem;
 }
 
-/* Media Query Adaptations */
-@media (max-width: 992px) {
-    .why-independent-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+/* Perfectly Symmetric Buttons on Desktop */
+.about-cta .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 577px) {
+    .about-cta .btn {
+        min-width: 240px; /* Forces symmetric widths across different length button texts */
     }
-    .why-independent-section {
-        padding: 4rem 0;
+}
+
+/* Responsive Adaptations */
+@media (max-width: 992px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
+    .about-why-col {
+        border-right: none;
+        padding-right: 0;
+    }
+    .about-how-col {
+        padding-left: 0;
+    }
+    .about-section {
+        padding: 4.5rem 0;
     }
 }
 
 @media (max-width: 576px) {
-    .why-independent-cta {
+    .about-cta {
         flex-direction: column;
         align-items: stretch;
         gap: 1rem;
     }
-    .why-independent-cta .btn {
+    .about-cta .btn {
         width: 100%;
         text-align: center;
     }
@@ -1101,19 +1224,20 @@ section[id] {
     border-bottom: 1px solid var(--color-border);
 }
 
-/* Featured three â€” hero cards */
-.services-featured {
+/* /* Symmetrical services grid layout */
+.services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.25rem;
-    margin-top: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
 }
 
-.service-feature {
+.service-card {
     background: #FFFFFF;
     border: 1px solid var(--color-border);
     border-radius: 16px;
-    padding: 2.5rem 2rem 2.25rem;
+    padding: 1.75rem 1.5rem 1.5rem;
     color: var(--color-text-main);
     display: flex;
     flex-direction: column;
@@ -1121,92 +1245,51 @@ section[id] {
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     transition: var(--transition-premium);
-    transform: translateY(0);
-    -webkit-transform: translateY(0);
-    will-change: transform;
 }
 
-.service-feature:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--color-primary);
-    z-index: 10;
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-accent); /* Unified subtle gold outline */
 }
 
-/* Icons on white cards */
-.service-feature-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 14px;
-    background: #FFFFFF;
+.service-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: var(--color-bg-subtle);
     color: var(--color-primary);
-    border: 1px solid rgba(196, 142, 84, 0.4);
+    border: 1px solid rgba(196, 142, 84, 0.25);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.75rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
 }
 
-.service-feature:hover .service-feature-icon {
+.service-card:hover .service-card-icon {
     background: var(--color-primary);
     color: var(--color-accent);
     border-color: var(--color-primary);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(17, 24, 39, 0.15);
+    transform: scale(1.05);
 }
 
-.service-feature h3 {
+.service-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.65rem;
+    font-size: 1.25rem;
     font-weight: 600;
     color: var(--color-text-title);
-    margin: 0 0 1rem;
-    line-height: 1.2;
+    margin: 0 0 0.5rem;
+    line-height: 1.3;
 }
 
-.service-feature > p {
-    font-size: 1rem;
-    color: var(--color-text-main);
-    line-height: 1.7;
-    margin: 0 0 1.75rem;
-}
-
-.service-feature-list {
-    list-style: none;
-    margin: 0 0 1.75rem;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.55rem;
-}
-
-.service-feature-list li {
-    font-size: 0.9rem;
-    color: var(--color-text-main);
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    line-height: 1.5;
-}
-
-.service-feature-list svg {
-    width: 14px;
-    height: 14px;
-    color: var(--color-accent);
-    flex-shrink: 0;
-}
-
-/* Card-wide click area: title becomes a stretched link covering the full card.
-   The CTA stays clickable thanks to a higher stacking context below. */
-.service-feature h3 a.card-stretched-link {
+.service-card h3 a.card-stretched-link {
     color: inherit;
     text-decoration: none;
     display: inline-block;
 }
 
-.service-feature h3 a.card-stretched-link::after {
+.service-card h3 a.card-stretched-link::after {
     content: "";
     position: absolute;
     top: 0;
@@ -1216,161 +1299,119 @@ section[id] {
     z-index: 1;
 }
 
-.service-feature-cta {
+.service-card > p {
+    font-size: 0.9rem;
+    color: var(--color-text-main);
+    line-height: 1.6;
+    margin: 0 0 0.75rem;
+}
+
+.service-card-list {
+    list-style: none;
+    margin: 0 0 1.25rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.service-card-list li {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    line-height: 1.4;
+}
+
+.service-card-list li::before {
+    content: "•";
+    color: var(--color-accent);
+    font-weight: bold;
+    display: inline-block;
+    width: 0.75em;
+    flex-shrink: 0;
+}
+
+.service-card-cta {
     position: relative;
     z-index: 2;
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    background: transparent;
-    color: var(--color-primary);
-    border: 2px solid var(--color-primary);
+    color: var(--color-accent);
     font-family: var(--font-display);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 600;
-    letter-spacing: 0.3px;
     text-decoration: none;
-    padding: 0.85rem 1.25rem;
-    border-radius: 8px;
     margin-top: auto;
-    transition: all 0.3s ease;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.service-feature-cta:hover {
-    background: var(--color-primary);
-    color: #fff !important;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
-}
-
-.service-feature-cta svg {
-    width: 16px;
-    height: 16px;
-    transition: transform 0.3s ease;
-}
-
-.service-feature-cta:hover svg {
-    transform: translateX(4px);
-}
-
-/* Secondary row â€” compact cards */
-.services-secondary {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin-top: 1.25rem;
-}
-
-.service-secondary {
-    background: #fff;
-    border: 1px solid rgba(17, 24, 39, 0.12);
-    border-radius: 10px;
-    padding: 1.5rem 1.5rem 1.25rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    text-decoration: none;
-    box-shadow: 0 2px 8px rgba(17, 24, 39, 0.05);
-    transition: border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
-}
-
-.service-secondary:hover {
-    border-color: var(--color-primary);
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(17, 24, 39, 0.1);
-}
-
-.service-secondary-icon {
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-    border-radius: 8px;
-    background: #FFFFFF;
+.service-card-cta:hover {
     color: var(--color-primary);
-    border: 1px solid rgba(196, 142, 84, 0.3);
+}
+
+/* Also Available horizontal bar */
+.services-also-available {
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.service-secondary:hover .service-secondary-icon {
-    background: var(--color-primary);
-    color: var(--color-accent);
-    border-color: var(--color-primary);
-}
-
-.service-secondary-body {
-    flex: 1;
-    min-width: 0;
-}
-
-.service-secondary-body strong {
-    display: block;
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--color-text-title);
-    margin-bottom: 0.25rem;
-}
-
-.service-secondary-body span {
-    font-size: 0.82rem;
-    color: #6B7280;
-    line-height: 1.4;
-    min-height: 2.8em;
-    display: block;
-}
-
-.service-secondary-links {
-    margin-top: 0.5rem;
-    display: flex;
     gap: 1rem;
-    align-items: center;
     flex-wrap: wrap;
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
 }
 
-.service-secondary-primary-link {
+.also-available-label {
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+}
+
+.also-available-link {
+    position: relative;
+    z-index: 2;
     color: var(--color-accent);
     font-weight: 600;
-    font-size: 1rem;
-    transition: color var(--transition-fast);
-}
-
-.service-secondary-doc-link {
-    color: var(--color-text-main);
-    font-size: 0.8rem;
     text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    opacity: 0.65;
+    transition: color 0.2s ease;
 }
 
-.service-secondary-doc-link:hover {
+.also-available-link:hover {
     color: var(--color-primary);
-    opacity: 1;
+    text-decoration: underline;
 }
 
-.service-secondary-arrow {
-    color: var(--color-accent);
-    transition: transform 0.2s ease;
+.also-available-divider {
+    color: rgba(17, 24, 39, 0.15);
+    font-weight: 300;
+    user-select: none;
 }
 
-.service-secondary:hover .service-secondary-arrow {
-    transform: translateX(3px);
-}
-
-@media (max-width: 960px) {
-    .services-featured {
-        grid-template-columns: 1fr;
+/* Responsive Adaptations */
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
     }
 }
 
-@media (max-width: 768px) {
-    .services-secondary {
+@media (max-width: 600px) {
+    .services-grid {
         grid-template-columns: 1fr;
+    }
+    .services-also-available {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.75rem;
+    }
+    .also-available-divider {
+        display: none;
     }
 }
 
@@ -1402,7 +1443,7 @@ section[id] {
 .insight-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-hover);
-    border-color: var(--color-primary);
+    border-color: var(--color-accent); /* Unified subtle gold outline */
 }
 
 .insight-card.featured {
@@ -3225,15 +3266,7 @@ iframe[data-tally-src][src] {
    MOBILE UX IMPROVEMENTS (v85)
    ========================================= */
 
-/* Services secondary — visible container at all sizes so cards don't get lost */
-.services-secondary {
-    background: #F8FAFC;
-    border: 1px solid var(--color-border);
-    border-radius: 16px;
-    padding: 1.25rem;
-    gap: 0.875rem;
-    margin-top: 1.75rem;
-}
+
 
 /* Hero badge — proportional on small screens */
 @media (max-width: 768px) {
@@ -3269,8 +3302,8 @@ iframe[data-tally-src][src] {
         background: #F8FAFC;
     }
 
-    /* Service feature cards: subtle depth lift on mobile */
-    .service-feature {
+    /* Service cards: subtle depth lift on mobile */
+    .service-card {
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     }
 
@@ -3573,17 +3606,17 @@ details[open] .faq-question::after {
     }
 
     /* 2. Break flat black & white scroll: Services & Insights Modern Refits */
-    .service-feature {
+    .service-card {
         background: var(--color-bg-alt) !important;
         border-radius: 16px !important;
         border: 1px solid rgba(0, 0, 0, 0.05) !important;
         box-shadow: var(--shadow-md) !important;
-        padding: 2.25rem 1.75rem !important;
+        padding: 1.75rem 1.5rem !important;
         margin-bottom: 2rem !important;
         transition: transform var(--transition-base), box-shadow var(--transition-base) !important;
     }
     
-    .service-feature:hover {
+    .service-card:hover {
         transform: translateY(-3px) !important;
         box-shadow: var(--shadow-lg) !important;
     }
