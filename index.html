@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-CA">
 
 <head>
     <meta charset="UTF-8">
@@ -13,12 +13,16 @@
       gtag('config', 'G-DFMPTGY8XM');
     </script>
     <script async src="https://tally.so/widgets/embed.js"></script>    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="theme-color" content="#111827">
+    <link rel="preload" as="image" href="images/hero-bg.avif" type="image/avif" fetchpriority="high">
     <title>Life & Health Insurance Abbotsford & BC | Chris Walker</title>
     <link rel="canonical" href="https://www.chriswalkerinsurance.ca/">
     <meta name="description"
         content="Life, health & mortgage insurance in Abbotsford & Greater Vancouver. Independent broker with 30+ years protecting BC families. Get your free assessment.">
 
     <!-- JSON-LD Local SEO Schema -->
+    <!-- TODO before go-live (AI-TASKS T4): add "streetAddress" + "postalCode" to "address", and an "openingHoursSpecification" with real hours. NAP must match the Google Business Profile exactly. -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -54,6 +58,8 @@
         "addressRegion": "BC",
         "addressCountry": "CA"
       },
+      "geo": { "@type": "GeoCoordinates", "latitude": 49.0514355, "longitude": -122.319642 },
+      "priceRange": "Free consultation",
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Insurance & Financial Services",
@@ -91,7 +97,7 @@
     }
     </script>
 
-    <!-- FAQ Schema for AI Search & Featured Snippets -->
+    <!-- FAQ Schema for AI Search & Featured Snippets (mirrors the visible homepage accordion) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -99,42 +105,50 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is the difference between bank mortgage insurance and independent mortgage protection?",
+          "name": "How much do your services cost? Do you charge broker fees?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Bank mortgage insurance belongs to the bank — it protects their loan, not your family. The benefit decreases as you pay down your mortgage, but your premiums stay the same. Independent mortgage protection pays your beneficiaries directly, keeps its value, and is portable between lenders. For most BC homeowners, independent coverage is significantly better value."
+            "text": "My advisory and broker services are 100% free to you. Independent brokers are compensated directly by the insurance carriers through standard industry commissions. You pay the exact same premium whether you use a broker or buy directly from a carrier, but with me, you get personalized, unbiased comparison shopping and dedicated lifetime support at no extra cost."
           }
         },
         {
           "@type": "Question",
-          "name": "Why should I use an independent insurance broker instead of going directly to a company?",
+          "name": "I have insurance through my employer benefits. Isn't that enough?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "An independent broker like Chris Walker represents you, not the insurance company. Instead of being limited to one company's products, an independent broker compares options across multiple carriers to find the best coverage at the best rate for your specific situation — at no extra cost to you."
+            "text": "Group benefits are a fantastic perk, but relying on them alone carries substantial risk. First, group coverage is not portable: if you change careers, get laid off, or retire, your protection ends immediately, and buying a personal policy when you are older or have new health issues will cost significantly more. Second, group policies typically only cover 1x to 2x your annual salary, which is rarely enough to clear a mortgage or sustain a family's lifestyle over the long term."
           }
         },
         {
           "@type": "Question",
-          "name": "How does the First Home Savings Account (FHSA) work in BC?",
+          "name": "Am I locked into a long-term contract? Can I cancel or change my policy?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The FHSA lets first-time home buyers in Canada contribute up to $8,000 per year (lifetime max $40,000) with tax-deductible contributions and tax-free growth. When combined with an RRSP through the Home Buyers' Plan, it can significantly accelerate your path to a down payment. Chris Walker helps BC families structure FHSA contributions alongside insurance planning."
+            "text": "No, you remain in complete control. Personal life and health insurance policies are highly flexible and have no lock-in contracts or exit penalties. You can cancel, reduce, or convert your coverage at any time without fees or questions asked. If your financial situation or budget changes, we can easily downsize your coverage to match your new reality."
           }
         },
         {
           "@type": "Question",
-          "name": "Does Chris Walker Insurance serve areas outside Abbotsford?",
+          "name": "Why use an independent broker instead of going directly to a carrier?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Chris Walker serves clients throughout the Fraser Valley and Greater Vancouver, including Chilliwack, Mission, Langley, and all of British Columbia. Many consultations are available by phone or video call, so location is rarely a barrier."
+            "text": "An independent broker represents you, not the insurance company. If you go directly to a single carrier, you will only see their products and prices. As a broker, I compare rates and policies across all of Canada's top-rated carriers (such as Manulife, Sun Life, Canada Life, iA Financial, and Equitable Life) to find the absolute best value and underwriting fit for your specific background."
           }
         },
         {
           "@type": "Question",
-          "name": "What types of life insurance are available for BC families?",
+          "name": "Why is bank mortgage insurance considered a poor choice?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "BC families can choose from term life insurance (coverage for a fixed period, typically 10–30 years), whole life insurance (permanent coverage with a cash value component), and universal life insurance (flexible premiums with investment options). Chris Walker helps families compare these options across multiple carriers to find the right fit for their budget and long-term goals."
+            "text": "Bank mortgage insurance only protects the bank's loan, not your family. The benefit decreases as you pay down your mortgage, but your premiums stay exactly the same. Plus, bank policies are tied to your specific lender, meaning you lose coverage if you switch banks. Personal mortgage protection pays a fixed tax-free cash benefit directly to your family, stays level, and moves with you if you refinance or switch lenders."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I get coverage if I have pre-existing health conditions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. Access to specialty underwriting is one of the biggest advantages of working with an independent broker. Even if you've been declined by a bank or a single carrier in the past, we work with specialized providers to secure coverage often through no-medical or simplified-issue plans that require zero exams, needles, or doctor reports."
           }
         }
       ]
@@ -151,7 +165,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="stylesheet" href="style.css?v=202605212349">
+    <link rel="stylesheet" href="style.css?v=202606011341">
+    <noscript><style>.reveal{opacity:1!important;visibility:visible!important;transform:none!important;}</style></noscript>
 
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
@@ -159,13 +174,20 @@
     <meta property="og:title" content="Life & Health Insurance Abbotsford, Greater Vancouver & All B.C. | Chris Walker Insurance Services">
     <meta property="og:description" content="Chris Walker provides trusted life, health, and mortgage insurance advice in Abbotsford, Greater Vancouver, and throughout British Columbia. 30+ years of expertise.">
     <meta property="og:image" content="https://www.chriswalkerinsurance.ca/images/social-share.jpg">
+    <meta property="og:image:alt" content="Chris Walker Insurance Services">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="1200">
+    <meta property="og:site_name" content="Chris Walker Insurance Services">
+    <meta property="og:locale" content="en_CA">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
 
     <header id="main-header">
         <div class="nav-container">
-            <a href="#" class="logo">
+            <a href="/" class="logo">
                 <span class="logo-text">Chris Walker Insurance Services</span>
             </a>
             <nav class="nav-links" id="primary-navigation">
@@ -197,9 +219,15 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <section id="hero">
-            <div class="hero-bg"></div>
+            <div class="hero-bg">
+                <picture>
+                    <source type="image/avif" srcset="images/hero-bg.avif">
+                    <source type="image/webp" srcset="images/hero-bg.webp">
+                    <img src="images/hero-bg.jpg" alt="A family walking together along a beach at sunset" width="1600" height="1066" fetchpriority="high" decoding="async">
+                </picture>
+            </div>
             <div class="hero-content container reveal fade-up">
                 <div class="hero-badge">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
@@ -491,6 +519,11 @@
         </section>
 
 
+        <!-- About-Chris section pinned for now (bio/year/designations not ready this round).
+             Cropped headshot is ready: images/chris-walker.{avif,webp,jpg} (260x325).
+             Markup + .about-chris-* styles preserved in git history. To restore, see AI-TASKS T10
+             and set the <img> to width="260" height="325". -->
+
         <section id="insights" class="section-padding">
             <div class="container">
                 <div class="section-header reveal fade-up">
@@ -501,7 +534,7 @@
                 <div class="insights-layout">
                     <!-- Featured Article: FHSA Secret Weapon (Spans 2x2) -->
                     <article class="insight-card featured reveal fade-up">
-                        <div class="insight-image insight-image-fhsa"></div>
+                        <div class="insight-image"><picture><source type="image/avif" srcset="images/insight-fhsa-thumb.avif"><source type="image/webp" srcset="images/insight-fhsa-thumb.webp"><img src="images/insight-fhsa-thumb.jpg" alt="First Home Savings Account (FHSA) guide" width="800" height="450" loading="lazy" decoding="async"></picture></div>
                         <div class="insight-content">
                             <span class="insight-tag">Home Buying Defense</span>
                             <h3><a href="insight-fhsa.html">The FHSA: Your secret weapon for a first home down
@@ -515,7 +548,7 @@
 
                     <!-- Secondary Articles: Each fills 1 slot -->
                     <article class="insight-card secondary-card reveal fade-up">
-                        <div class="insight-image insight-image-probate"></div>
+                        <div class="insight-image"><picture><source type="image/avif" srcset="images/insight-bc-probate-thumb.avif"><source type="image/webp" srcset="images/insight-bc-probate-thumb.webp"><img src="images/insight-bc-probate-thumb.jpg" alt="BC probate and estate planning guide" width="800" height="450" loading="lazy" decoding="async"></picture></div>
                         <div class="insight-content">
                             <span class="insight-tag">Estate Planning</span>
                             <h3><a href="insight-bc-probate.html">BC Probate laws &amp; your estate</a></h3>
@@ -525,8 +558,7 @@
                     </article>
 
                     <article class="insight-card secondary-card reveal fade-up reveal-delay-1">
-                        <div class="insight-image insight-image-disability">
-                        </div>
+                        <div class="insight-image"><picture><source type="image/avif" srcset="images/insight-disability-thumb.avif"><source type="image/webp" srcset="images/insight-disability-thumb.webp"><img src="images/insight-disability-thumb.jpg" alt="Income and disability protection guide" width="800" height="450" loading="lazy" decoding="async"></picture></div>
                         <div class="insight-content">
                             <span class="insight-tag">Income Stability</span>
                             <h3><a href="insight-disability.html">Protecting your ability to earn</a></h3>
@@ -536,7 +568,7 @@
                     </article>
 
                     <article class="insight-card secondary-card reveal fade-up reveal-delay-2">
-                        <div class="insight-image insight-image-mortgage"></div>
+                        <div class="insight-image"><picture><source type="image/avif" srcset="images/insight-mortgage-thumb.avif"><source type="image/webp" srcset="images/insight-mortgage-thumb.webp"><img src="images/insight-mortgage-thumb.jpg" alt="Bank vs. independent mortgage protection guide" width="800" height="450" loading="lazy" decoding="async"></picture></div>
                         <div class="insight-content">
                             <span class="insight-tag">Mortgage Protection</span>
                             <h3><a href="insight-mortgage.html">Bank vs. Independent: Which coverage is safe?</a></h3>
@@ -547,7 +579,7 @@
                     </article>
 
                     <article class="insight-card secondary-card reveal fade-up reveal-delay-3">
-                        <div class="insight-image insight-image-flood"></div>
+                        <div class="insight-image"><picture><source type="image/avif" srcset="images/insight-flood-thumb.avif"><source type="image/webp" srcset="images/insight-flood-thumb.webp"><img src="images/insight-flood-thumb.jpg" alt="BC flood insurance coverage guide" width="800" height="450" loading="lazy" decoding="async"></picture></div>
                         <div class="insight-content">
                             <span class="insight-tag">Home &amp; Property</span>
                             <h3><a href="insight-flood.html">Does BC home insurance cover flooding?</a></h3>
@@ -562,6 +594,9 @@
                 </div>
             </div>
         </section>
+
+        <!-- Testimonials section pinned for now (no client content yet; design TBD).
+             Markup + .testimonials-* styles preserved in git history / AI-TASKS T11 for easy restore. -->
 
         <section id="faq" class="section-padding faq-section-tight faq-section">
             <div class="container">
@@ -675,7 +710,7 @@
                 <p class="footer-brand-tagline">Helping British Columbia families build secure financial futures with tailored, independent insurance advice.</p>
                 <div class="footer-license-badge-inline">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                    Licensed Independent Broker in BC
+                    Licensed Independent Broker in BC &middot; Reg. #[NUMBER]
                 </div>
             </div>
             
