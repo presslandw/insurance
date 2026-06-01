@@ -4196,6 +4196,19 @@ textarea:focus-visible,
     font-size: 0.9rem;
 }
 
+.about-chris-photo img {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 768px) {
+    .about-chris-photo { display: flex; justify-content: center; }
+}
+
 .about-chris-bio {
     font-size: 1.1rem;
     line-height: 1.8;

@@ -165,7 +165,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="stylesheet" href="style.css?v=202606011246">
+    <link rel="stylesheet" href="style.css?v=202606011341">
     <noscript><style>.reveal{opacity:1!important;visibility:visible!important;transform:none!important;}</style></noscript>
 
     <!-- Open Graph / Social Media Meta Tags -->
@@ -527,11 +527,11 @@
         <section id="about-chris" class="section-padding about-chris-section reveal fade-up">
             <div class="container about-chris-grid">
                 <div class="about-chris-photo">
-                    <!-- Replace with: <img src="images/chris-walker.jpg" alt="Chris Walker, independent insurance broker in Abbotsford, BC" width="640" height="800"> -->
-                    <div class="about-chris-photo-placeholder" role="img" aria-label="Placeholder for Chris Walker headshot">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                        <span>Add Chris&rsquo;s headshot</span>
-                    </div>
+                    <picture>
+                        <source type="image/avif" srcset="images/chris-walker.avif">
+                        <source type="image/webp" srcset="images/chris-walker.webp">
+                        <img src="images/chris-walker.jpg" alt="Chris Walker, independent insurance broker in Abbotsford, BC" width="500" height="667" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="about-chris-content">
                     <p class="about-eyebrow">Meet Your Broker</p>
@@ -539,7 +539,6 @@
                     <p class="about-chris-bio">[PLACEHOLDER BIO &mdash; replace before publishing. 2&ndash;3 sentences in Chris&rsquo;s own voice: who he helps, how he works, and why BC families have trusted him for 30+ years.]</p>
                     <ul class="about-chris-creds">
                         <li>Licensed in British Columbia since <strong>[YEAR]</strong></li>
-                        <li>Insurance Council of BC registration <strong>#[NUMBER]</strong></li>
                         <li>Designations: <strong>[e.g. CLU, CHS &mdash; or remove this line]</strong></li>
                     </ul>
                     <a href="#contact" class="btn btn-outline-accent">Talk with Chris</a>
@@ -618,37 +617,8 @@
             </div>
         </section>
 
-        <!-- ============================================================
-             TESTIMONIALS — TODO before publishing (AI-TASKS T11):
-             Replace with REAL client testimonials / Google reviews.
-             Do NOT publish placeholder quotes. Add Review + aggregateRating
-             schema to the InsuranceAgency block ONLY once reviews are real.
-             ============================================================ -->
-        <section id="testimonials" class="section-padding testimonials-section reveal fade-up">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title center">What clients say</h2>
-                    <p class="section-subtitle center">Reviews from BC families and businesses Chris has helped protect.</p>
-                </div>
-                <div class="testimonials-grid">
-                    <figure class="testimonial-card">
-                        <blockquote>&ldquo;[Placeholder &mdash; replace with a real client quote before publishing.]&rdquo;</blockquote>
-                        <figcaption>&mdash; Client Name, City</figcaption>
-                    </figure>
-                    <figure class="testimonial-card">
-                        <blockquote>&ldquo;[Placeholder &mdash; replace with a real client quote before publishing.]&rdquo;</blockquote>
-                        <figcaption>&mdash; Client Name, City</figcaption>
-                    </figure>
-                    <figure class="testimonial-card">
-                        <blockquote>&ldquo;[Placeholder &mdash; replace with a real client quote before publishing.]&rdquo;</blockquote>
-                        <figcaption>&mdash; Client Name, City</figcaption>
-                    </figure>
-                </div>
-                <p class="testimonials-cta-note">
-                    <a href="https://www.google.com/maps/place/Chris+Walker+Insurance+Services/@49.0514355,-122.319642,17z/data=!3m1!4b1!4m6!3m5!1s0x5484354cebf78677:0xaa1c64cf15e7ff54!8m2!3d49.0514355!4d-122.319642!16s%2Fg%2F12mm84dq3" target="_blank" rel="noopener">Read more reviews on Google &rarr;</a>
-                </p>
-            </div>
-        </section>
+        <!-- Testimonials section pinned for now (no client content yet; design TBD).
+             Markup + .testimonials-* styles preserved in git history / AI-TASKS T11 for easy restore. -->
 
         <section id="faq" class="section-padding faq-section-tight faq-section">
             <div class="container">
@@ -762,7 +732,7 @@
                 <p class="footer-brand-tagline">Helping British Columbia families build secure financial futures with tailored, independent insurance advice.</p>
                 <div class="footer-license-badge-inline">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                    Licensed Independent Broker in BC
+                    Licensed Independent Broker in BC &middot; Reg. #[NUMBER]
                 </div>
             </div>
             

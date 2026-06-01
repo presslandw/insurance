@@ -28,8 +28,13 @@ priority and dependency. Each task is self-contained: goal, files, exact steps, 
 - ✅ T12 breadcrumbs (visible nav + `BreadcrumbList` JSON-LD) + Article schema enriched (`author.url`,
   `mainEntityOfPage`) on all 7 insight pages.
 - ✅ T4 InsuranceAgency schema: added real `geo` coords + `priceRange`; TODO comment for owner NAP/hours.
-- ✅ T10 About-Chris section + T11 Testimonials section scaffolded on the homepage with clearly-labelled
-  placeholders (6 placeholder markers, 3 TODO comments). No fabricated facts/reviews.
+- ✅ T10 About-Chris section live with a REAL photo (`chris-walker.{avif,webp,jpg}`, derived from the
+  owner's `images/car.jpg` — a lifestyle shot of Chris with his classic car, shown uncropped). Bio +
+  "licensed since [YEAR]" + designations remain labelled placeholders. Per owner: the Insurance Council of
+  BC registration # was REMOVED from the mid-page About section (decorum) and relocated to the footer
+  licence badge as `Reg. #[NUMBER]` sitewide (fill or remove before publish).
+- ⏸ T11 Testimonials: PINNED per owner (no client content yet + design not finalised). Section removed from
+  index.html; markup + `.testimonials-*` CSS preserved in git history for easy restore.
 - ✅ T13 quote-life **and** quote-savings grid bug fixed — PLUS the same pre-existing bug found and fixed on
   disability-insurance.html and mortgage-protection.html (4 landing pages total now balanced).
 - ✅ T14 inline `onclick` email-copy → standardized `.contact-copy-email` button on all 13 pages.
