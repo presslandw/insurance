@@ -1,23 +1,23 @@
+# Chris Walker Insurance — robots.txt
+# Posture: MAXIMUM crawlability for Google Search, Google AI Overviews / AI Mode,
+# and third-party answer engines (AEO). Every crawler is allowed sitewide.
+#
+# Welcomed (all allowed via the wildcard below — listed for clarity, not restriction):
+#   Google:     Googlebot, Googlebot-Image, Google-Extended (AI Overviews / Gemini grounding),
+#               Google-InspectionTool (Rich Results Test / URL Inspection), AdsBot-Google
+#   Bing/Copilot: Bingbot
+#   OpenAI:     OAI-SearchBot, ChatGPT-User      Anthropic: Claude-SearchBot, Claude-User
+#   Perplexity: PerplexityBot, Perplexity-User   Apple: Applebot      Amazon: Amazonbot
+#
+# !! IMPORTANT — Cloudflare can override this file at the edge !!
+#   Cloudflare "Managed robots.txt" (Sept-2025 Content Signals) PREPENDS its own block and
+#   currently injects "Disallow: /" for Google-Extended, GPTBot, CCBot and ClaudeBot.
+#   This file is only fully authoritative once Managed robots.txt is DISABLED in Cloudflare:
+#   Dashboard -> AI Audit / Bots -> Manage robots.txt  (and/or  Scrape Shield -> Content Signals).
+#   After disabling: purge cache, then re-fetch https://www.chriswalkerinsurance.ca/robots.txt
+#   and confirm the "Cloudflare Managed content" block is gone.
+
 User-agent: *
 Allow: /
-
-# Block AI Training Bots
-User-agent: GPTBot
-Disallow: /
-
-User-agent: ChatGPT-User
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-User-agent: anthropic-ai
-Disallow: /
-
-User-agent: Claude-Web
-Disallow: /
-
-User-agent: Google-Extended
-Disallow: /
 
 Sitemap: https://www.chriswalkerinsurance.ca/sitemap.xml
