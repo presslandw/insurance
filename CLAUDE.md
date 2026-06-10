@@ -43,9 +43,10 @@ This document provides project context and technical standards for AI coding ass
 - **Version Bump**: After ANY change to `style.css`, run `.\bump_version.ps1` to update the cache-busting version string across all 15+ HTML files.
 - **Build**: No build step required (Static).
 - **Validation**:
+  - **Automated (June 2026)**: `python3 verify.py` — placeholders (e.g. `[NUMBER]`), JSON-LD validity, broken internal links/images. Runs automatically as a **pre-push hook** (`.githooks/pre-push`, activated via `git config core.hooksPath .githooks` — re-run that command on any fresh clone) and in **GitHub Actions** (`.github/workflows/verify.yml`) on every push/PR. Emergency bypass: `git push --no-verify`. This exists because `Reg. #[NUMBER]` once shipped to production on all 17 pages.
   - HTML: W3C Validator
   - Accessibility: Axe Linter (VS Code)
-- **Deployment**: `git push origin main` (auto-deploys to GitHub Pages).
+- **Deployment**: `git push origin main` (auto-deploys to GitHub Pages). The pre-push hook runs `verify.py` first and blocks the push on failure.
 
 ## Design System & "2026 Premium" Aesthetic
 The project underwent a significant visual overhaul in April 2026 to adopt a "Premium Light" editorial aesthetic.

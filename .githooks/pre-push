@@ -1,0 +1,11 @@
+#!/bin/sh
+# Pre-push gate: blocks the push if site content fails verification.
+# Installed via: git config core.hooksPath .githooks
+# Bypass in an emergency with: git push --no-verify
+
+echo "pre-push: running verify.py ..."
+python3 "$(git rev-parse --show-toplevel)/verify.py" || {
+  echo ""
+  echo "pre-push: BLOCKED — fix the issues above (or 'git push --no-verify' to override)."
+  exit 1
+}

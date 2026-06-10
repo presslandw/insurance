@@ -25,6 +25,17 @@ live in git history. Scope was **under-the-hood improvements, no redesign** (own
 
 ---
 
+## ✅ Done — June 9 (verification pipeline)
+- **`verify.py` + pre-push hook + GitHub Actions**: every push now auto-checks for placeholder
+  text, invalid JSON-LD, and broken internal links — locally (`.githooks/pre-push`) and in CI
+  (`.github/workflows/verify.yml`). On a fresh clone, re-activate with
+  `git config core.hooksPath .githooks`.
+- **Footer placeholder fixed**: `Reg. #[NUMBER]` removed from all 17 pages (badge now reads
+  "Licensed Independent Broker in BC"). When the owner supplies the real reg number, add it
+  back as `&middot; Reg. #XXXXX` — the hook will no longer allow a bracketed placeholder.
+- **`NORTH-STAR.md` created** — aspirational reference doc (trust layer, product pages,
+  calculators, conversion funnels, SSG migration). Read it before planning new work.
+
 ## ⏳ Open tasks — NEEDS THE OWNER
 - [ ] **Cloudflare (highest impact — unblocks AEO on the live site):** dashboard → AI Audit / Bots →
       **disable Managed robots.txt** (it prepends its own block at the edge and blocks
@@ -33,7 +44,8 @@ live in git history. Scope was **under-the-hood improvements, no redesign** (own
 - [ ] **NAP for schema:** street address, postal code, business hours → fill `InsuranceAgency.address` +
       add `openingHoursSpecification` (TODO comment is in `index.html` `<head>`). Must match the Google
       Business Profile exactly.
-- [ ] **Footer reg #:** fill `Reg. #[NUMBER]` in the footer licence badge (sitewide), or delete that span.
+- [ ] **Footer reg #:** placeholder removed June 9 (badge now reads "Licensed Independent Broker
+      in BC" only). Still need the real reg number from the owner to restore `&middot; Reg. #XXXXX`.
 - [ ] **About-Chris content:** bio text, year licensed, designations (photo is ready).
 - [ ] **Testimonials:** real client quotes / Google reviews; then add `Review` + `aggregateRating` to the
       `InsuranceAgency` schema. Design still TBD.
