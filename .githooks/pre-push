@@ -4,7 +4,21 @@
 # Bypass in an emergency with: git push --no-verify
 
 echo "pre-push: running verify.py ..."
-python3 "$(git rev-parse --show-toplevel)/verify.py" || {
+repo_root=$(git rev-parse --show-toplevel) || exit 1
+
+# Permit a known Python runtime on Windows without bypassing verification.
+if [ -n "${CWI_PYTHON:-}" ]; then
+  python_command=$CWI_PYTHON
+elif command -v python3 >/dev/null 2>&1; then
+  python_command=python3
+elif command -v python >/dev/null 2>&1; then
+  python_command=python
+else
+  echo "pre-push: Python is unavailable. Set CWI_PYTHON to your Python executable."
+  exit 1
+fi
+
+"$python_command" "$repo_root/verify.py" || {
   echo ""
   echo "pre-push: BLOCKED — fix the issues above (or 'git push --no-verify' to override)."
   exit 1

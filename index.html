@@ -74,8 +74,7 @@
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "RRSP and TFSA Planning" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "First Home Savings Account (FHSA) Planning" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Payout Annuities" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estate and Probate Planning" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "LegalShield Legal Plans" } }
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estate and Probate Planning" } }
         ]
       },
       "knowsAbout": [
@@ -165,7 +164,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="stylesheet" href="style.css?v=202606011341">
+    <link rel="stylesheet" href="style.css?v=202609270013">
     <noscript><style>.reveal{opacity:1!important;visibility:visible!important;transform:none!important;}</style></noscript>
 
     <!-- Open Graph / Social Media Meta Tags -->
@@ -195,9 +194,6 @@
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#insights" class="nav-link">Insights</a>
                 <a href="#contact" class="nav-link">Contact</a>
-                <a href="https://chrisjwalker.wearelegalshield.ca/" target="_blank" rel="noopener"
-                    class="nav-link nav-link-external">LegalShield
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
             </nav>
             <div class="nav-contact">
                 <a href="tel:+16043092001" class="btn btn-outline" aria-label="Call Chris Walker at (604) 309-2001">
@@ -300,8 +296,8 @@
                     <span>Unbiased Choice &amp; Advice</span>
                 </div>
                 <div class="cred-item">
-                    <strong>Licensed Sitewide</strong>
-                    <span>Regulated Guidance in B.C.</span>
+                    <strong>Licensed in B.C.</strong>
+                    <span>Regulated Provincial Guidance</span>
                 </div>
                 <div class="cred-item">
                     <strong>Direct 1-on-1</strong>
@@ -423,11 +419,6 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><path d="M9 6h6M9 10h6M9 14h6"></path></svg>
                             <span>Property &amp; Business</span>
                         </a>
-                        <a href="https://chrisjwalker.wearelegalshield.ca/" target="_blank" rel="noopener" class="supplementary-item supplementary-item-external">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M8 11h8M12 8v6"></path></svg>
-                            <span>LegalShield Plans</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="external-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        </a>
                     </div>
                 </div>
 
@@ -444,6 +435,17 @@
                     <div class="about-why-col">
                         <p class="about-eyebrow">Why an Independent Broker?</p>
                         <h2 class="about-col-title">An advisor who works for you, not a corporate office.</h2>
+                        <figure class="about-broker-portrait">
+                            <picture>
+                                <source type="image/avif" srcset="images/chris-walker.avif">
+                                <source type="image/webp" srcset="images/chris-walker.webp">
+                                <img src="images/chris-walker.jpg" alt="Chris Walker standing beside his classic Oldsmobile" width="720" height="900" loading="lazy" decoding="async">
+                            </picture>
+                            <figcaption>
+                                <strong>Chris Walker</strong>
+                                Independent insurance broker serving B.C. families for 30+ years.
+                            </figcaption>
+                        </figure>
                         <div class="why-values">
                             <div class="why-value">
                                 <div class="why-value-icon">
@@ -519,10 +521,11 @@
         </section>
 
 
-        <!-- About-Chris section pinned for now (bio/year/designations not ready this round).
-             Cropped headshot is ready: images/chris-walker.{avif,webp,jpg} (260x325).
-             Markup + .about-chris-* styles preserved in git history. To restore, see AI-TASKS T10
-             and set the <img> to width="260" height="325". -->
+        <!-- Dedicated About-Chris section pinned for now (bio/year/designations not ready this round).
+             Portrait source: images/portrait.jpg. Optimized derivatives are ready:
+             images/chris-walker.{avif,webp,jpg} (720x900). Markup + .about-chris-*
+             styles are preserved in git history. To restore, use width="720" height="900"
+             and let .about-chris-photo img scale responsively. -->
 
         <section id="insights" class="section-padding">
             <div class="container">
@@ -742,7 +745,6 @@
                         <li><a href="tel:+16043092001">(604) 309-2001</a></li>
                         <li><a href="https://calendly.com/chriswalkerinsurance/30min" target="_blank" rel="noopener">Book a 30-Minute Call</a></li>
                         <li><a href="index.html#contact">Send a Message</a></li>
-                        <li><a href="https://chrisjwalker.wearelegalshield.ca/" target="_blank" rel="noopener" class="nav-link-external">LegalShield <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></li>
                     </ul>
                 </div>
             </div>
@@ -754,7 +756,7 @@
         </div>
     </footer>
 
-    <script src="scripts.js" defer></script>
+    <script src="scripts.js?v=202609270013" defer></script>
     <div class="mobile-sticky-cta">
         <a href="tel:+16043092001" class="btn btn-primary btn-full">Call Chris Walker: (604) 309-2001</a>
     </div>

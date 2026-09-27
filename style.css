@@ -9,6 +9,7 @@
     --color-surface-darker: #0B111A;
     --color-accent: #C48E54; /* Sophisticated Copper/Gold */
     --color-accent-hover: #A67540;
+    --color-accent-strong: #885B2F; /* Accessible text on light surfaces / white button labels */
     --color-bg-main: #FAFAFA; /* Warm off-white */
     --color-bg-subtle: #F8FAFC; /* Clean off-white */
     --color-bg-alt: #FFFFFF;
@@ -37,6 +38,23 @@
     /* Spacing */
     --section-padding: 6rem;
     --container-max: 1200px;
+}
+
+.affiliate-resource {
+    padding-block: 1.5rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.affiliate-resource p {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+}
+
+.affiliate-resource a {
+    color: var(--color-text-main);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
 }
 
 /* =========================================
@@ -174,14 +192,14 @@ section[id] {
 
 .btn-solid-accent {
     background: var(--color-accent);
-    color: white;
+    color: var(--color-primary);
     border: 2px solid var(--color-accent);
     box-shadow: 0 4px 12px rgba(196, 142, 84, 0.15);
 }
 
 .btn-solid-accent:hover {
-    background: var(--color-accent-hover);
-    border-color: var(--color-accent-hover);
+    background: var(--color-accent-strong);
+    border-color: var(--color-accent-strong);
     color: white !important;
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(196, 142, 84, 0.35);
@@ -909,6 +927,44 @@ section[id] {
     line-height: 1.3;
 }
 
+.about-broker-portrait {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 1.15rem;
+    align-items: center;
+    margin: 0 0 2.2rem;
+}
+
+.about-broker-portrait picture,
+.about-broker-portrait img {
+    display: block;
+}
+
+.about-broker-portrait img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+.about-broker-portrait figcaption {
+    margin: 0;
+    color: var(--color-text-main);
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
+.about-broker-portrait strong {
+    display: block;
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+    font-size: 1.12rem;
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+}
+
 /* Left Column: Why Values (Clean text rows) */
 .why-values {
     display: flex;
@@ -1061,6 +1117,11 @@ section[id] {
 }
 
 @media (max-width: 576px) {
+    .about-broker-portrait {
+        grid-template-columns: 96px 1fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
     .about-col-cta {
         margin-top: 2rem;
         justify-content: center;
@@ -1683,7 +1744,7 @@ section[id] {
 }
 
 .inline-accent-link {
-    color: var(--color-accent);
+    color: var(--color-accent-strong);
     font-weight: 600;
 }
 
@@ -2331,6 +2392,11 @@ textarea {
    10. ANIMATIONS (Scroll Reveal)
    ========================================= */
 .reveal {
+    opacity: 1;
+    visibility: visible;
+}
+
+.reveal.reveal-pending {
     opacity: 0;
     visibility: hidden;
 }
@@ -2341,8 +2407,12 @@ textarea {
 }
 
 .fade-up {
-    transform: translateY(30px);
+    transform: translateY(0);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out, visibility 0.8s ease-out;
+}
+
+.reveal-pending.fade-up {
+    transform: translateY(30px);
 }
 
 .fade-up.active {
@@ -3800,8 +3870,7 @@ details[open] .faq-question::after {
     }
 
     /* Dynamic plus/minus indicators next to category titles */
-    .footer-link-grid h4::after,
-    .main-footer h4::after {
+    .footer-accordion-toggle::after {
         content: '+' !important;
         font-size: 1.25rem !important;
         font-weight: 300 !important;
@@ -3810,8 +3879,7 @@ details[open] .faq-question::after {
         display: inline-block !important;
     }
 
-    .footer-link-grid h4.active::after,
-    .main-footer h4.active::after {
+    .main-footer h4.active .footer-accordion-toggle::after {
         content: '−' !important;
         transform: rotate(180deg) !important;
         color: #FFFFFF !important;
@@ -3819,10 +3887,6 @@ details[open] .faq-question::after {
 
     .footer-link-grid ul,
     .main-footer ul {
-        max-height: 0 !important;
-        overflow: hidden !important;
-        opacity: 0 !important;
-        transform: translateY(-8px) !important;
         display: flex !important; /* Force flex so layout is correct when open */
         flex-direction: column !important;
         padding: 0 !important;
@@ -3840,6 +3904,30 @@ details[open] .faq-question::after {
         transform: translateY(0) !important;
         padding-bottom: 1.5rem !important;
         margin-top: 0.5rem !important;
+    }
+
+    .main-footer ul[hidden] {
+        display: none !important;
+    }
+
+    .main-footer h4.accordion-ready {
+        padding: 0 !important;
+    }
+
+    .footer-accordion-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 1.25rem 0;
+        border: 0;
+        background: transparent;
+        color: inherit;
+        font: inherit;
+        letter-spacing: inherit;
+        text-transform: inherit;
+        text-align: left;
+        cursor: pointer;
     }
 
     .footer-link-grid li,

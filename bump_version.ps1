@@ -9,11 +9,12 @@ $version = Get-Date -Format "yyyyMMddHHmm"
 $files = Get-ChildItem -Path "." -Filter "*.html" -Recurse
 
 foreach ($file in $files) {
-    $content = Get-Content -Path $file.FullName -Raw
+    $content = Get-Content -LiteralPath $file.FullName -Raw -Encoding UTF8
     $updated = $content -replace 'style\.css\?v=\d+', "style.css?v=$version"
+    $updated = $updated -replace 'scripts\.js(?:\?v=\d+)?(?=["''])', "scripts.js?v=$version"
     if ($content -ne $updated) {
         if (-not $DryRun) {
-            Set-Content -Path $file.FullName -Value $updated -NoNewline
+            [System.IO.File]::WriteAllText($file.FullName, $updated, [System.Text.UTF8Encoding]::new($false))
         }
         Write-Host ("$(if ($DryRun) {'[DRY RUN] Would update'} else {'Updated'}): " + $file.Name)
     } else {

@@ -28,7 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     revealElements.forEach((element) => {
-      revealObserver.observe(element);
+      // Never hide the first screen or depend on JavaScript to expose content.
+      if (element.getBoundingClientRect().top < window.innerHeight) {
+        element.classList.add('active');
+      } else {
+        element.classList.add('reveal-pending');
+        revealObserver.observe(element);
+      }
     });
   }
 
@@ -47,6 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelector('.nav-links');
 
   if (mobileToggle && navLinks) {
+    navLinks.id = navLinks.id || 'primary-navigation';
+    mobileToggle.setAttribute('aria-controls', navLinks.id);
+    mobileToggle.setAttribute('aria-expanded', 'false');
     const closeMenu = () => {
       mobileToggle.classList.remove('active');
       navLinks.classList.remove('active');
@@ -71,6 +80,15 @@ document.addEventListener('DOMContentLoaded', () => {
         closeMenu();
       }
     });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+        closeMenu();
+        mobileToggle.focus();
+      }
+    });
+
+    window.matchMedia('(max-width: 1080px)').addEventListener('change', closeMenu);
   }
 
   // 4. Email Copy Enhancement
@@ -124,13 +142,19 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Listen for height messages from Tally (extra insurance)
   window.addEventListener('message', (e) => {
-    if (e.data && typeof e.data === 'string' && e.data.includes('tally-height')) {
+    if (e.origin === 'https://tally.so' && typeof e.data === 'string' && e.data.includes('tally-height')) {
       try {
         const data = JSON.parse(e.data);
-        const iframe = document.querySelector(`iframe[src*="${data.formId}"], iframe[data-tally-src*="${data.formId}"]`);
-        if (iframe && data.height) {
-          iframe.style.height = data.height + 'px';
-        }
+        if (!data || typeof data.formId !== 'string' || !/^[a-zA-Z0-9]+$/.test(data.formId)) return;
+        const height = Number(data.height);
+        if (!Number.isFinite(height) || height <= 0 || height > 100000) return;
+        document.querySelectorAll('iframe[data-tally-src], iframe[src]').forEach((iframe) => {
+          if (iframe.contentWindow !== e.source) return;
+          const url = new URL(iframe.getAttribute('src') || iframe.dataset.tallySrc, window.location.href);
+          if (url.origin === e.origin && url.pathname === `/embed/${data.formId}`) {
+            iframe.style.height = `${height}px`;
+          }
+        });
       } catch (err) {
         // Silently fail if not a valid Tally height message
       }
@@ -138,39 +162,33 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 6. Mobile Footer Accordion Interactivity
-  const initFooterAccordion = () => {
-    const footerHeaders = document.querySelectorAll('.main-footer h4');
-    
-    footerHeaders.forEach(header => {
-      header.addEventListener('click', (e) => {
-        if (window.innerWidth > 768) return; // Desktop bypass
-        
-        e.preventDefault();
-        const isActive = header.classList.toggle('active');
-        header.setAttribute('aria-expanded', String(isActive));
-      });
-      
-      if (window.innerWidth <= 768) {
-        header.setAttribute('role', 'button');
-        header.setAttribute('aria-expanded', 'false');
-      }
+  const footerMedia = window.matchMedia('(max-width: 768px)');
+  document.querySelectorAll('.main-footer h4').forEach((heading, index) => {
+    const list = heading.nextElementSibling;
+    if (!list || list.tagName !== 'UL') return;
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'footer-accordion-toggle';
+    button.textContent = heading.textContent;
+    list.id = list.id || `footer-links-${index + 1}`;
+    button.setAttribute('aria-controls', list.id);
+
+    const sync = () => {
+      const mobile = footerMedia.matches;
+      const expanded = !mobile || heading.classList.contains('active');
+      // Preserve heading semantics on desktop; use a native disclosure on mobile.
+      if (mobile && !heading.contains(button)) heading.replaceChildren(button);
+      if (!mobile && heading.contains(button)) heading.textContent = button.textContent;
+      heading.classList.toggle('accordion-ready', mobile);
+      button.setAttribute('aria-expanded', String(expanded));
+      list.hidden = !expanded;
+    };
+    button.addEventListener('click', () => {
+      heading.classList.toggle('active');
+      sync();
     });
-  };
-  
-  initFooterAccordion();
-  
-  window.addEventListener('resize', () => {
-    document.querySelectorAll('.main-footer h4').forEach(header => {
-      if (window.innerWidth <= 768) {
-        if (!header.hasAttribute('role')) {
-          header.setAttribute('role', 'button');
-          header.setAttribute('aria-expanded', header.classList.contains('active') ? 'true' : 'false');
-        }
-      } else {
-        header.removeAttribute('role');
-        header.removeAttribute('aria-expanded');
-      }
-    });
-  }, { passive: true });
+    footerMedia.addEventListener('change', sync);
+    sync();
+  });
 
 });

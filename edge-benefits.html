@@ -30,7 +30,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="stylesheet" href="style.css?v=202606011341">
+    <link rel="stylesheet" href="style.css?v=202609270013">
     <noscript><style>.reveal{opacity:1!important;visibility:visible!important;transform:none!important;}</style></noscript>
 
     <style>
@@ -79,9 +79,6 @@
                 <a href="/#services" class="nav-link">Services</a>
                 <a href="archive-insights.html" class="nav-link">Insights</a>
                 <a href="/#contact" class="nav-link">Contact</a>
-                <a href="https://chrisjwalker.wearelegalshield.ca/" target="_blank" rel="noopener"
-                    class="nav-link nav-link-external">LegalShield
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
             </nav>
             <div class="nav-contact">
                 <a href="tel:+16043092001" class="btn btn-outline" aria-label="Call Chris Walker at (604) 309-2001">
@@ -239,7 +236,6 @@
                         <li><a href="tel:+16043092001">(604) 309-2001</a></li>
                         <li><a href="https://calendly.com/chriswalkerinsurance/30min" target="_blank" rel="noopener">Book a 30-Minute Call</a></li>
                         <li><a href="index.html#contact">Send a Message</a></li>
-                        <li><a href="https://chrisjwalker.wearelegalshield.ca/" target="_blank" rel="noopener" class="nav-link-external">LegalShield <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></li>
                     </ul>
                 </div>
             </div>
@@ -251,25 +247,9 @@
         </div>
     </footer>
 
+    <script src="scripts.js?v=202609270013" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Header scroll effect
-            const header = document.getElementById('main-header');
-            window.addEventListener('scroll', () => {
-                header.classList.toggle('scrolled', window.scrollY > 50);
-            });
-            if (window.scrollY > 50) header.classList.add('scrolled');
-
-            // Mobile Menu Logic
-            const mobileToggle = document.querySelector('.mobile-menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            if (mobileToggle) {
-                mobileToggle.addEventListener('click', () => {
-                    mobileToggle.classList.toggle('active');
-                    navLinks.classList.toggle('active');
-                });
-            }
-
             // Edge Benefits Tab Switcher
             const tabBtns = document.querySelectorAll('.edge-tab-btn');
             tabBtns.forEach(btn => {
@@ -354,6 +334,3 @@
 </body>
 
 </html>
-
-
-
