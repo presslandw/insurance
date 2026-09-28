@@ -589,6 +589,27 @@ section[id] {
     align-items: center !important;
 }
 
+/* Desktop: logo left, links truly centred, phone right, in a narrower pill. */
+@media (min-width: 1081px) {
+    #main-header, .navbar.sticky {
+        max-width: 1080px;
+    }
+
+    .nav-container {
+        display: grid !important;
+        grid-template-columns: 1fr auto 1fr;
+        column-gap: 2rem;
+    }
+
+    .nav-links {
+        gap: 2.5rem;
+    }
+
+    .nav-contact {
+        justify-self: end;
+    }
+}
+
 .logo {
     display: flex;
     align-items: center;
