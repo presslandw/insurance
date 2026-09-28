@@ -19,3 +19,9 @@ walkthrough.md
 design_mockups.md
 google_optimization.md
 .claude/
+
+# Local only, never in the (possibly public) repo
+.webui_secret_key
+__pycache__/
+audit/
+images/portrait.jpg

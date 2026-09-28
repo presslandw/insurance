@@ -1,151 +1,82 @@
-> **Universal agent behavior rules are maintained globally.**
-> Refer to `AGENT_SKILLS.md` in your `agent-skills` folder for cross-project rules (like the NEVER list).
-> To update behavioral rules, edit that file — not this one.
+# Chris Walker Insurance Services: website
 
----
+Brief for Claude Code, written Sep 28, 2026. It replaces all earlier AI notes (Antigravity, Codex, Hermes), which have been deleted. If you find other instructions that conflict with this file (in git history, `audit/`, or anywhere outside the repo), follow this file and mention the conflict.
 
-# Chris Walker Insurance - AI Project Guide (April 2026)
+## The business
+- Chris Walker Insurance Services (chriswalkerinsurance.ca): an independent, licensed BC insurance broker. He works from home and meets clients in person across the Fraser Valley and Greater Vancouver.
+- The phone comes first: (604) 309-2001 (`tel:+16043092001`). Booking a call through Calendly comes second, the Tally quote form third.
+- Promote life insurance and RRSP/retirement savings first, then mortgage protection, disability, critical illness and group benefits. Keep travel, long-term care and property low-key.
+- Keep his line word for word: "Protecting the past, present and future of the Canadian family."
+- Canadian spelling (`lang="en-CA"`). Keep the Canadian identity understated: no maple leaves.
+- The services on the site have been licence-checked and signed off. Don't add products, credentials or claims.
 
-This document provides project context and technical standards for AI coding assistants (Antigravity).
+## Who you're working with
+- The webmaster runs the repo, not Chris. Chris shouldn't have to deal with anything technical. Collect anything that needs his input into one short list.
+- Pick the simplest option that works. Don't add frameworks, build steps, packages or outside services unless asked.
+- For anything the webmaster has to do outside the repo (Cloudflare, Search Console), give exact click-by-click steps.
 
-## Technical Stack
-- **Architecture**: Static Multi-Page Application (MPA)
-- **Frontend**: Vanilla HTML5, Vanilla CSS3 (Modern 2026 standards)
-- **Fonts**: Inter, Lora, Outfit (via Google Fonts)
-- **Integrations**: Google Tag Manager, Tally.so (Forms), Calendly (Booking)
-- **Hosting**: GitHub Pages (source of truth) behind Cloudflare proxy (CDN + bot management)
+## Hard rules
+- Service-area business: never add a street address, postal code or map coordinates to any page or to the structured data. The home address is hidden on Google on purpose, and the Google verification must not be disturbed.
+- Make nothing up: no reviews, testimonials, staff, offices, statistics, or stock photos presented as Chris. Real photos only.
+- Don't overpromise. No "guaranteed", "best value", "cancel any time" or similar. Keep wording plain and accurate.
+- The repo may be public. Never commit secrets, logins, personal email addresses, Chris's home address or private notes.
+- Public email addresses must be on the domain (quotes@chriswalkerinsurance.ca today), never Gmail.
+- Keep these working: GA4 tag `G-DFMPTGY8XM` (gtag, no GTM), Tally form `xXyvdk`, Calendly `https://calendly.com/chriswalkerinsurance/30min`, `google10a4d81a71c07441.html` (Search Console verification), `CNAME`, and a `robots.txt` that allows AI crawlers (a real client found Chris through ChatGPT).
+- Before deleting anything, list the exact files and wait for the webmaster's yes. Never delete Obsidian notes. Also ask before rewriting history, force-pushing, or touching any branch other than `main`. Leave the old `copy-refresh` branch alone.
 
-## Project Structure
-- `index.html`: Main landing page
-- `style.css`: Primary stylesheet (all pages)
-- `images/`: High-resolution assets
-- `insight-*.html`: Educational articles/guides
-- `quote-*.html`: Quote request landing pages
-- `.vscode/`: Environment configuration
+## How the site works
+- Static HTML, CSS and JS with no build step. It's hosted on GitHub Pages (default Jekyll build) behind Cloudflare, and a push to `main` deploys it.
+- `_config.yml` keeps notes, scripts and `audit/` off the live site. If you add anything that shouldn't be public, exclude it there.
+- The header and footer are copied into every page. A nav or footer change means editing every HTML file, `404.html` included.
+- There is one `style.css` (about 4,400 lines, heavy on `!important`) and one `scripts.js`. After changing either, run `.\bump_version.ps1` to update the `?v=` cache strings.
+- `verify.py` checks for placeholder text, checks the JSON-LD, and checks that every internal link and image exists. It runs in the pre-push hook (`.githooks`, already enabled) and in GitHub Actions. Run it before every commit. Bracketed placeholders like `[NUMBER]` are blocked, so don't write them. If the hook can't find Python, set `CWI_PYTHON`.
+- Local preview: `python -m http.server 8000` in the repo root, then open http://localhost:8000.
+- GitHub Pages can't redirect. Retired URLs get 301s in Cloudflare (Rules > Redirect Rules), which the webmaster adds. Write out the rules and don't make meta-refresh pages.
+- After a deploy: purge the Cloudflare cache, check the live page, and resubmit `sitemap.xml` in Search Console if it changed.
+- Photos: `images/portrait.jpg` is the full-size photo of Chris with his Oldsmobile. It's kept local (git-ignored), and the site uses the `images/chris-walker.{avif,webp,jpg}` versions. `car.jpg` and `bike.jpg` were removed on purpose. `hero-bg.*` is the other real photo.
+- `docs/` holds carrier PDFs linked from `resources.html`. Keep them.
+- `audit/` is another assistant's review from Sep 27, 2026. It's local only (git-ignored) and for reference only. Don't run its publish scripts; publish with a normal `git push`.
 
-## Code Style & Standards
-- **HTML**:
-  - Use Semantic HTML5 elements (`<main>`, `<section>`, `<article>`, `<header>`, `<footer>`).
-  - Strict Accessibility: All images must have `alt` text, buttons must have `aria-label` where needed.
-  - SEO: Every page MUST have a unique `<title>`, `canonical` link, and meta `description`.
-  - Social: Open Graph (OG) tags must be present on all indexable pages.
-- **CSS**:
-  - Prefer native CSS variables (Custom Properties).
-  - Use modern layout techniques: CSS Grid and Flexbox.
-  - Colors: Use `oklch()` or semantic variables where possible.
-  - Typography: Stick to the project's font pairings (Outfit for headers, Inter for body).
-- **SEO**:
-  - Use JSON-LD Schema on relevant pages: `InsuranceAgency` on homepage, `Article` with `Organization` publisher (NOT `InsuranceAgency`) on insight pages.
-  - Ensure fast LCP (Largest Contentful Paint) by optimizing images.
+## Next session: remove the Insights section
+Decided Sep 28: no articles. They don't bring in calls and they add clutter.
 
-## Common Operations
-- **Serve Local**: Run `npx serve .` to start a local server at `http://localhost:3000`.
-- **Version Bump**: After ANY change to `style.css`, run `.\bump_version.ps1` to update the cache-busting version string across all 15+ HTML files.
-- **Build**: No build step required (Static).
-- **Validation**:
-  - **Automated (June 2026)**: `python3 verify.py` — placeholders (e.g. `[NUMBER]`), JSON-LD validity, broken internal links/images. Runs automatically as a **pre-push hook** (`.githooks/pre-push`, activated via `git config core.hooksPath .githooks` — re-run that command on any fresh clone) and in **GitHub Actions** (`.github/workflows/verify.yml`) on every push/PR. Emergency bypass: `git push --no-verify`. This exists because `Reg. #[NUMBER]` once shipped to production on all 17 pages.
-  - HTML: W3C Validator
-  - Accessibility: Axe Linter (VS Code)
-- **Deployment**: `git push origin main` (auto-deploys to GitHub Pages). The pre-push hook runs `verify.py` first and blocks the push on failure.
+First, the working tree has uncommitted work:
+- the Sep 28 fixes: the new `_config.yml`, the exact coordinates removed from the homepage JSON-LD, root-relative links in `404.html`, and the floating "Talk with Chris" buttons now `tel:` links
+- this cleanup of the old AI files, and `.gitignore` additions
+- the removal of `car.jpg` and `bike.jpg`
+- a comment-only edit to `robots.txt`, plus line-ending noise in `sitemap.xml`
 
-## Design System & "2026 Premium" Aesthetic
-The project underwent a significant visual overhaul in April 2026 to adopt a "Premium Light" editorial aesthetic.
+Review it and commit it on its own, so the Insights removal is a separate commit. After that first push, confirm https://www.chriswalkerinsurance.ca/CLAUDE.md returns 404 (it was public before `_config.yml`).
 
-- **Color Palette**:
-  - `Primary (Navy)`: Used for the floating header and high-contrast accents.
-  - `Accent (Gold/Copper)`: Symbolizes value and trust. Used for CTAs and iconography.
-  - `Text Title (Deep Charcoal)`: A refined, very dark navy-grey used for all headers to avoid the "harshness" of pure black.
-  - `Backgrounds`: Prefer clean white (`#FFFFFF`) or off-white (`#F8FAFC`) over dark solid blocks.
-- **Typography**:
-  - **Headers**: `Outfit` (Sans-serif) for high-impact titles.
-  - **Editorial Body**: `Lora` (Serif) for long-form insight content to evoke professional journalism.
-  - **UI/Small Text**: `Inter` (Sans-serif) for functional readability.
-  - **Readability Rules**: Paragraphs use `line-height: 1.85` and `1.75rem` bottom-margin for an open, airy reading rhythm.
-- **UI Component Standards**:
-  - **Corners**: `8px` for buttons/forms; `16px-20px` for large content cards/images.
-  - **Header**: Floating "glassmorphism" pill with `15px` backdrop-blur and `85px` scroll-margin-top.
-  - **CTAs**: Avoid heavy solid boxes. Use white cards with subtle borders and gold top-accents.
+Then:
+1. Delete these pages and give the webmaster a 301 rule for each:
 
-## AI Communication Rules
-- **CRITICAL**: Do NOT use Git worktrees. Stick to standard `git checkout` or `git switch`. Creating worktrees permanently modifies the repo config and crashes certain AI chat indexers.
-- Always preserve existing SEO tracking scripts (GTM).
-- Maintain 2026 best practices for accessibility and performance.
-- **Aesthetic Consistency**: Adhere to the "Premium Light" design tokens. Avoid adding heavy dark backgrounds or generic blue/red colors.
-- When adding content, match the "trusted local insurance broker" tone of voice: professional, straightforward, and family-oriented.
+   | Remove | Redirect to |
+   |---|---|
+   | /archive-insights.html | / |
+   | /insight-flood.html | / |
+   | /insight-life.html | /quote-life.html |
+   | /insight-bc-probate.html | /quote-life.html |
+   | /insight-mortgage.html | /mortgage-protection.html |
+   | /insight-disability.html | /disability-insurance.html |
+   | /insight-savings.html | /quote-savings.html |
+   | /insight-fhsa.html | /quote-savings.html |
 
-## Active Project State
-- **Primary Branch**: `main` (Live site — auto-deploys on push).
-- **Secondary Branch**: `copy-refresh` (Stale rough draft for sitewide copy refresh — not merged, low priority, do not touch unless explicitly asked).
-- **Stale Worktree Branch**: `claude/gallant-wing-228abc` exists in git but is orphaned. Run `git worktree prune` if it causes issues. Do NOT create new worktrees.
-- **Ongoing Focus**: Image optimisation — 2 images over 100KB need compression and width/height attributes to reduce CLS (see SEO Audit Log).
+2. Before deleting, move any genuinely useful point into a short section, a few sentences at most, on the page it redirects to. Good candidates: beneficiaries and probate on the life page, bank mortgage insurance vs. personal term on mortgage protection, FHSA basics on savings.
+3. Remove every link to those pages: the nav, the footer on every page, the homepage Insights and featured cards, `resources.html`, the JSON-LD and `sitemap.xml`. `grep -l "insight-\|archive-insights" *.html sitemap.xml` finds them.
+4. Delete the images only those pages used (`images/insight-*`), after grepping to confirm nothing else uses them.
+5. Leave the Insights CSS alone unless it's clearly isolated. The stylesheet gets rebuilt later.
+6. Update `lastmod` in `sitemap.xml` for the pages you changed. Run `verify.py`, preview locally, then commit.
+7. Finish with the Cloudflare redirect rules to add and the after-deploy checklist above.
 
-## Site Maintenance Checklist
-Things AI will not proactively suggest but that cause real headaches when skipped.
-
-### After Every Significant Deployment
-- **Purge Cloudflare cache**: Dashboard → Caching → Purge Everything. AI pushes to GitHub but Cloudflare may still serve stale HTML/CSS to Googlebot and visitors for hours.
-- **Verify live site visually**: Open an incognito window and check the changed pages. GitHub Pages + Cloudflare has a pipeline; the deploy may look complete in git but the live URL may lag.
-- **Run URL Inspection in GSC**: For any new or significantly changed page, paste the URL into GSC → URL Inspection → Request Indexing. Don't wait for Google to find it passively.
-
-### After Any sitemap.xml Change
-- **Resubmit sitemap in GSC**: GSC → Sitemaps → paste URL → Submit. This is manual every time. GSC does not auto-detect sitemap changes.
-- **Check sitemap renders correctly**: Visit `https://www.chriswalkerinsurance.ca/sitemap.xml` directly in a browser and confirm XML is valid and no entries are blank.
-
-### After Any Schema / Structured Data Change
-- **Run Rich Results Test**: https://search.google.com/test/rich-results — paste the page URL. Google flags errors that Ahrefs and Screaming Frog miss. This is the authoritative validator.
-
-### Monthly
-- **Check GSC Coverage report**: Look for new Errors or pages that dropped from Valid to Excluded. GSC emails alerts but they can be delayed by weeks.
-- **Check GSC Core Web Vitals report**: Poor/Needs Improvement pages affect rankings. AI cannot see this without you pasting the data in.
-- **Review 404s in GSC**: GSC → Coverage → Not Found (404). Broken internal links accumulate silently over time.
-- **Check Google Business Profile**: Confirm hours, phone, and address are accurate. Verify no one has suggested unauthorized edits. Post an update (events, offers) to signal activity to Google.
-
-### Quarterly
-- **Run an external crawler audit**: Screaming Frog (free, <500 URLs) or Ahrefs Site Audit. Paste the issues report into AI for triage. AI auditing its own code without external data is unreliable.
-- **Check external link rot**: Any outbound links (carrier sites, government pages) may have moved. Ahrefs Webmaster Tools flags these for free.
-- **Validate robots.txt in GSC**: GSC → Settings → robots.txt Tester. Confirm Googlebot sees `Allow: /` and no unintended blocks after any Cloudflare config changes.
-- **Review Cloudflare Analytics**: Check for bot traffic spikes or unexpected 5xx errors that GitHub/GSC won't surface.
-
-## SEO Audit Log
-AI does not have external visibility into the live site without being given tool output. Always run an external audit first and paste results in.
-
-### Completed (May 2026)
-- Redesigned the global footer into a premium **Asymmetric Editorial Layout** across all 17 HTML pages (logo, taglines, trust credentials on left; streamlined 3-column link lists on right).
-- Consolidated all 10 raw PDF download links into a brand new, highly premium **Resource Library Page** (`resources.html`), eliminating links-per-page dilution and link equity leakage.
-- Refactored the homepage FAQ section into an active **Objection Handler Accordion** with 6 high-converting accordions addressing fee transparency, employer-benefit risks, cancellation commitments, bank traps, and health concerns.
-- Integrated the new **Partner Trust Bar** (with custom SVGs for Manulife, Sun Life, IA, Equitable, Canada Life, and Edge) and **Stats Bar** ("30+ Years", "BC Families Protected") on the homepage.
-- Removed the extraneous "How It Works" timeline section in favor of a standalone 3-column values grid on `#F0F4F8` cool grey-blue.
-- `robots.txt` cleaned — global `Allow: /`, Cloudflare injects its own managed block above (harmless)
-- `sitemap.xml` fixed — orphaned PDFs re-linked globally in footer then restored to sitemap
-- Page titles shortened to <60 chars across all 15 pages (local signals retained)
-- Meta descriptions tightened to <155 chars across 8 pages (Abbotsford & Greater Vancouver retained)
-- Article schema `publisher @type` corrected: `InsuranceAgency` → `Organization` on all 6 insight pages
-- Rich Results Test validated: Article schema returns "1 valid item detected" — non-critical warnings only (optional fields), no blocking errors
-- Canonical tags confirmed present on all 17 HTML pages
-- Internal 4xx (Cloudflare email obfuscation `/cdn-cgi/`) confirmed false positive — ignore
-
-
-## Landing Page Strategy (Conversion-Focused)
-*Inspired by "Conversion Design" principles for high-intent PPC/Ad traffic.*
-
-- **Surgical Intent**: Create unique landing pages for every major keyword (e.g., "Mortgage Insurance Abbotsford", "BC Business Health Benefits").
-- **Conversion-Only Layout**: 
-    - **Remove Global Nav/Footer**: Disable the floating pill menu and main footer on these pages to prevent "leaks" in the conversion funnel.
-    - **Single CTA Focus**: Every element on the page should lead back to the primary lead magnet (Tally Form or Calendly).
-    - **Above-the-Fold Form**: For high-intent traffic, the form should be visible or immediately accessible in the Hero.
-- **A/B Testing**: Implement a systematic process to test headline variations, CTA button colors, and social proof placement.
-- **Technical Connection**: Ensure these pages are hosted on sub-paths (e.g., `/lp/mortgage-protection`) and excluded from the main site navigation to maintain SEO siloing.
-
-### Outstanding / Next Steps
-- **Local SEO audit**: Run BrightLocal to audit Google Business Profile, local citations, and map pack rankings — highest ROI opportunity not yet addressed
-- **Relume Structural Audit (May 2026)**:
-    - [x] **Trust Bar**: Add carrier logos (Manulife, Sun Life, etc.) below Hero to anchor authority. (Completed)
-    - [x] **Process Section**: Add "How it Works" timeline or value cards to the homepage. (Completed & subsequently simplified into the modern 3-card grid per user feedback)
-    - [x] **FAQ / Objection Handler**: Add accordion FAQ to homepage to address pre-sale friction. (Completed)
-    - [x] **Hard Stats**: Elevate "30+ Years" and "BC Families Protected" into a dedicated high-impact stats block. (Completed)
-- **AI search visibility**: Check brand visibility in Google AI Overviews / Perplexity using Profound or Otterly.ai
-- **Twitter/X cards**: Add `twitter:card` meta tags if/when a Twitter account is created
-- **H2 structure**: 4 pages missing H2, 3 pages with non-sequential heading order (low priority)
-- **IndexNow**: Submit updated URLs to Bing via IndexNow after any major content changes
-- **Images**: 2 images over 100KB — compress and add width/height attributes to reduce CLS
-- **Google Rich Results Test**: ✅ Validated May 2026 — Article schema clean on insight pages
+## Later (don't start unless asked)
+- The new look is decided: "Midnight and brass".
+  - Colours: navy `#1B2A3F`, cream `#F4F1EA`, brass `#CDB483` on dark, dark brass `#8A6D3B` on light, rules `#A88E5E`.
+  - Type: Newsreader for headings, Public Sans for body text and tracked caps.
+  - Marks: a CW monogram with an italic W, a diamond divider and a fine ring motif.
+  - The mockups are in Claude Design.
+- The live site still has the old look (Outfit, Lora, Inter). Don't restyle it piecemeal. The order is: the homepage from the approved mockup, then one coverage-page template, then About Chris, then a clean stylesheet to replace `style.css`.
+- Target pages: the homepage with Chris (photo, name, phone) at the top; the coverage pages `quote-life`, `quote-savings`, `mortgage-protection`, `disability-insurance` and `edge-benefits`; About Chris (new); `resources`; `privacy`; `404`.
+- Copy fixes: two homepage FAQ answers overstate ("cancel ... at any time without fees or questions asked" and "absolute best value"). The footer headings skip levels.
+- Chris still has to supply a headshot, his bio, his BC licence/registration number and real Google reviews. Dormant `.about-chris-*` and `.testimonials-*` styles are still in `style.css`, and the pinned markup is in git history.
+- Accounts are handled outside the repo by the webmaster: Google Business Profile, Bing Places, Apple Business Connect, the Calendly calendar, and Cloudflare email routing.

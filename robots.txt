@@ -8,14 +8,10 @@
 #   Bing/Copilot: Bingbot
 #   OpenAI:     OAI-SearchBot, ChatGPT-User      Anthropic: Claude-SearchBot, Claude-User
 #   Perplexity: PerplexityBot, Perplexity-User   Apple: Applebot      Amazon: Amazonbot
-#
-# !! IMPORTANT — Cloudflare can override this file at the edge !!
-#   Cloudflare "Managed robots.txt" (Sept-2025 Content Signals) PREPENDS its own block and
-#   currently injects "Disallow: /" for Google-Extended, GPTBot, CCBot and ClaudeBot.
-#   This file is only fully authoritative once Managed robots.txt is DISABLED in Cloudflare:
-#   Dashboard -> AI Audit / Bots -> Manage robots.txt  (and/or  Scrape Shield -> Content Signals).
-#   After disabling: purge cache, then re-fetch https://www.chriswalkerinsurance.ca/robots.txt
-#   and confirm the "Cloudflare Managed content" block is gone.
+# Live check 2026-06-29: Cloudflare Managed robots.txt is not prepending a block.
+# If Cloudflare AI Audit / Bots or Scrape Shield settings change later, re-fetch
+# https://www.chriswalkerinsurance.ca/robots.txt and confirm this origin file is
+# still the full live response.
 
 User-agent: *
 Allow: /

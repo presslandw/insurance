@@ -1,0 +1,7 @@
+# Keep internal files off the live site (GitHub Pages / Jekyll).
+exclude:
+  - "*.md"
+  - audit
+  - "*.ps1"
+  - "*.py"
+  - "*.code-workspace"
