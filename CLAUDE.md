@@ -37,37 +37,21 @@ Brief for Claude Code, written Sep 28, 2026. It replaces all earlier AI notes (A
 - `docs/` holds carrier PDFs linked from `resources.html`. Keep them.
 - `audit/` is another assistant's review from Sep 27, 2026. It's local only (git-ignored) and for reference only. Don't run its publish scripts; publish with a normal `git push`.
 
-## Next session: remove the Insights section
-Decided Sep 28: no articles. They don't bring in calls and they add clutter.
+## Insights section: removed Sep 28, 2026
+No articles. They didn't bring in calls, added clutter, and were AI-written, so none of their content was moved to the coverage pages. Don't bring articles back. If Chris wants a topic covered (beneficiaries, bank vs. personal mortgage cover, FHSA), he writes it in his own words during the rebuild.
 
-First, the working tree has uncommitted work:
-- the Sep 28 fixes: the new `_config.yml`, the exact coordinates removed from the homepage JSON-LD, root-relative links in `404.html`, and the floating "Talk with Chris" buttons now `tel:` links
-- this cleanup of the old AI files, and `.gitignore` additions
-- the removal of `car.jpg` and `bike.jpg`
-- a comment-only edit to `robots.txt`, plus line-ending noise in `sitemap.xml`
+The 8 pages, their `images/insight-*` files, the nav and footer links, the homepage section and the sitemap entries are gone. The Insights CSS is still in `style.css` and goes with the rebuild. Old URLs redirect (301) in Cloudflare:
 
-Review it and commit it on its own, so the Insights removal is a separate commit. After that first push, confirm https://www.chriswalkerinsurance.ca/CLAUDE.md returns 404 (it was public before `_config.yml`).
-
-Then:
-1. Delete these pages and give the webmaster a 301 rule for each:
-
-   | Remove | Redirect to |
-   |---|---|
-   | /archive-insights.html | / |
-   | /insight-flood.html | / |
-   | /insight-life.html | /quote-life.html |
-   | /insight-bc-probate.html | /quote-life.html |
-   | /insight-mortgage.html | /mortgage-protection.html |
-   | /insight-disability.html | /disability-insurance.html |
-   | /insight-savings.html | /quote-savings.html |
-   | /insight-fhsa.html | /quote-savings.html |
-
-2. Before deleting, move any genuinely useful point into a short section, a few sentences at most, on the page it redirects to. Good candidates: beneficiaries and probate on the life page, bank mortgage insurance vs. personal term on mortgage protection, FHSA basics on savings.
-3. Remove every link to those pages: the nav, the footer on every page, the homepage Insights and featured cards, `resources.html`, the JSON-LD and `sitemap.xml`. `grep -l "insight-\|archive-insights" *.html sitemap.xml` finds them.
-4. Delete the images only those pages used (`images/insight-*`), after grepping to confirm nothing else uses them.
-5. Leave the Insights CSS alone unless it's clearly isolated. The stylesheet gets rebuilt later.
-6. Update `lastmod` in `sitemap.xml` for the pages you changed. Run `verify.py`, preview locally, then commit.
-7. Finish with the Cloudflare redirect rules to add and the after-deploy checklist above.
+| Old URL | Redirects to |
+|---|---|
+| /archive-insights.html | / |
+| /insight-flood.html | / |
+| /insight-life.html | /quote-life.html |
+| /insight-bc-probate.html | /quote-life.html |
+| /insight-mortgage.html | /mortgage-protection.html |
+| /insight-disability.html | /disability-insurance.html |
+| /insight-savings.html | /quote-savings.html |
+| /insight-fhsa.html | /quote-savings.html |
 
 ## Later (don't start unless asked)
 - The new look is decided: "Midnight and brass".
